@@ -1,0 +1,22 @@
+# Default ownership
+* @aleksnick
+
+# Repository automation
+/.github/ @aleksnick
+
+# Application code
+/app/ @aleksnick
+/components/ @aleksnick
+/hooks/ @aleksnick
+/lib/ @aleksnick
+/public/ @aleksnick
+/styles/ @aleksnick
+
+# Build and config
+/Dockerfile @aleksnick
+/package.json @aleksnick
+/package-lock.json @aleksnick
+/next.config.mjs @aleksnick
+/postcss.config.mjs @aleksnick
+/tsconfig.json @aleksnick
+/eslint.config.mjs @aleksnick
