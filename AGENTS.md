@@ -2,7 +2,7 @@
 
 ## Scope
 
-These rules apply to the `tradejs-site` repository.
+These rules apply to the `TradeJS-Site` repository.
 
 ## Purpose
 

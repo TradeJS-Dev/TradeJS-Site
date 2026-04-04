@@ -1,4 +1,4 @@
-# tradejs-site
+# TradeJS-Site
 
 Standalone marketing site for the TradeJS framework.
 
