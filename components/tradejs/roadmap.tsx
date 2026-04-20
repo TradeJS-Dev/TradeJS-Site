@@ -64,8 +64,15 @@ export function Roadmap() {
                       aria-hidden="true"
                     />
                     <div className="flex items-start justify-between gap-4">
-                      <div className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                        {item.quarter}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <div className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                          {item.quarter}
+                        </div>
+                        {item.completed ? (
+                          <div className="inline-flex rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-300">
+                            {t.roadmap.completedLabel}
+                          </div>
+                        ) : null}
                       </div>
                       <div className="rounded-xl border border-primary/20 bg-primary/10 p-2 text-primary transition-colors group-hover:bg-primary/16">
                         <Icon size={18} />
@@ -85,7 +92,9 @@ export function Roadmap() {
                     >
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-primary/80 to-info/70"
-                        style={{ width: `${55 + index * 12}%` }}
+                        style={{
+                          width: item.completed ? '100%' : `${55 + index * 12}%`,
+                        }}
                       />
                     </div>
                   </article>

@@ -34,6 +34,7 @@ TradeJS is an open-source, self-hosted framework for:
 - Runtime signals: https://docs.tradejs.dev/runtime/execution/signals
 - Backtesting: https://docs.tradejs.dev/runtime/backtesting/overview
 - AI config: https://docs.tradejs.dev/ai-ml/ai/configuration
+- AI prompt replay: https://docs.tradejs.dev/ai-ml/ai/prompt-replay
 - ML config: https://docs.tradejs.dev/ai-ml/ml/configuration
 - Production runbook: https://docs.tradejs.dev/operations/production-runbook
 

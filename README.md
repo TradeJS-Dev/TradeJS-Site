@@ -7,13 +7,13 @@ Source of truth for `tradejs.dev`. Core framework code stays in the main monorep
 ## Install
 
 ```bash
-npm install
+yarn
 ```
 
 ## Run
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Site runs on `http://localhost:3003`.
@@ -21,7 +21,7 @@ Site runs on `http://localhost:3003`.
 ## Build
 
 ```bash
-npm run build
+yarn build
 ```
 
 ## Container Image

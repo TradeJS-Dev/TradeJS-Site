@@ -63,6 +63,7 @@ TradeJS supports the full strategy lifecycle:
   - https://docs.tradejs.dev/runtime/backtesting/results-runtime-config
 - AI and ML:
   - https://docs.tradejs.dev/ai-ml/ai/configuration
+  - https://docs.tradejs.dev/ai-ml/ai/prompt-replay
   - https://docs.tradejs.dev/ai-ml/ai/prompt-governance
   - https://docs.tradejs.dev/ai-ml/ml/configuration
   - https://docs.tradejs.dev/ai-ml/ml/train-latest-select

@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
-import { Brain, LayoutGrid, ExternalLink } from 'lucide-react';
+import { Brain, LayoutGrid, ExternalLink, RefreshCw } from 'lucide-react';
 
-const icons = [LayoutGrid, Brain];
+const icons = [LayoutGrid, RefreshCw, Brain];
 
 export function Intelligence() {
   const { t } = useLocale();
@@ -48,7 +48,7 @@ export function Intelligence() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {t.intelligence.items.map((item, i) => {
             const Icon = icons[i];
             return (

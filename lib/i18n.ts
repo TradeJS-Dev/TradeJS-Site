@@ -79,7 +79,7 @@ export const translations = {
     intelligence: {
       sectionTitle: 'Intelligence & Backtesting',
       sectionSubtitle:
-        'AI-powered signal enhancement and massive parameter optimization',
+        'Grid backtests, prompt replay, and built-in AI / ML for safer strategy iteration',
       items: [
         {
           title: 'Grid Backtesting',
@@ -93,9 +93,24 @@ export const translations = {
           ],
         },
         {
-          title: 'Built-in AI / ML',
+          title: 'Prompt Replay for AI Gates',
           description:
-            'Enhance your signals with AI and ML models. Configurable pipelines for signal filtering, prediction, and risk scoring.',
+            'Backtests can persist replayable AI rows. Re-run current prompt logic on the same historical trades to validate prompt updates, model swaps, and quality thresholds before live gating.',
+          links: [
+            {
+              label: 'Prompt Replay',
+              url: 'https://docs.tradejs.dev/ai-ml/ai/prompt-replay',
+            },
+            {
+              label: 'Historical AI Eval',
+              url: 'https://docs.tradejs.dev/ai-ml/ai/offline-gating-eval',
+            },
+          ],
+        },
+        {
+          title: 'Runtime AI / ML',
+          description:
+            'Use AI as a runtime review layer and combine it with ML enrichment when you need live signal filtering, prediction, or risk-aware scoring.',
           links: [
             {
               label: 'AI Configuration',
@@ -153,19 +168,19 @@ export const translations = {
           step: '02',
           title: 'Run Grid Backtests',
           description:
-            'Configure parameter grids and run thousands of backtests automatically. Analyze results with built-in metrics.',
+            'Configure parameter grids, run thousands of historical tests, and capture replayable AI rows during the same backtest flow.',
         },
         {
           step: '03',
-          title: 'Promote Best Configs',
+          title: 'Validate AI Prompts on History',
           description:
-            'Select top-performing parameter sets from backtest results and promote them to runtime configuration.',
+            'Test prompt changes, provider swaps, and quality thresholds on the same backtest sample before enabling live AI gating.',
         },
         {
           step: '04',
-          title: 'Execute & Monitor',
+          title: 'Promote & Monitor',
           description:
-            'Launch live signal execution with real-time Telegram notifications. Monitor performance and adjust on the fly.',
+            'Move the best configs into runtime, launch execution, and monitor live results with Telegram notifications.',
         },
       ],
     },
@@ -178,27 +193,32 @@ export const translations = {
     roadmap: {
       sectionTitle: 'Roadmap',
       sectionSubtitle: 'Project roadmap for the next major milestones',
+      completedLabel: 'Completed',
       items: [
         {
           quarter: 'Q1',
+          completed: true,
           title: 'Project Launch',
           description:
             'Launch of the TradeJS open-source framework and the core project foundation.',
         },
         {
           quarter: 'Q2',
-          title: 'AI Evaluation of Backtest Trades',
+          completed: true,
+          title: 'Prompt Replay for AI Gates',
           description:
-            'Export backtest trades, run them through prompts attached to each strategy, and measure how accurately AI accepts or rejects trades.',
+            'Capture replayable AI rows during backtests and validate prompt and gating changes on the same historical trades before live rollout.',
         },
         {
           quarter: 'Q3',
+          completed: false,
           title: 'Built-In Strategy Catalog Expansion',
           description:
             'Expand the catalog of built-in working and validated strategies available out of the box.',
         },
         {
           quarter: 'Q4',
+          completed: false,
           title: 'New Data Sources For Strategies',
           description:
             'Add new data sources for strategies, including news portals, Reddit, X.com, and Arkham.',
@@ -234,11 +254,11 @@ export const translations = {
       actionWords: ['ПИШИ', 'ТЕСТИРУЙ', 'ЗАПУСКАЙ'],
       titleSuffix: 'Торговые стратегии',
       subtitle:
-        'Open-source фреймворк для торговых стратегий на TypeScript и Pine Script',
+        'Open-source фреймворк для создания торговых стратегий на TypeScript и Pine Script',
       quickstart: 'Быстрый старт',
       trust: {
         backtesting: 'Grid-бэктесты',
-        runtime: 'Сигналы в рантайме',
+        runtime: 'Рабочие сигналы',
         aiml: 'AI / ML',
         telegram: 'Уведомления в Telegram',
       },
@@ -279,16 +299,16 @@ export const translations = {
           ],
         },
         {
-          title: 'Локальный и self-hosted режим',
+          title: 'Локальный запуск и свой сервер',
           description:
             'Запускайте TradeJS локально или на своём сервере. Полный контроль над данными, инфраструктурой и средой исполнения.',
           links: [
             {
-              label: 'Локальная установка',
+              label: 'Локальный запуск',
               url: 'https://docs.tradejs.dev/ru/getting-started/quickstart',
             },
             {
-              label: 'Self-hosted установка',
+              label: 'Запуск на своём сервере',
               url: 'https://docs.tradejs.dev/ru/operations/production-runbook',
             },
           ],
@@ -297,12 +317,13 @@ export const translations = {
     },
     intelligence: {
       sectionTitle: 'Интеллект и бэктестинг',
-      sectionSubtitle: 'AI-усиление сигналов и масштабный перебор параметров',
+      sectionSubtitle:
+        'Grid-бэктесты, проверка AI-промптов на исторических сделках и встроенный AI / ML для безопасной настройки стратегий',
       items: [
         {
           title: 'Grid-бэктесты',
           description:
-            'Запускайте массовый перебор параметров через Grid Config. Автоматически находите оптимальные конфигурации среди тысяч комбинаций.',
+            'Запускайте массовый перебор параметров с помощью Grid Config и автоматически находите оптимальные конфигурации среди тысяч комбинаций.',
           links: [
             {
               label: 'Grid Config',
@@ -311,9 +332,24 @@ export const translations = {
           ],
         },
         {
-          title: 'Встроенный AI / ML',
+          title: 'Проверка AI-промптов на данных бэктестов',
           description:
-            'Усиливайте сигналы с помощью AI и ML моделей. Настраиваемые пайплайны для фильтрации, предсказания и оценки рисков.',
+            'Во время AI-бэктестов TradeJS сохраняет данные по сделкам для повторной проверки. Затем на том же историческом наборе можно сравнивать новые версии промптов, модели и пороги качества до включения AI-фильтра в рабочем режиме.',
+          links: [
+            {
+              label: 'Проверка на данных бэктестов',
+              url: 'https://docs.tradejs.dev/ru/ai-ml/ai/prompt-replay',
+            },
+            {
+              label: 'Оценка на истории',
+              url: 'https://docs.tradejs.dev/ru/ai-ml/ai/offline-gating-eval',
+            },
+          ],
+        },
+        {
+          title: 'AI / ML в рабочем режиме',
+          description:
+            'Используйте AI как слой проверки сигналов и комбинируйте его с ML, когда нужна фильтрация входов, прогноз или оценка риска в рабочем режиме.',
           links: [
             {
               label: 'Конфигурация AI',
@@ -330,12 +366,12 @@ export const translations = {
     execution: {
       sectionTitle: 'Исполнение и мониторинг',
       sectionSubtitle:
-        'От результатов бэктестов к живой торговле с уведомлениями в реальном времени',
+        'От результатов бэктестов к рабочему запуску с уведомлениями в реальном времени',
       items: [
         {
           title: 'Из бэктестов в рантайм',
           description:
-            'Переносите лучшие результаты бэктестов прямо в рантайм-конфиг. Без ручной настройки — фреймворк делает всё сам.',
+            'Переносите лучшие результаты бэктестов прямо в конфигурацию рантайма. Без ручной подгонки: фреймворк делает это сам.',
           links: [
             {
               label: 'Результаты в рантайм',
@@ -346,7 +382,7 @@ export const translations = {
         {
           title: 'Telegram-уведомления',
           description:
-            'Получайте алерты о сигналах, отчёты об исполнении и уведомления об ошибках прямо в Telegram. Будьте в курсе без мониторинга дашбордов.',
+            'Получайте уведомления о сигналах, отчёты об исполнении и сообщения об ошибках прямо в Telegram. Не нужно постоянно держать открытым дашборд.',
           links: [
             {
               label: 'Настройка Telegram',
@@ -358,7 +394,7 @@ export const translations = {
     },
     howItWorks: {
       sectionTitle: 'Как это работает',
-      sectionSubtitle: 'От идеи стратегии до исполнения — четыре шага',
+      sectionSubtitle: 'От идеи стратегии до рабочего запуска — четыре шага',
       steps: [
         {
           step: '01',
@@ -370,19 +406,19 @@ export const translations = {
           step: '02',
           title: 'Запустите Grid-бэктесты',
           description:
-            'Настройте сетку параметров и запустите тысячи бэктестов автоматически. Анализируйте результаты встроенными метриками.',
+            'Настройте сетку параметров, прогоните тысячи исторических тестов и сразу сохраните данные для повторной AI-проверки.',
         },
         {
           step: '03',
-          title: 'Перенесите лучшие конфиги',
+          title: 'Проверьте AI-промпты на истории',
           description:
-            'Выберите лучшие наборы параметров из результатов бэктестов и перенесите их в рантайм-конфигурацию.',
+            'Сравните новые версии промптов, модели и пороги качества на том же наборе сделок до включения AI-фильтра в рабочем режиме.',
         },
         {
           step: '04',
-          title: 'Запуск и мониторинг',
+          title: 'Перенесите в рантайм и следите за результатами',
           description:
-            'Запустите исполнение сигналов в реальном времени с Telegram-уведомлениями. Контролируйте и корректируйте на лету.',
+            'Перенесите лучшие конфигурации в рантайм, включите сигналы и следите за результатами через Telegram-уведомления.',
         },
       ],
     },
@@ -394,39 +430,44 @@ export const translations = {
       pineTab: 'Pine Script',
     },
     roadmap: {
-      sectionTitle: 'Roadmap',
-      sectionSubtitle: 'Дорожная карта проекта',
+      sectionTitle: 'Дорожная карта',
+      sectionSubtitle: 'Ключевые этапы развития проекта',
+      completedLabel: 'Выполнено',
       items: [
         {
           quarter: 'Q1',
+          completed: true,
           title: 'Старт проекта',
           description:
-            'Запуск TradeJS как open-source фреймворка и закладка базовой архитектуры проекта.',
+            'Запуск TradeJS как open-source фреймворка и формирование базовой архитектуры проекта.',
         },
         {
           quarter: 'Q2',
-          title: 'AI-оценка сделок из бэктестов',
+          completed: true,
+          title: 'Проверка AI-промптов на данных бэктестов',
           description:
-            'Экспорт сделок из бэктестов, прогон через промпты, привязанные к стратегии, и анализ того, насколько AI верно или неверно отбирает сделки.',
+            'Сохранение данных для повторной AI-проверки во время бэктестов и сравнение новых версий промптов и правил фильтрации на том же историческом наборе до запуска в рабочем режиме.',
         },
         {
           quarter: 'Q3',
+          completed: false,
           title: 'Расширение каталога встроенных стратегий',
           description:
-            'Обогащение каталога встроенных рабочих и проверенных стратегий, доступных из коробки.',
+            'Расширение каталога встроенных, проверенных стратегий, доступных из коробки.',
         },
         {
           quarter: 'Q4',
+          completed: false,
           title: 'Новые источники данных для стратегий',
           description:
-            'Добавление в стратегии новых источников данных, включая новостные порталы, Reddit, X.com и Arkham.',
+            'Подключение новых источников данных для стратегий, включая новостные порталы, Reddit, X.com и Arkham.',
         },
       ],
     },
     finalCta: {
       title: 'Готовы автоматизировать трейдинг?',
       subtitle:
-        'Начните работать с open-source фреймворком TradeJS уже сегодня. Self-hosted и создан для разработчиков.',
+        'Начните работать с open-source фреймворком TradeJS уже сегодня. Разворачивайте у себя и управляйте всем стеком самостоятельно.',
       quickstart: 'Быстрый старт',
     },
     footer: {

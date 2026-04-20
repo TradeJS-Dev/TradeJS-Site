@@ -84,7 +84,7 @@
   "engines": {
     "node": ">=20.0"
   },
-  "packageManager": "npm@10.8.2",
+  "packageManager": "yarn@4.13.0",
   "license": "MIT",
   "author": "aleksnick (https://github.com/aleksnick)"
 }
