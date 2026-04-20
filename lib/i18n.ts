@@ -93,17 +93,17 @@ export const translations = {
           ],
         },
         {
-          title: 'Prompt Replay for AI Gates',
+          title: 'AI Filter Validation on Backtest Data',
           description:
-            'Backtests can persist replayable AI rows. Re-run current prompt logic on the same historical trades to validate prompt updates, model swaps, and quality thresholds before live gating.',
+            'Backtests can persist replayable AI rows. Re-run the same historical trades to validate prompt updates, model swaps, and quality thresholds before changing the live AI filter.',
           links: [
             {
-              label: 'Prompt Replay',
+              label: 'AI Filter Validation',
               url: 'https://docs.tradejs.dev/ai-ml/ai/prompt-replay',
             },
             {
-              label: 'Historical AI Eval',
-              url: 'https://docs.tradejs.dev/ai-ml/ai/offline-gating-eval',
+              label: 'AI Configuration',
+              url: 'https://docs.tradejs.dev/ai-ml/ai/configuration',
             },
           ],
         },
@@ -172,9 +172,9 @@ export const translations = {
         },
         {
           step: '03',
-          title: 'Validate AI Prompts on History',
+          title: 'Validate AI Filters on Backtest Data',
           description:
-            'Test prompt changes, provider swaps, and quality thresholds on the same backtest sample before enabling live AI gating.',
+            'Test prompt changes, provider swaps, and quality thresholds on the same backtest sample before enabling the live AI filter.',
         },
         {
           step: '04',
@@ -205,9 +205,9 @@ export const translations = {
         {
           quarter: 'Q2',
           completed: true,
-          title: 'Prompt Replay for AI Gates',
+          title: 'AI Filter Validation on Backtest Data',
           description:
-            'Capture replayable AI rows during backtests and validate prompt and gating changes on the same historical trades before live rollout.',
+            'Capture replayable AI rows during backtests and validate prompt, model, and gating changes on the same historical trades before live rollout.',
         },
         {
           quarter: 'Q3',
@@ -332,17 +332,17 @@ export const translations = {
           ],
         },
         {
-          title: 'Проверка AI-промптов на данных бэктестов',
+          title: 'Проверка AI-фильтра на данных бэктестов',
           description:
-            'Во время AI-бэктестов TradeJS сохраняет данные по сделкам для повторной проверки. Затем на том же историческом наборе можно сравнивать новые версии промптов, модели и пороги качества до включения AI-фильтра в рабочем режиме.',
+            'Во время AI-бэктестов TradeJS сохраняет данные по сделкам для повторной проверки. Затем на том же историческом наборе можно сравнивать новые версии промптов, модели и пороги качества до изменения AI-фильтра в рабочем режиме.',
           links: [
             {
-              label: 'Проверка на данных бэктестов',
+              label: 'Проверка AI-фильтра',
               url: 'https://docs.tradejs.dev/ru/ai-ml/ai/prompt-replay',
             },
             {
-              label: 'Оценка на истории',
-              url: 'https://docs.tradejs.dev/ru/ai-ml/ai/offline-gating-eval',
+              label: 'Конфигурация AI',
+              url: 'https://docs.tradejs.dev/ru/ai-ml/ai/configuration',
             },
           ],
         },
@@ -410,9 +410,9 @@ export const translations = {
         },
         {
           step: '03',
-          title: 'Проверьте AI-промпты на истории',
+          title: 'Проверьте AI-фильтр на данных бэктестов',
           description:
-            'Сравните новые версии промптов, модели и пороги качества на том же наборе сделок до включения AI-фильтра в рабочем режиме.',
+            'Сравните новые версии промптов, модели и пороги качества на том же наборе сделок до изменения AI-фильтра в рабочем режиме.',
         },
         {
           step: '04',
@@ -444,7 +444,7 @@ export const translations = {
         {
           quarter: 'Q2',
           completed: true,
-          title: 'Проверка AI-промптов на данных бэктестов',
+          title: 'Проверка AI-фильтра на данных бэктестов',
           description:
             'Сохранение данных для повторной AI-проверки во время бэктестов и сравнение новых версий промптов и правил фильтрации на том же историческом наборе до запуска в рабочем режиме.',
         },
