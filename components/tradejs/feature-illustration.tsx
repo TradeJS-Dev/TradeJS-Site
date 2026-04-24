@@ -372,7 +372,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
           </WindowFrame>
 
           <FlowPath
-            d="M149 70C164 70 168 62 182 62"
+            d="M149 66H182"
             stroke={accentStroke}
             markerEnd={arrowMarker}
           />
@@ -483,9 +483,9 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               stroke={accentStroke}
               strokeWidth="2.5"
             />
-            <rect x="20" y="23" width="16" height="16" rx="4" fill={defs.tone.soft} />
+            <rect x="19" y="25" width="18" height="16" rx="4.5" fill={defs.tone.soft} />
             <path
-              d="M24 23v-5a4 4 0 118 0v5"
+              d="M23 25v-5a5 5 0 0110 0v5"
               fill="none"
               stroke={defs.tone.solid}
               strokeWidth="2.2"
@@ -672,15 +672,24 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               fill={chrome.panel}
               stroke={accentStroke}
             />
-            <Chip
-              x={10}
-              y={16}
-              width={20}
+            <SvgText
+              x={28}
+              y={24}
               label="AI"
-              fill={defs.tone.soft}
-              textFill={defs.tone.solid}
+              fill={defs.tone.solid}
+              fontSize={9.5}
+              fontWeight={800}
+              anchor="middle"
             />
-            <Chip x={32} y={36} width={22} label="ML" fill={chrome.fill} />
+            <SvgText
+              x={28}
+              y={39}
+              label="ML"
+              fill={chrome.text}
+              fontSize={9.5}
+              fontWeight={800}
+              anchor="middle"
+            />
             <Dot cx={28} cy={-4} fill={defs.tone.solid} />
             <Dot cx={56} cy={48} fill={defs.tone.solid} />
             <Dot cx={0} cy={48} fill={defs.tone.solid} />
