@@ -2,9 +2,17 @@
 
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
+import {
+  FeatureIllustration,
+  type FeatureIllustrationVariant,
+} from './feature-illustration';
 import { ArrowRightLeft, Send, ExternalLink } from 'lucide-react';
 
 const icons = [ArrowRightLeft, Send];
+const illustrationVariants: FeatureIllustrationVariant[] = [
+  'results-to-runtime',
+  'telegram-notifications',
+];
 
 export function Execution() {
   const { t } = useLocale();
@@ -32,6 +40,7 @@ export function Execution() {
         <div className="grid gap-6 md:grid-cols-2">
           {t.execution.items.map((item, i) => {
             const Icon = icons[i];
+            const variant = illustrationVariants[i] ?? 'results-to-runtime';
             return (
               <AnimateOnScroll key={i} delay={i * 120}>
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-surface/40 backdrop-blur-md hover:border-success/30 transition-all duration-300">
@@ -44,6 +53,7 @@ export function Execution() {
                     <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-success/10 text-success group-hover:bg-success/15 transition-colors">
                       <Icon size={26} />
                     </div>
+                    <FeatureIllustration variant={variant} tone="success" />
                     <h3 className="text-xl font-semibold text-foreground mb-3">
                       {item.title}
                     </h3>

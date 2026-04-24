@@ -3,9 +3,18 @@
 import Image from 'next/image';
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
+import {
+  FeatureIllustration,
+  type FeatureIllustrationVariant,
+} from './feature-illustration';
 import { Brain, LayoutGrid, ExternalLink, RefreshCw } from 'lucide-react';
 
 const icons = [LayoutGrid, RefreshCw, Brain];
+const illustrationVariants: FeatureIllustrationVariant[] = [
+  'grid-backtesting',
+  'ai-validation',
+  'runtime-ai',
+];
 
 export function Intelligence() {
   const { t } = useLocale();
@@ -51,6 +60,7 @@ export function Intelligence() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {t.intelligence.items.map((item, i) => {
             const Icon = icons[i];
+            const variant = illustrationVariants[i] ?? 'grid-backtesting';
             return (
               <AnimateOnScroll key={i} delay={i * 120}>
                 <div className="group relative h-full rounded-2xl border border-border bg-surface/40 backdrop-blur-md overflow-hidden hover:border-info/30 transition-all duration-300">
@@ -60,6 +70,7 @@ export function Intelligence() {
                     <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-info/10 text-info group-hover:bg-info/15 transition-colors">
                       <Icon size={26} />
                     </div>
+                    <FeatureIllustration variant={variant} tone="info" />
                     <h3 className="text-xl font-semibold text-foreground mb-3">
                       {item.title}
                     </h3>
