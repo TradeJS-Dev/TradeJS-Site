@@ -123,7 +123,7 @@ export default function RootLayout({
       lang="en"
       className={`dark ${_manrope.variable} ${_jetbrainsMono.variable}`}
     >
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <Script id="yandex-metrika" strategy="afterInteractive">
           {`
             (function(m,e,t,r,i,k,a){

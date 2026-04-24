@@ -491,22 +491,12 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               strokeWidth="2.2"
               strokeLinecap="round"
             />
-            <Chip x={4} y={74} width={48} label="DATA" fill={chrome.panel} />
           </g>
 
-          <FlowPath
-            d="M94 68C108 68 114 68 130 68"
-            stroke={accentStroke}
-            markerEnd={arrowMarker}
-          />
-          <FlowPath
-            d="M214 68C202 68 196 68 188 68"
-            stroke={accentStroke}
-            markerEnd={arrowMarker}
-          />
+          <Chip x={28} y={118} width={40} label="DATA" fill={chrome.panel} />
           <Chip
-            x={128}
-            y={122}
+            x={214}
+            y={118}
             width={54}
             label="CONTROL"
             fill={defs.tone.soft}
@@ -560,11 +550,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             <Chip x={54} y={76} width={46} label="AUTO" fill={defs.tone.soft} />
           </WindowFrame>
 
-          <FlowPath
-            d="M152 72C166 72 172 62 186 62"
-            stroke={accentStroke}
-            markerEnd={arrowMarker}
-          />
+          <FlowPath d="M152 68H184" stroke={accentStroke} markerEnd={arrowMarker} />
 
           <WindowFrame x={188} y={28} width={122} height={110}>
             <Chip
@@ -772,7 +758,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
           </WindowFrame>
 
           <FlowPath
-            d="M132 72H190"
+            d="M132 72H162"
             stroke={accentStroke}
             strokeWidth={4}
             markerEnd={arrowMarker}
