@@ -6,9 +6,8 @@ import {
   FeatureIllustration,
   type FeatureIllustrationVariant,
 } from './feature-illustration';
-import { ArrowRightLeft, Send, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const icons = [ArrowRightLeft, Send];
 const illustrationVariants: FeatureIllustrationVariant[] = [
   'results-to-runtime',
   'telegram-notifications',
@@ -39,28 +38,24 @@ export function Execution() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {t.execution.items.map((item, i) => {
-            const Icon = icons[i];
             const variant = illustrationVariants[i] ?? 'results-to-runtime';
             return (
-              <AnimateOnScroll key={i} delay={i * 120}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-surface/40 backdrop-blur-md hover:border-success/30 transition-all duration-300">
-                  <div className="p-8">
+              <AnimateOnScroll key={i} delay={i * 120} className="h-full">
+                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40 backdrop-blur-md hover:border-success/30 transition-all duration-300">
+                  <div className="flex flex-1 flex-col p-8">
                     {/* Large step number watermark */}
                     <div className="absolute -top-4 -right-2 text-8xl font-extrabold font-mono text-success/5 select-none">
                       {String(i + 1).padStart(2, '0')}
                     </div>
 
-                    <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-success/10 text-success group-hover:bg-success/15 transition-colors">
-                      <Icon size={26} />
-                    </div>
                     <FeatureIllustration variant={variant} tone="success" />
                     <h3 className="text-xl font-semibold text-foreground mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="mt-auto flex flex-wrap gap-3 pt-5">
                       {item.links.map((link) => (
                         <a
                           key={link.url}

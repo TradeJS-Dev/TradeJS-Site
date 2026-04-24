@@ -7,9 +7,8 @@ import {
   FeatureIllustration,
   type FeatureIllustrationVariant,
 } from './feature-illustration';
-import { Brain, LayoutGrid, ExternalLink, RefreshCw } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const icons = [LayoutGrid, RefreshCw, Brain];
 const illustrationVariants: FeatureIllustrationVariant[] = [
   'grid-backtesting',
   'ai-validation',
@@ -59,25 +58,21 @@ export function Intelligence() {
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {t.intelligence.items.map((item, i) => {
-            const Icon = icons[i];
             const variant = illustrationVariants[i] ?? 'grid-backtesting';
             return (
-              <AnimateOnScroll key={i} delay={i * 120}>
-                <div className="group relative h-full rounded-2xl border border-border bg-surface/40 backdrop-blur-md overflow-hidden hover:border-info/30 transition-all duration-300">
+              <AnimateOnScroll key={i} delay={i * 120} className="h-full">
+                <div className="group relative flex h-full flex-col rounded-2xl border border-border bg-surface/40 backdrop-blur-md overflow-hidden hover:border-info/30 transition-all duration-300">
                   {/* Top accent stripe */}
                   <div className="h-1 bg-gradient-to-r from-info/60 via-primary/60 to-transparent" />
-                  <div className="p-8">
-                    <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-info/10 text-info group-hover:bg-info/15 transition-colors">
-                      <Icon size={26} />
-                    </div>
+                  <div className="flex flex-1 flex-col p-8">
                     <FeatureIllustration variant={variant} tone="info" />
                     <h3 className="text-xl font-semibold text-foreground mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {item.description}
                     </p>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="mt-auto flex flex-wrap gap-3 pt-5">
                       {item.links.map((link) => (
                         <a
                           key={link.url}

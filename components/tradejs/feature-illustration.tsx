@@ -95,15 +95,10 @@ function WindowFrame({
       <rect
         width={width}
         height={height}
-        rx="18"
+        rx="16"
         fill={chrome.surface}
-        stroke={chrome.border}
       />
-      <path d={`M0 20H${width}`} stroke={chrome.borderSoft} />
-      <circle cx="12" cy="10" r="2.5" fill={chrome.dot} />
-      <circle cx="20" cy="10" r="2.5" fill={chrome.dot} />
-      <circle cx="28" cy="10" r="2.5" fill={chrome.dot} />
-      <g transform="translate(12 30)">{children}</g>
+      <g transform="translate(12 14)">{children}</g>
     </g>
   );
 }
@@ -165,7 +160,16 @@ function CodeLine({
   fill: string;
   height?: number;
 }) {
-  return <rect x={x} y={y} width={width} height={height} rx={height / 2} fill={fill} />;
+  return (
+    <rect
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      rx={height / 2}
+      fill={fill}
+    />
+  );
 }
 
 function Sparkline({
@@ -213,9 +217,9 @@ function Chip({
         x={width / 2}
         y="11"
         textAnchor="middle"
-        fontSize="7.5"
+        fontSize="6.4"
         fontWeight="700"
-        letterSpacing="0.14em"
+        letterSpacing="0"
         fill={textFill}
         style={{ fontFamily: svgFontFamily }}
       >
@@ -249,7 +253,7 @@ function SvgText({
       textAnchor={anchor}
       fontSize={fontSize}
       fontWeight={fontWeight}
-      letterSpacing="0.08em"
+      letterSpacing="0"
       fill={fill}
       style={{ fontFamily: svgFontFamily }}
     >
@@ -317,7 +321,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'typescript-strategies':
       return (
         <>
-          <WindowFrame x={10} y={20} width={138} height={104}>
+          <WindowFrame x={10} y={20} width={138} height={128}>
             <Chip
               x={0}
               y={0}
@@ -336,19 +340,18 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             <rect
               x="72"
               y="14"
-              width="38"
+              width="34"
               height="28"
               rx="8"
               fill={chrome.panel}
-              stroke={chrome.borderSoft}
             />
-            <SvgText x={79} y={27} label="qty:number" fontSize={6.5} />
-            <SvgText x={79} y={36} label="risk:number" fontSize={6.5} />
+            <SvgText x={82} y={27} label="qty" fontSize={6.5} anchor="middle" />
+            <SvgText x={82} y={36} label="risk" fontSize={6.5} anchor="middle" />
             <Chip x={0} y={80} width={38} label="AUTO" fill={chrome.fill} />
             <Chip x={44} y={80} width={34} label="SAFE" fill={defs.tone.soft} />
           </WindowFrame>
 
-          <WindowFrame x={184} y={28} width={124} height={92}>
+          <WindowFrame x={184} y={28} width={124} height={112}>
             <Chip x={0} y={0} width={34} label="EMA" fill={defs.tone.soft} />
             <Chip x={40} y={0} width={32} label="RSI" fill={chrome.fill} />
             <Chip x={78} y={0} width={34} label="NPM" fill={chrome.fill} />
@@ -365,7 +368,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             />
             <Dot cx={62} cy={24} fill={defs.tone.solid} />
             <Dot cx={62} cy={42} fill={chrome.textMuted} />
-            <Chip x={46} y={62} width={52} label="INDICATORS" fill={chrome.fill} />
+            <Chip x={54} y={62} width={36} label="TOOLS" fill={chrome.fill} />
           </WindowFrame>
 
           <FlowPath
@@ -374,12 +377,11 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             markerEnd={arrowMarker}
           />
           <Chip
-            x={126}
+            x={132}
             y={92}
-            width={58}
-            label="SHIP FAST"
+            width={42}
+            label="SHIP"
             fill={chrome.panel}
-            stroke={defs.tone.soft}
           />
         </>
       );
@@ -437,7 +439,6 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             width={78}
             label="NO REWRITE"
             fill={chrome.panel}
-            stroke={defs.tone.soft}
           />
         </>
       );
@@ -454,15 +455,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               fill={defs.tone.soft}
               textFill={defs.tone.solid}
             />
-            <rect
-              x="0"
-              y="14"
-              width="74"
-              height="46"
-              rx="10"
-              fill={chrome.surface}
-              stroke={chrome.border}
-            />
+            <rect x="0" y="14" width="74" height="46" rx="10" fill={chrome.surface} />
             <rect x="10" y="24" width="54" height="24" rx="6" fill={chrome.fill} />
             <path
               d="M8 66H66"
@@ -474,15 +467,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
 
           <g transform="translate(214 24)">
             <Chip x={4} y={0} width={56} label="SERVER" fill={chrome.fill} />
-            <rect
-              x="0"
-              y="20"
-              width="82"
-              height="76"
-              rx="16"
-              fill={chrome.surface}
-              stroke={chrome.border}
-            />
+            <rect x="0" y="20" width="82" height="76" rx="16" fill={chrome.surface} />
             <rect x="16" y="34" width="50" height="10" rx="5" fill={defs.tone.soft} />
             <rect x="16" y="52" width="50" height="10" rx="5" fill={chrome.fill} />
             <rect x="16" y="70" width="50" height="10" rx="5" fill={defs.tone.soft} />
@@ -506,7 +491,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               strokeWidth="2.2"
               strokeLinecap="round"
             />
-            <Chip x={0} y={74} width={56} label="YOUR DATA" fill={chrome.panel} />
+            <Chip x={4} y={74} width={48} label="DATA" fill={chrome.panel} />
           </g>
 
           <FlowPath
@@ -522,7 +507,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
           <Chip
             x={128}
             y={122}
-            width={64}
+            width={54}
             label="CONTROL"
             fill={defs.tone.soft}
             textFill={defs.tone.solid}
@@ -533,7 +518,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'grid-backtesting':
       return (
         <>
-          <WindowFrame x={10} y={20} width={140} height={104}>
+          <WindowFrame x={10} y={20} width={140} height={126}>
             <Chip
               x={0}
               y={0}
@@ -571,8 +556,8 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
                 })}
               </g>
             ))}
-            <Chip x={0} y={84} width={48} label="64 RUNS" fill={chrome.fill} />
-            <Chip x={54} y={84} width={46} label="AUTO" fill={defs.tone.soft} />
+            <Chip x={0} y={76} width={48} label="64 RUNS" fill={chrome.fill} />
+            <Chip x={54} y={76} width={46} label="AUTO" fill={defs.tone.soft} />
           </WindowFrame>
 
           <FlowPath
@@ -581,7 +566,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             markerEnd={arrowMarker}
           />
 
-          <WindowFrame x={188} y={28} width={122} height={92}>
+          <WindowFrame x={188} y={28} width={122} height={110}>
             <Chip
               x={0}
               y={0}
@@ -591,11 +576,17 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               textFill={defs.tone.solid}
             />
             <rect x="0" y="24" width="84" height="14" rx="7" fill={defs.tone.soft} />
-            <SvgText x={8} y={34} label="#1  18 / 55 / 2.5" fill={defs.tone.solid} fontSize={6.5} />
+            <SvgText
+              x={8}
+              y={34}
+              label="#1 18/55"
+              fill={defs.tone.solid}
+              fontSize={6.5}
+            />
             <rect x="0" y="46" width="72" height="12" rx="6" fill={chrome.fill} />
-            <SvgText x={8} y={55} label="#2  12 / 34 / 2.0" fontSize={6.5} />
+            <SvgText x={8} y={55} label="#2 12/34" fontSize={6.5} />
             <rect x="0" y="66" width="60" height="12" rx="6" fill={chrome.fill} />
-            <SvgText x={8} y={75} label="#3  9 / 21 / 1.8" fontSize={6.5} />
+            <SvgText x={8} y={75} label="#3 9/21" fontSize={6.5} />
             <path d="M88 30h12" stroke={accentStroke} strokeWidth="3" strokeLinecap="round" />
             <path d="M96 24l8 6-8 6" fill="none" stroke={defs.tone.solid} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
           </WindowFrame>
@@ -605,7 +596,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'ai-validation':
       return (
         <>
-          <WindowFrame x={10} y={24} width={102} height={92}>
+          <WindowFrame x={10} y={24} width={102} height={104}>
             <Chip
               x={0}
               y={0}
@@ -625,10 +616,9 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
           <Chip
             x={114}
             y={64}
-            width={62}
-            label="SAME DATA"
+            width={54}
+            label="REPLAY"
             fill={chrome.panel}
-            stroke={defs.tone.soft}
           />
           <FlowPath
             d="M114 54C138 54 154 42 184 40"
@@ -641,7 +631,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             markerEnd={arrowMarker}
           />
 
-          <WindowFrame x={186} y={16} width={122} height={46}>
+          <WindowFrame x={186} y={22} width={122} height={66}>
             <Chip x={0} y={0} width={58} label="OLD" fill={chrome.fill} />
             <rect x="0" y="22" width="48" height="12" rx="6" fill={chrome.fill} />
             <CheckMark x={54} y={23} stroke={chrome.positiveStroke} />
@@ -649,7 +639,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             <CrossMark x={108} y={24} stroke={chrome.negativeStroke} />
           </WindowFrame>
 
-          <WindowFrame x={186} y={76} width={122} height={46}>
+          <WindowFrame x={186} y={82} width={122} height={66}>
             <Chip
               x={0}
               y={0}
@@ -669,7 +659,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'runtime-ai':
       return (
         <>
-          <WindowFrame x={10} y={28} width={96} height={88}>
+          <WindowFrame x={10} y={28} width={96} height={108}>
             <Chip
               x={0}
               y={0}
@@ -689,8 +679,21 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
           <FlowPath d="M108 72C120 72 124 72 132 72" stroke={accentStroke} />
 
           <g transform="translate(132 42)">
-            <circle cx="28" cy="28" r="28" fill={chrome.panel} stroke={accentStroke} />
-            <Chip x={10} y={16} width={20} label="AI" fill={defs.tone.soft} textFill={defs.tone.solid} />
+            <circle
+              cx="28"
+              cy="28"
+              r="28"
+              fill={chrome.panel}
+              stroke={accentStroke}
+            />
+            <Chip
+              x={10}
+              y={16}
+              width={20}
+              label="AI"
+              fill={defs.tone.soft}
+              textFill={defs.tone.solid}
+            />
             <Chip x={32} y={36} width={22} label="ML" fill={chrome.fill} />
             <Dot cx={28} cy={-4} fill={defs.tone.solid} />
             <Dot cx={56} cy={48} fill={defs.tone.solid} />
@@ -706,7 +709,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             markerEnd={arrowMarker}
           />
 
-          <WindowFrame x={206} y={18} width={104} height={108}>
+          <WindowFrame x={206} y={24} width={104} height={120}>
             <Chip
               x={0}
               y={0}
@@ -715,11 +718,29 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               fill={chrome.fill}
             />
             <rect x="0" y="24" width="80" height="16" rx="8" fill={chrome.positive} />
-            <SvgText x={8} y={35} label="GO   92" fill={chrome.positiveStroke} fontSize={7} />
+            <SvgText
+              x={8}
+              y={35}
+              label="GO   92"
+              fill={chrome.positiveStroke}
+              fontSize={7}
+            />
             <rect x="0" y="48" width="62" height="16" rx="8" fill={chrome.warning} />
-            <SvgText x={8} y={59} label="WAIT 61" fill={chrome.warningStroke} fontSize={7} />
+            <SvgText
+              x={8}
+              y={59}
+              label="WAIT 61"
+              fill={chrome.warningStroke}
+              fontSize={7}
+            />
             <rect x="0" y="72" width="44" height="16" rx="8" fill={chrome.negative} />
-            <SvgText x={8} y={83} label="BLOCK 24" fill={chrome.negativeStroke} fontSize={7} />
+            <SvgText
+              x={8}
+              y={83}
+              label="BLOCK 24"
+              fill={chrome.negativeStroke}
+              fontSize={7}
+            />
           </WindowFrame>
         </>
       );
@@ -727,7 +748,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'results-to-runtime':
       return (
         <>
-          <WindowFrame x={10} y={24} width={118} height={96}>
+          <WindowFrame x={10} y={24} width={118} height={110}>
             <Chip
               x={0}
               y={0}
@@ -737,7 +758,13 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               textFill={defs.tone.solid}
             />
             <rect x="0" y="24" width="90" height="14" rx="7" fill={defs.tone.soft} />
-            <SvgText x={8} y={34} label="WINNER  +18.4%" fill={defs.tone.solid} fontSize={7} />
+            <SvgText
+              x={8}
+              y={34}
+              label="WINNER +18%"
+              fill={defs.tone.solid}
+              fontSize={7}
+            />
             <rect x="0" y="46" width="74" height="12" rx="6" fill={chrome.fill} />
             <SvgText x={8} y={55} label="ALT A   +9.3%" fontSize={6.5} />
             <rect x="0" y="64" width="60" height="12" rx="6" fill={chrome.fill} />
@@ -756,17 +783,28 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             width={58}
             label="PROMOTE"
             fill={chrome.panel}
-            stroke={defs.tone.soft}
           />
 
-          <WindowFrame x={194} y={16} width={116} height={110}>
+          <WindowFrame x={194} y={22} width={116} height={124}>
             <Chip x={0} y={0} width={58} label="RUNTIME" fill={chrome.fill} />
             <rect x="0" y="24" width="90" height="16" rx="8" fill={defs.tone.soft} />
-            <SvgText x={8} y={35} label="EMA 18 / 55 / 2.5" fill={defs.tone.solid} fontSize={7} />
+            <SvgText
+              x={8}
+              y={35}
+              label="EMA 18/55"
+              fill={defs.tone.solid}
+              fontSize={7}
+            />
             <rect x="0" y="48" width="90" height="16" rx="8" fill={chrome.fill} />
             <SvgText x={8} y={59} label="RISK 1.0%" fontSize={7} />
             <rect x="0" y="74" width="56" height="16" rx="8" fill={chrome.positive} />
-            <SvgText x={8} y={85} label="LIVE ON" fill={chrome.positiveStroke} fontSize={7} />
+            <SvgText
+              x={8}
+              y={85}
+              label="LIVE ON"
+              fill={chrome.positiveStroke}
+              fontSize={7}
+            />
             <path
               d="M74 82l12-8v16z"
               fill={defs.tone.solid}
@@ -779,7 +817,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
     case 'telegram-notifications':
       return (
         <>
-          <WindowFrame x={10} y={28} width={112} height={88}>
+          <WindowFrame x={10} y={28} width={112} height={108}>
             <Chip
               x={0}
               y={0}
@@ -817,7 +855,7 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
             opacity={0.75}
           />
 
-          <g transform="translate(210 12)">
+          <g transform="translate(210 18)">
             <rect
               width="88"
               height="126"
@@ -844,7 +882,14 @@ function renderVariant(variant: FeatureIllustrationVariant, defs: IllustrationDe
               textFill={chrome.negativeStroke}
             />
             <circle cx="68" cy="24" r="10" fill={defs.tone.soft} />
-            <SvgText x={68} y={27} label="3" anchor="middle" fill={defs.tone.solid} fontSize={9} />
+            <SvgText
+              x={68}
+              y={27}
+              label="3"
+              anchor="middle"
+              fill={defs.tone.solid}
+              fontSize={9}
+            />
           </g>
         </>
       );
@@ -866,7 +911,7 @@ export function FeatureIllustration({
     <div
       aria-hidden="true"
       className={cn(
-        'relative mb-6 h-[132px] overflow-hidden rounded-2xl border border-white/8 bg-[linear-gradient(135deg,rgba(9,13,20,0.96),rgba(17,24,38,0.82)_50%,rgba(19,31,49,0.62))] p-3 transition-transform duration-300 group-hover:-translate-y-0.5',
+        'relative mb-6 h-[132px] overflow-hidden rounded-2xl border border-white/8 bg-[linear-gradient(135deg,rgba(9,13,20,0.96),rgba(17,24,38,0.82)_50%,rgba(19,31,49,0.62))] p-1.5 transition-transform duration-300 group-hover:-translate-y-0.5',
         className,
       )}
       style={{
@@ -887,16 +932,12 @@ export function FeatureIllustration({
           background: `radial-gradient(circle, ${palette.glow} 0%, transparent 72%)`,
         }}
       />
-      <div className="absolute left-3 top-3 flex gap-1.5">
-        <span className="h-2 w-2 rounded-full bg-white/10" />
-        <span className="h-2 w-2 rounded-full bg-white/10" />
-        <span className="h-2 w-2 rounded-full bg-white/10" />
-      </div>
 
       <svg
-        viewBox="0 0 320 160"
+        viewBox="8 14 304 122"
         className="relative h-full w-full"
         fill="none"
+        preserveAspectRatio="xMidYMid meet"
       >
         <defs>
           <linearGradient id={accentGradient} x1="0" y1="0" x2="320" y2="160">
@@ -920,14 +961,6 @@ export function FeatureIllustration({
           </marker>
         </defs>
 
-        <rect
-          x="2"
-          y="2"
-          width="316"
-          height="156"
-          rx="28"
-          stroke={chrome.borderSoft}
-        />
         {renderVariant(variant, {
           accentGradient,
           softGradient,

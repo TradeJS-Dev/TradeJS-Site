@@ -6,9 +6,8 @@ import {
   FeatureIllustration,
   type FeatureIllustrationVariant,
 } from './feature-illustration';
-import { Code2, TreePine, Server, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const icons = [Code2, TreePine, Server];
 const illustrationVariants: FeatureIllustrationVariant[] = [
   'typescript-strategies',
   'pine-compatibility',
@@ -43,22 +42,18 @@ export function StrategyAuthoring() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {t.strategyAuthoring.items.map((item, i) => {
-            const Icon = icons[i];
             const variant = illustrationVariants[i] ?? 'typescript-strategies';
             return (
-              <AnimateOnScroll key={i} delay={i * 100}>
-                <div className="group relative h-full rounded-xl border border-border bg-surface/60 p-8 backdrop-blur-sm hover:border-primary/30 hover:bg-surface transition-all duration-300">
-                  <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary group-hover:bg-primary/15 transition-colors">
-                    <Icon size={22} />
-                  </div>
+              <AnimateOnScroll key={i} delay={i * 100} className="h-full">
+                <div className="group relative flex h-full flex-col rounded-xl border border-border bg-surface/60 p-8 backdrop-blur-sm hover:border-primary/30 hover:bg-surface transition-all duration-300">
                   <FeatureIllustration variant={variant} tone="primary" />
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="mt-auto flex flex-wrap gap-3 pt-5">
                     {item.links.map((link) => (
                       <a
                         key={link.url}
