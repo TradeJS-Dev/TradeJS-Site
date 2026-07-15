@@ -15,7 +15,7 @@ TradeJS supports one TypeScript-first strategy lifecycle:
 4. Generate runtime signals and optionally automate execution.
 5. Operate the complete stack locally or on self-hosted infrastructure.
 
-Pine compatibility, AI/ML enrichment, grid search, Telegram notifications, and the optional UI are extensions to this primary workflow.
+Pine-backed strategy compatibility, AI/ML enrichment, grid search, Telegram notifications, and the optional UI are extensions to this primary workflow.
 
 ## Main Public Surface
 
@@ -26,7 +26,7 @@ Pine compatibility, AI/ML enrichment, grid search, Telegram notifications, and t
   - Server-side runtime
   - Strategy execution
   - Backtesting
-  - Pine support
+  - Pine-backed strategy support
   - Strategy and connector registries
 - `@tradejs/cli`
   - Operational commands

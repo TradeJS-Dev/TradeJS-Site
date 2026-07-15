@@ -83,12 +83,12 @@ export const translations = {
         'Add compatibility, intelligence, and operational integrations without changing the TypeScript-first workflow',
       items: [
         {
-          title: 'Pine Script Interoperability',
+          title: 'Pine Strategy Interoperability',
           description:
-            'Port or compare Pine Script-inspired ideas while keeping TypeScript as the primary strategy and runtime surface.',
+            'Port or compare Pine-backed strategies while keeping TypeScript as the primary strategy and runtime surface.',
           links: [
             {
-              label: 'Pine Workflows',
+              label: 'Pine Strategies',
               url: 'https://docs.tradejs.dev/guides/pine-workflows',
             },
           ],
@@ -331,12 +331,12 @@ export const translations = {
         'Добавляйте совместимость, интеллектуальные слои и интеграции, не меняя TypeScript-first процесс',
       items: [
         {
-          title: 'Совместимость с Pine Script',
+          title: 'Совместимость с Pine-стратегиями',
           description:
-            'Переносите и сравнивайте идеи из Pine Script, сохраняя TypeScript основным языком стратегий и runtime.',
+            'Переносите и сравнивайте Pine-backed стратегии, сохраняя TypeScript основным языком стратегий и runtime.',
           links: [
             {
-              label: 'Pine workflows',
+              label: 'Pine-стратегии',
               url: 'https://docs.tradejs.dev/ru/guides/pine-workflows',
             },
           ],
