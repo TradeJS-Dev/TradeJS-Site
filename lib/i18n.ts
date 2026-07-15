@@ -8,14 +8,15 @@ export const translations = {
       devExperience: 'TypeScript',
       x: 'X.com',
       github: 'GitHub',
-      quickstart: 'Start with TypeScript',
+      quickstart: 'Run first backtest',
     },
     hero: {
       actionWords: ['BUILD', 'BACKTEST', 'RUN'],
       titleSuffix: 'TypeScript Strategies',
       subtitle:
         'An open-source, self-hosted framework for building, backtesting, and running programmable trading strategies',
-      quickstart: 'Start with TypeScript',
+      quickstart: 'Run your first backtest',
+      secondaryCta: 'Explore TypeScript API',
       trust: {
         typescript: 'TypeScript-native',
         openSource: 'Open Source',
@@ -238,7 +239,8 @@ export const translations = {
       title: 'Build Your Strategy in TypeScript',
       subtitle:
         'Start with the open-source framework, run the first backtest, and keep the entire stack on your infrastructure.',
-      quickstart: 'Start with TypeScript',
+      quickstart: 'Run your first backtest',
+      secondaryCta: 'Explore TypeScript API',
     },
     footer: {
       description:
@@ -258,14 +260,15 @@ export const translations = {
       devExperience: 'TypeScript',
       x: 'X.com',
       github: 'GitHub',
-      quickstart: 'Начать с TypeScript',
+      quickstart: 'Первый бэктест',
     },
     hero: {
       actionWords: ['СОЗДАВАЙ', 'ТЕСТИРУЙ', 'ЗАПУСКАЙ'],
       titleSuffix: 'TypeScript-стратегии',
       subtitle:
         'Open-source self-hosted фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий',
-      quickstart: 'Начать с TypeScript',
+      quickstart: 'Запустить первый бэктест',
+      secondaryCta: 'Изучить TypeScript API',
       trust: {
         typescript: 'TypeScript-native',
         openSource: 'Open Source',
@@ -486,7 +489,8 @@ export const translations = {
       title: 'Создайте стратегию на TypeScript',
       subtitle:
         'Начните с open-source фреймворка, запустите первый бэктест и оставьте весь стек на своей инфраструктуре.',
-      quickstart: 'Начать с TypeScript',
+      quickstart: 'Запустить первый бэктест',
+      secondaryCta: 'Изучить TypeScript API',
     },
     footer: {
       description:

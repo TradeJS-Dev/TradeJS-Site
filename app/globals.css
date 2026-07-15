@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #090d14;
-  --foreground: #d5ddee;
+  --background: #080c13;
+  --foreground: #dce5f4;
   --card: #111826;
   --card-foreground: #d5ddee;
   --popover: #111826;
@@ -30,6 +30,111 @@
   --surface-2: #131f31;
   --accent-hover: #34d1c9;
   --radius: 0.625rem;
+}
+
+/* TradeJS control-room surface */
+.control-grid {
+  background-image:
+    linear-gradient(rgba(76, 93, 117, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 93, 117, 0.11) 1px, transparent 1px),
+    radial-gradient(circle at 50% 35%, rgba(32, 197, 189, 0.08), transparent 38%);
+  background-size: 80px 80px, 80px 80px, 100% 100%;
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.75) 75%, transparent 100%);
+}
+
+.control-panel {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 35px 100px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(32, 197, 189, 0.025);
+}
+
+.panel-sheen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 36%);
+}
+
+.code-fade::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 64px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #0b111c 90%);
+}
+
+@keyframes chart-draw {
+  from { stroke-dashoffset: 720; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes chart-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.45); }
+}
+
+@keyframes signal-sweep {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(420%); }
+}
+
+@keyframes live-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(25, 198, 160, 0.45); }
+  50% { box-shadow: 0 0 0 5px rgba(25, 198, 160, 0); }
+}
+
+.hero-chart-line {
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
+  animation: chart-draw 2.1s cubic-bezier(0.4, 0, 0.2, 1) 0.45s forwards;
+}
+
+.hero-chart-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: chart-pulse 2s ease-in-out infinite;
+}
+
+.signal-sweep {
+  animation: signal-sweep 3.4s linear infinite;
+}
+
+.live-dot {
+  animation: live-pulse 2s ease-in-out infinite;
+}
+
+@media (min-width: 1024px) {
+  .workflow-rail::before,
+  .workflow-rail::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 47px;
+    z-index: 20;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .workflow-rail::before {
+    background: rgba(76, 93, 117, 0.4);
+  }
+
+  .workflow-rail::after {
+    right: 70%;
+    background: linear-gradient(90deg, transparent, #20c5bd, transparent);
+    animation: workflow-progress 4.8s ease-in-out infinite;
+  }
+}
+
+@keyframes workflow-progress {
+  0% { transform: translateX(-30%); opacity: 0; }
+  18% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { transform: translateX(330%); opacity: 0; }
 }
 
 @theme inline {
@@ -249,4 +354,18 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .hero-chart-line,
+  .hero-chart-pulse,
+  .signal-sweep,
+  .live-dot,
+  .workflow-rail::after {
+    animation: none !important;
+  }
+
+  .hero-chart-line { stroke-dashoffset: 0; }
 }

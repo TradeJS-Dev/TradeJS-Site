@@ -2,16 +2,24 @@
 
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
+import { ChartNoAxesCombined, Code2, ServerCog, UploadCloud } from 'lucide-react';
+
+const stepIcons = [Code2, ChartNoAxesCombined, UploadCloud, ServerCog];
+const stepLabels = ['AUTHOR', 'REPLAY', 'PROMOTE', 'EXECUTE'];
 
 export function HowItWorks() {
   const { t } = useLocale();
 
   return (
-    <section id="how-it-works" className="relative py-24 lg:py-32">
-      <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-8">
+    <section id="how-it-works" className="relative overflow-hidden border-b border-white/6 py-24 lg:py-32">
+      <div className="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px]" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <AnimateOnScroll>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+          <div className="mb-16 text-center">
+            <div className="mb-4 font-mono text-[10px] tracking-[0.2em] text-primary">
+              CONTROLLED LIFECYCLE
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
               {t.howItWorks.sectionTitle}
             </h2>
             <p className="mt-4 text-muted-foreground text-base lg:text-lg max-w-2xl mx-auto text-pretty">
@@ -20,27 +28,33 @@ export function HowItWorks() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid auto-rows-fr gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {t.howItWorks.steps.map((step, i) => (
-            <AnimateOnScroll key={i} delay={i * 120} className="h-full">
-              <div className="relative group h-full">
-                <div className="relative h-full rounded-xl border border-border bg-surface/40 p-6 hover:border-primary/30 hover:bg-surface/70 transition-all duration-300">
-                  {/* Step number */}
-                  <div className="mb-4 text-3xl font-extrabold text-primary/20 font-mono">
-                    {step.step}
+        <div className="workflow-rail relative grid gap-4 lg:grid-cols-4 lg:gap-0">
+          {t.howItWorks.steps.map((step, i) => {
+            const Icon = stepIcons[i] ?? Code2;
+            return (
+              <AnimateOnScroll key={i} delay={i * 130} className="relative h-full">
+                <div className="group relative h-full border border-white/8 bg-surface/35 p-6 backdrop-blur-sm transition-colors hover:bg-surface/65 lg:min-h-[330px] lg:border-r-0 lg:last:border-r">
+                  <div className="relative z-10 mb-10 flex items-center justify-between lg:mb-14">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-background text-primary shadow-[0_0_30px_rgba(32,197,189,0.08)]">
+                      <Icon size={19} />
+                    </div>
+                    <span className="font-mono text-3xl font-extrabold text-primary/15">
+                      {step.step}
+                    </span>
                   </div>
-
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    {step.title}
-                  </h3>
-
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
+                  <div className="mb-3 font-mono text-[9px] tracking-[0.18em] text-primary/80">
+                    {stepLabels[i]}
+                  </div>
+                  <h3 className="mb-3 text-lg font-semibold text-foreground">{step.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
+                  <div className="absolute bottom-5 left-6 right-6 flex items-center gap-2 font-mono text-[8px] tracking-wider text-muted-foreground/60">
+                    <span className="h-1 w-1 rounded-full bg-success" />
+                    STAGE READY
+                  </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
-          ))}
+              </AnimateOnScroll>
+            );
+          })}
         </div>
       </div>
     </section>

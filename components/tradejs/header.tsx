@@ -5,17 +5,16 @@ import { useLocale } from './locale-provider';
 import { Github, Menu, X as CloseIcon } from 'lucide-react';
 
 const GITHUB_REPO_URL = 'https://github.com/tradejs-dev/tradejs';
-const X_ACCOUNT_URL = 'https://x.com/tradejsdev';
 
 export function Header() {
   const { locale, t, toggleLocale } = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const quickstartUrl =
+  const firstBacktestUrl =
     locale === 'ru'
-      ? 'https://docs.tradejs.dev/ru/getting-started/quickstart/'
-      : 'https://docs.tradejs.dev/getting-started/quickstart/';
+      ? 'https://docs.tradejs.dev/ru/getting-started/first-backtest'
+      : 'https://docs.tradejs.dev/getting-started/first-backtest';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -113,15 +112,6 @@ export function Header() {
             </span>
           </button>
           <a
-            href={X_ACCOUNT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg border border-border bg-surface/70 px-3 py-2 text-sm font-semibold text-foreground hover:border-primary/40 hover:bg-surface transition-colors"
-            aria-label={t.nav.x}
-          >
-            <span>{t.nav.x}</span>
-          </a>
-          <a
             href={GITHUB_REPO_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -132,7 +122,7 @@ export function Header() {
             <span>{t.nav.github}</span>
           </a>
           <a
-            href={quickstartUrl}
+            href={firstBacktestUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-accent-hover transition-colors glow-accent"
@@ -197,14 +187,6 @@ export function Header() {
               </button>
             </div>
             <a
-              href={X_ACCOUNT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground hover:border-primary/40 hover:bg-surface transition-colors"
-            >
-              <span>{t.nav.x}</span>
-            </a>
-            <a
               href={GITHUB_REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -214,7 +196,7 @@ export function Header() {
               <span>{t.nav.github}</span>
             </a>
             <a
-              href={quickstartUrl}
+              href={firstBacktestUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground text-center hover:bg-accent-hover transition-colors"
