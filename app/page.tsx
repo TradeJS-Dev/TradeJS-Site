@@ -27,18 +27,18 @@ export default function Page() {
         },
         url: 'https://tradejs.dev',
         description:
-          'Open-source trading strategy framework for TypeScript and Pine Script with backtesting, runtime execution, and AI/ML enrichment.',
+          'Open-source, self-hosted framework for building, backtesting, and running programmable TypeScript trading strategies.',
       },
       {
         '@type': 'SoftwareSourceCode',
         name: 'TradeJS',
         codeRepository: 'https://github.com/tradejs-dev/tradejs',
-        programmingLanguage: ['TypeScript', 'Pine Script'],
+        programmingLanguage: 'TypeScript',
         runtimePlatform: 'Node.js',
         url: 'https://tradejs.dev',
         license: 'https://opensource.org/licenses/MIT',
         description:
-          'Open-source framework for TypeScript and Pine Script trading strategies, with runtime execution, backtesting, and AI/ML enrichment.',
+          'TypeScript-native strategy framework and runtime stack for infrastructure you control.',
       },
     ],
   };

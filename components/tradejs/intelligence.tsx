@@ -10,9 +10,9 @@ import {
 import { ExternalLink } from 'lucide-react';
 
 const illustrationVariants: FeatureIllustrationVariant[] = [
-  'grid-backtesting',
-  'ai-validation',
+  'pine-compatibility',
   'runtime-ai',
+  'telegram-notifications',
 ];
 
 export function Intelligence() {
@@ -45,7 +45,7 @@ export function Intelligence() {
         <AnimateOnScroll>
           <div className="text-center mb-16">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-info/20 bg-info/5 px-4 py-1.5 text-xs font-semibold text-info tracking-wider uppercase">
-              02
+              03
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
               {t.intelligence.sectionTitle}

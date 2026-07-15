@@ -8,7 +8,6 @@ import { Intelligence } from './intelligence';
 import { Execution } from './execution';
 import { HowItWorks } from './how-it-works';
 import { DeveloperExperience } from './developer-experience';
-import { Roadmap } from './roadmap';
 import { FinalCta } from './final-cta';
 import { Footer } from './footer';
 
@@ -20,11 +19,10 @@ export function LandingPage() {
         <main>
           <Hero />
           <StrategyAuthoring />
-          <Intelligence />
-          <Execution />
           <HowItWorks />
           <DeveloperExperience />
-          <Roadmap />
+          <Execution />
+          <Intelligence />
           <FinalCta />
         </main>
         <Footer />

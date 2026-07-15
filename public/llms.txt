@@ -1,20 +1,21 @@
 # TradeJS
 
-> Open-source TypeScript-native trading strategy framework for backtesting, runtime execution, AI/ML enrichment, and Telegram notifications.
+> Open-source, self-hosted framework for building, backtesting, and running programmable trading strategies in TypeScript.
 
 Primary site: https://tradejs.dev
 Documentation: https://docs.tradejs.dev
 
 ## Product Summary
 
-TradeJS is an open-source, self-hosted framework for:
+TradeJS is a TypeScript-native framework for one strategy lifecycle:
 
-- writing strategies in TypeScript or Pine Script,
-- authoring indicators,
-- running grid backtests,
-- promoting backtest configs into runtime,
-- enriching runtime decisions with AI and ML,
-- sending Telegram notifications for signals and execution results.
+- build typed strategies and indicators with public npm packages,
+- backtest and compare strategy configurations,
+- promote selected results into runtime,
+- generate signals and optionally automate execution,
+- run the entire stack locally or on infrastructure you control.
+
+Pine compatibility, AI/ML enrichment, grid search, Telegram notifications, and the optional UI extend this TypeScript-first workflow.
 
 ## Core Packages
 
@@ -30,12 +31,10 @@ TradeJS is an open-source, self-hosted framework for:
 - Core API: https://docs.tradejs.dev/api/framework
 - CLI API: https://docs.tradejs.dev/api/cli
 - Strategy authoring: https://docs.tradejs.dev/strategies/authoring/write-strategies
+- TypeScript strategy tutorial: https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step
 - Indicator authoring: https://docs.tradejs.dev/indicators/authoring
 - Runtime signals: https://docs.tradejs.dev/runtime/execution/signals
 - Backtesting: https://docs.tradejs.dev/runtime/backtesting/overview
-- AI config: https://docs.tradejs.dev/ai-ml/ai/configuration
-- AI filter validation on backtest data: https://docs.tradejs.dev/ai-ml/ai/prompt-replay
-- ML config: https://docs.tradejs.dev/ai-ml/ml/configuration
 - Production runbook: https://docs.tradejs.dev/operations/production-runbook
 
 ## Locales

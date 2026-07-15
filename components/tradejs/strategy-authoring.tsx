@@ -10,7 +10,7 @@ import { ExternalLink } from 'lucide-react';
 
 const illustrationVariants: FeatureIllustrationVariant[] = [
   'typescript-strategies',
-  'pine-compatibility',
+  'results-to-runtime',
   'self-hosted',
 ];
 

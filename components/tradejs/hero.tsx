@@ -4,9 +4,9 @@ import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
-import { BarChart3, Radio, Brain, Send } from 'lucide-react';
+import { Braces, GitBranch, Server, Repeat2 } from 'lucide-react';
 
-const trustIcons = [BarChart3, Radio, Brain, Send];
+const trustIcons = [Braces, GitBranch, Server, Repeat2];
 
 export function Hero() {
   const { locale, t } = useLocale();
@@ -34,10 +34,10 @@ export function Hero() {
   }, [cycleWord]);
 
   const trustItems = [
-    { label: t.hero.trust.backtesting, Icon: trustIcons[0] },
-    { label: t.hero.trust.runtime, Icon: trustIcons[1] },
-    { label: t.hero.trust.aiml, Icon: trustIcons[2] },
-    { label: t.hero.trust.telegram, Icon: trustIcons[3] },
+    { label: t.hero.trust.typescript, Icon: trustIcons[0] },
+    { label: t.hero.trust.openSource, Icon: trustIcons[1] },
+    { label: t.hero.trust.selfHosted, Icon: trustIcons[2] },
+    { label: t.hero.trust.lifecycle, Icon: trustIcons[3] },
   ];
 
   return (

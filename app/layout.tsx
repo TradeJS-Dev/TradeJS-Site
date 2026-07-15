@@ -17,21 +17,20 @@ const _jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tradejs.dev'),
   title: {
-    default: 'TradeJS — Open-Source Trading Strategy Framework',
+    default: 'TradeJS — Self-Hosted TypeScript Trading Framework',
     template: '%s | TradeJS',
   },
   description:
-    'TradeJS is an open-source framework for building, backtesting, and running trading strategies with TypeScript and Pine Script, including AI/ML enrichment and real-time Telegram notifications.',
+    'TradeJS is an open-source, self-hosted framework for building, backtesting, and running programmable trading strategies in TypeScript.',
   applicationName: 'TradeJS',
   keywords: [
     'TradeJS',
-    'open-source trading framework',
-    'trading strategy framework',
+    'self-hosted trading framework',
+    'TypeScript trading framework',
     'algorithmic trading',
-    'TypeScript trading bot',
-    'Pine Script',
-    'grid backtesting',
-    'AI trading signals',
+    'TypeScript trading strategies',
+    'trading strategy backtesting',
+    'open-source trading runtime',
   ],
   authors: [{ name: 'TradeJS Team', url: 'https://tradejs.dev' }],
   creator: 'TradeJS Team',
@@ -52,9 +51,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'TradeJS — Open-Source Trading Strategy Framework',
+    title: 'TradeJS — Self-Hosted TypeScript Trading Framework',
     description:
-      'TradeJS is an open-source framework for building, backtesting, and running trading strategies with TypeScript and Pine Script, including AI/ML enrichment and real-time Telegram notifications.',
+      'Build, backtest, and run programmable TypeScript trading strategies on infrastructure you control.',
     type: 'website',
     url: 'https://tradejs.dev',
     siteName: 'TradeJS',
@@ -64,15 +63,15 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'TradeJS — Open-Source Trading Strategy Framework',
+        alt: 'TradeJS — Self-Hosted TypeScript Trading Framework',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TradeJS — Open-Source Trading Strategy Framework',
+    title: 'TradeJS — Self-Hosted TypeScript Trading Framework',
     description:
-      'Open-source framework for TypeScript and Pine Script trading strategies.',
+      'Build, backtest, and run TypeScript trading strategies on your infrastructure.',
     images: ['/og-image.png'],
   },
   icons: {
