@@ -15,7 +15,9 @@ TradeJS supports one TypeScript-first strategy lifecycle:
 4. Generate runtime signals and optionally automate execution.
 5. Operate the complete stack locally or on self-hosted infrastructure.
 
-Pine-backed strategy compatibility, AI/ML enrichment, grid search, Telegram notifications, and the optional UI are extensions to this primary workflow.
+The recommended first setup is `npx create-tradejs`. It creates an external npm project, starts local Redis and PostgreSQL/Timescale, and opens the install page. The user chooses the local root password, then lands on a market dashboard with a Create backtest action.
+
+Pine-backed strategy compatibility, AI/ML enrichment, grid search, and Telegram notifications are extensions to this primary workflow.
 
 ## Main Public Surface
 
@@ -37,6 +39,10 @@ Pine-backed strategy compatibility, AI/ML enrichment, grid search, Telegram noti
   - ML workflows
 - `@tradejs/app`
   - Optional installable UI for dashboards, backtests, and runtime data
+- `create-tradejs`
+  - One-command external project bootstrap
+  - Starts local infrastructure and the Web UI
+  - Opens the install page, then the market dashboard
 
 ## Recommended Sources By Question Type
 

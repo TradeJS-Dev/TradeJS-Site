@@ -11,48 +11,114 @@ if (!hljs.getLanguage('typescript')) {
   hljs.registerLanguage('typescript', typescript);
 }
 
-const tsCode = `import {
-  CreateStrategyCore,
-  StrategyConfig,
-} from '@tradejs/types';
+const tsCode = `export const createMaStrategyCore: CreateStrategyCore<
+  MaStrategyConfig,
+  IndicatorsHistorySnapshot | undefined
+> = async ({ config, strategyApi }) => {
+  const { FEE_PERCENT, MAX_LOSS_VALUE, TRADE_COOLDOWN_MS, LONG, SHORT } =
+    config;
 
-type MyStrategyConfig = StrategyConfig & {
-  MAX_LOSS_VALUE: number;
-  TAKE_PROFIT_PCT: number;
-  STOP_LOSS_PCT: number;
-};
+  const lastTradeController = strategyApi.createLastTradeController({
+    enabled: Number(TRADE_COOLDOWN_MS ?? 0) > 0,
+    cooldownMs: Number(TRADE_COOLDOWN_MS ?? 0),
+  });
 
-export const createMyStrategyCore: CreateStrategyCore<
-  MyStrategyConfig
-> = async ({ strategyApi, config }) => {
   return async () => {
+    const { indicators } = strategyApi.getCurrentIndicatorsContext();
+    if (!indicators) {
+      return strategyApi.skip('NO_INDICATORS');
+    }
+
+    const maFast = Array.isArray(indicators.maFast) ? indicators.maFast : [];
+    const maSlow = Array.isArray(indicators.maSlow) ? indicators.maSlow : [];
+    if (maFast.length < 2 || maSlow.length < 2) {
+      return strategyApi.skip('WAIT_MA_DATA');
+    }
+
+    const cross = detectCross(maFast, maSlow);
     const position = await strategyApi.getCurrentPosition();
-    if (position) {
-      return strategyApi.skip('POSITION_EXISTS');
+    const positionExists = Boolean(
+      position && typeof position.qty === 'number' && position.qty > 0,
+    );
+
+    if (positionExists && position) {
+      if (
+        (position.direction === 'LONG' && cross?.kind === 'bearish') ||
+        (position.direction === 'SHORT' && cross?.kind === 'bullish')
+      ) {
+        return strategyApi.exit({
+          code: 'CLOSE_BY_OPPOSITE_MA_CROSS',
+          direction: position.direction,
+        });
+      }
+
+      return strategyApi.skip('POSITION_HELD');
     }
 
-    const { currentPrice, candle } =
+    if (!cross) {
+      return strategyApi.skip('NO_CROSS');
+    }
+
+    const modeConfig = cross.kind === 'bullish' ? LONG : SHORT;
+    if (!modeConfig.enable) {
+      return strategyApi.skip('STRATEGY_DISABLED');
+    }
+
+    const { timestamp, currentPrice, candle } =
       await strategyApi.getDecisionPriceContext();
-    if (!candle || candle.close <= candle.open) {
-      return strategyApi.skip('NO_LONG_SETUP');
+    if (lastTradeController.isInCooldown(timestamp)) {
+      return strategyApi.skip('TRADE_COOLDOWN');
     }
 
-    const { stopLossPrice, takeProfitPrice, qty } =
+    const { stopLossPrice, takeProfitPrice, riskRatio, qty } =
       strategyApi.getDirectionalTpSlPrices({
         price: currentPrice,
-        direction: 'LONG',
-        takeProfitDelta: config.TAKE_PROFIT_PCT,
-        stopLossDelta: config.STOP_LOSS_PCT,
+        direction: modeConfig.direction,
+        takeProfitDelta: modeConfig.TP,
+        stopLossDelta: modeConfig.SL,
         unit: 'percent',
-        maxLossValue: config.MAX_LOSS_VALUE,
+        maxLossValue: MAX_LOSS_VALUE,
+        feePercent: Number(FEE_PERCENT ?? 0),
       });
 
-    if (!qty) {
+    if (!qty || !Number.isFinite(qty) || qty <= 0) {
       return strategyApi.skip('INVALID_QTY');
     }
 
+    if (riskRatio <= modeConfig.minRiskRatio) {
+      return strategyApi.skip(\`RISK_RATIO:\${round(riskRatio)}\`);
+    }
+
+    const correlation = getIndicatorsCorrelation(indicators);
+    const figureCandles = Array.isArray(indicators.candles15m)
+      ? (indicators.candles15m as KlineChartData)
+      : candle
+        ? ([candle] as KlineChartData)
+        : [];
+
+    lastTradeController.markTrade(timestamp);
+
     return strategyApi.entry({
-      direction: 'LONG',
+      code: cross.kind === 'bullish' ? 'MA_BULLISH_CROSS' : 'MA_BEARISH_CROSS',
+      direction: modeConfig.direction,
+      figures: buildMaStrategyFigures({
+        candles: figureCandles,
+        maFast,
+        maSlow,
+        crossTimestamp: timestamp,
+        crossPrice: currentPrice,
+        crossKind: cross.kind,
+      }),
+      indicators,
+      additionalIndicators: {
+        crossKind: cross.kind,
+        maFastPrev: cross.maFastPrev,
+        maFastCurrent: cross.maFastCurrent,
+        maSlowPrev: cross.maSlowPrev,
+        maSlowCurrent: cross.maSlowCurrent,
+        maGap: cross.maFastCurrent - cross.maSlowCurrent,
+        correlation,
+      },
       orderPlan: {
         qty,
         stopLossPrice,
@@ -74,14 +140,14 @@ export function DeveloperExperience() {
       : 'https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step';
 
   return (
-    <section id="dev-experience" className="relative overflow-hidden border-b border-white/6 py-24 lg:py-32">
+    <section id="dev-experience" className="relative overflow-hidden border-b border-border pb-16 pt-20 lg:pb-16 lg:pt-24">
       <div className="absolute inset-0 control-grid opacity-30" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <AnimateOnScroll>
           <div className="mb-12 grid items-end gap-6 md:grid-cols-[0.8fr_1.2fr]">
             <div>
               <div className="mb-4 font-mono text-[10px] tracking-[0.2em] text-primary">
-                CODE / RESULT
+                03 / CODE → RESULT
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
                 {t.devExperience.sectionTitle}
@@ -98,7 +164,7 @@ export function DeveloperExperience() {
             <div className="min-w-0 border-b border-white/8 lg:border-b-0 lg:border-r">
               <div className="flex items-center justify-between border-b border-white/8 bg-surface/50 px-4 py-3 sm:px-6">
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-[10px] text-primary">strategy.ts</span>
+                  <span className="font-mono text-[10px] text-primary">MaStrategy/core.ts</span>
                   <span className="hidden rounded-full border border-white/8 px-2 py-1 font-mono text-[8px] tracking-wider text-muted-foreground sm:block">
                     {t.devExperience.tsTab}
                   </span>
@@ -119,7 +185,7 @@ export function DeveloperExperience() {
                 </div>
               </div>
               <div className="flex items-center justify-between border-t border-white/8 bg-surface-2/40 px-4 py-3 sm:px-6">
-                <span className="font-mono text-[9px] text-muted-foreground">UTF-8 / TYPESCRIPT</span>
+                <span className="font-mono text-[9px] text-muted-foreground">packages/strategies/src/MaStrategy/core.ts</span>
                 <a
                   href={typescriptApiUrl}
                   target="_blank"
@@ -137,7 +203,7 @@ export function DeveloperExperience() {
               <div className="relative flex items-start justify-between">
                 <div>
                   <p className="font-mono text-[9px] tracking-[0.18em] text-muted-foreground">SAMPLE BACKTEST</p>
-                  <h3 className="mt-2 text-xl font-semibold text-foreground">EMA Momentum / 1h</h3>
+                  <h3 className="mt-2 text-xl font-semibold text-foreground">MA Strategy / 1h</h3>
                 </div>
                 <span className="live-dot mt-1 h-2 w-2 rounded-full bg-success" />
               </div>

@@ -11,13 +11,13 @@ export function HowItWorks() {
   const { t } = useLocale();
 
   return (
-    <section id="how-it-works" className="relative overflow-hidden border-b border-white/6 py-24 lg:py-32">
+    <section id="how-it-works" className="relative overflow-hidden border-b border-border pb-16 pt-20 lg:pb-16 lg:pt-24">
       <div className="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-primary/5 blur-[140px]" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <AnimateOnScroll>
           <div className="mb-16 text-center">
             <div className="mb-4 font-mono text-[10px] tracking-[0.2em] text-primary">
-              CONTROLLED LIFECYCLE
+              02 / CONTROLLED LIFECYCLE
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
               {t.howItWorks.sectionTitle}
@@ -33,7 +33,7 @@ export function HowItWorks() {
             const Icon = stepIcons[i] ?? Code2;
             return (
               <AnimateOnScroll key={i} delay={i * 130} className="relative h-full">
-                <div className="group relative h-full border border-white/8 bg-surface/35 p-6 backdrop-blur-sm transition-colors hover:bg-surface/65 lg:min-h-[330px] lg:border-r-0 lg:last:border-r">
+                <div className="group relative h-full border border-border bg-surface/55 p-6 backdrop-blur-sm transition-colors hover:bg-surface lg:min-h-[330px] lg:border-r-0 lg:last:border-r">
                   <div className="relative z-10 mb-10 flex items-center justify-between lg:mb-14">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-background text-primary shadow-[0_0_30px_rgba(32,197,189,0.08)]">
                       <Icon size={19} />

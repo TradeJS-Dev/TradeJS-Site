@@ -15,7 +15,9 @@ TradeJS is a TypeScript-native framework for one strategy lifecycle:
 - generate signals and optionally automate execution,
 - run the entire stack locally or on infrastructure you control.
 
-Pine-backed strategy compatibility, AI/ML enrichment, grid search, Telegram notifications, and the optional UI extend this TypeScript-first workflow.
+The recommended first setup is `npx create-tradejs`, which creates the project, starts local infrastructure, and opens the install page. After choosing the local root password, the user lands on the market dashboard and can select Create backtest.
+
+Pine-backed strategy compatibility, AI/ML enrichment, grid search, and Telegram notifications extend this TypeScript-first workflow.
 
 ## Core Packages
 
@@ -23,6 +25,7 @@ Pine-backed strategy compatibility, AI/ML enrichment, grid search, Telegram noti
 - `@tradejs/node` - Node runtime, backtests, Pine strategy loading, plugin registries
 - `@tradejs/cli` - operational commands for runtime, backtests, ML, and maintenance
 - `@tradejs/app` - optional installable Next.js UI
+- `create-tradejs` - one-command project, infrastructure, install page, and market dashboard bootstrap
 
 ## Best Entry Points
 

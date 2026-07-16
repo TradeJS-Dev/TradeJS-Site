@@ -15,14 +15,8 @@ export const translations = {
       titleSuffix: 'TypeScript Strategies',
       subtitle:
         'An open-source, self-hosted framework for building, backtesting, and running programmable trading strategies',
-      quickstart: 'Run your first backtest',
+      quickstart: 'npx create-tradejs',
       secondaryCta: 'Explore TypeScript API',
-      trust: {
-        typescript: 'TypeScript-native',
-        openSource: 'Open Source',
-        selfHosted: 'Self-Hosted',
-        lifecycle: 'Backtest & Runtime',
-      },
     },
     // Group 1: TypeScript-first product pillars
     strategyAuthoring: {
@@ -82,6 +76,7 @@ export const translations = {
       sectionTitle: 'Extend When You Need It',
       sectionSubtitle:
         'Add compatibility, intelligence, and operational integrations without changing the TypeScript-first workflow',
+      coreStatement: 'TypeScript stays in control.',
       items: [
         {
           title: 'Pine Strategy Interoperability',
@@ -238,13 +233,12 @@ export const translations = {
     finalCta: {
       title: 'Build Your Strategy in TypeScript',
       subtitle:
-        'Start with the open-source framework, run the first backtest, and keep the entire stack on your infrastructure.',
-      quickstart: 'Run your first backtest',
+        'Create the project, start local infrastructure, choose your local password, and open the market dashboard with one command.',
+      quickstart: 'npx create-tradejs',
       secondaryCta: 'Explore TypeScript API',
     },
     footer: {
-      description:
-        'Open-source, self-hosted framework for TypeScript trading strategies.',
+      description: 'One strategy lifecycle from research to runtime.',
       app: 'Application',
       docs: 'Documentation',
       github: 'GitHub Repository',
@@ -267,14 +261,8 @@ export const translations = {
       titleSuffix: 'TypeScript-стратегии',
       subtitle:
         'Open-source self-hosted фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий',
-      quickstart: 'Запустить первый бэктест',
+      quickstart: 'npx create-tradejs',
       secondaryCta: 'Изучить TypeScript API',
-      trust: {
-        typescript: 'TypeScript-native',
-        openSource: 'Open Source',
-        selfHosted: 'Self-Hosted',
-        lifecycle: 'Бэктест и runtime',
-      },
     },
     strategyAuthoring: {
       sectionTitle: 'Для TypeScript-разработчиков',
@@ -332,6 +320,7 @@ export const translations = {
       sectionTitle: 'Расширяйте по необходимости',
       sectionSubtitle:
         'Добавляйте совместимость, интеллектуальные слои и интеграции, не меняя TypeScript-first процесс',
+      coreStatement: 'TypeScript сохраняет контроль.',
       items: [
         {
           title: 'Совместимость с Pine-стратегиями',
@@ -488,13 +477,12 @@ export const translations = {
     finalCta: {
       title: 'Создайте стратегию на TypeScript',
       subtitle:
-        'Начните с open-source фреймворка, запустите первый бэктест и оставьте весь стек на своей инфраструктуре.',
-      quickstart: 'Запустить первый бэктест',
+        'Одной командой создайте проект, запустите локальную инфраструктуру, задайте пароль и откройте dashboard с графиком.',
+      quickstart: 'npx create-tradejs',
       secondaryCta: 'Изучить TypeScript API',
     },
     footer: {
-      description:
-        'Open-source self-hosted фреймворк для торговых стратегий на TypeScript.',
+      description: 'Единый цикл стратегии от исследования до runtime.',
       app: 'Приложение',
       docs: 'Документация',
       github: 'GitHub-репозиторий',

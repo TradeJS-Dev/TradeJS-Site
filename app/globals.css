@@ -4,31 +4,31 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #080c13;
-  --foreground: #dce5f4;
-  --card: #111826;
-  --card-foreground: #d5ddee;
-  --popover: #111826;
-  --popover-foreground: #d5ddee;
-  --primary: #20c5bd;
-  --primary-foreground: #090d14;
-  --secondary: #131f31;
-  --secondary-foreground: #d5ddee;
-  --muted: #131f31;
-  --muted-foreground: #9cb0c7;
-  --accent: #20c5bd;
-  --accent-foreground: #090d14;
-  --destructive: #ff5f70;
-  --destructive-foreground: #090d14;
-  --border: #22364a;
-  --input: #22364a;
-  --ring: #20c5bd;
-  --success: #19c6a0;
-  --danger: #ff5f70;
-  --info: #4ca9ff;
-  --surface: #111826;
-  --surface-2: #131f31;
-  --accent-hover: #34d1c9;
+  --background: #eaf1ef;
+  --foreground: #091019;
+  --card: #f5f8f7;
+  --card-foreground: #091019;
+  --popover: #f5f8f7;
+  --popover-foreground: #091019;
+  --primary: #087f79;
+  --primary-foreground: #f7fbfa;
+  --secondary: #dfe9e6;
+  --secondary-foreground: #13242b;
+  --muted: #dfe9e6;
+  --muted-foreground: #566872;
+  --accent: #087f79;
+  --accent-foreground: #f7fbfa;
+  --destructive: #c64255;
+  --destructive-foreground: #ffffff;
+  --border: #bdcbc7;
+  --input: #bdcbc7;
+  --ring: #087f79;
+  --success: #0b8664;
+  --danger: #c64255;
+  --info: #256fa8;
+  --surface: #f5f8f7;
+  --surface-2: #dfe9e6;
+  --accent-hover: #0b9189;
   --radius: 0.625rem;
 }
 
@@ -42,7 +42,47 @@
   mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.75) 75%, transparent 100%);
 }
 
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(9, 16, 25, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(9, 16, 25, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 18% 12%, rgba(8, 127, 121, 0.12), transparent 28%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+}
+
+.product-visual-grid {
+  background-image:
+    linear-gradient(rgba(147, 167, 189, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 167, 189, 0.055) 1px, transparent 1px),
+    radial-gradient(circle, rgba(32, 197, 189, 0.08) 1px, transparent 1.5px);
+  background-size: 32px 32px, 32px 32px, 16px 16px;
+  mask-image: linear-gradient(135deg, black, rgba(0, 0, 0, 0.42) 62%, transparent);
+}
+
+.product-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    inset 0 -80px 100px rgba(0, 0, 0, 0.12);
+}
+
 .control-panel {
+  --background: #080d15;
+  --foreground: #dce5f4;
+  --muted-foreground: #93a7bd;
+  --border: #26384c;
+  --surface: #111826;
+  --surface-2: #131f31;
+  --primary: #20c5bd;
+  --primary-foreground: #080d15;
+  --success: #19c6a0;
+  --danger: #ff5f70;
+  --info: #4ca9ff;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 35px 100px rgba(0, 0, 0, 0.34),

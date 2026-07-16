@@ -17,7 +17,7 @@ export function FinalCta() {
       : 'https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step';
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32">
+    <section className="relative overflow-hidden py-20 lg:py-24">
       <div className="absolute inset-0 control-grid opacity-40" />
       <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[150px]" />
 
@@ -51,7 +51,7 @@ export function FinalCta() {
                   href={firstBacktestUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-accent-hover glow-accent"
+                  className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 font-mono text-sm font-semibold text-primary-foreground transition-all hover:bg-accent-hover glow-accent"
                   aria-label={t.finalCta.quickstart}
                 >
                   {t.finalCta.quickstart}

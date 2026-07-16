@@ -1,31 +1,26 @@
 'use client';
 
-import { useLocale } from './locale-provider';
+import { ArrowUpRight } from 'lucide-react';
 import { AnimateOnScroll } from './animate-on-scroll';
-import {
-  FeatureIllustration,
-  type FeatureIllustrationVariant,
-} from './feature-illustration';
-import { ExternalLink } from 'lucide-react';
+import { useLocale } from './locale-provider';
+import { ProductVisual, type ProductVisualVariant } from './product-visual';
 
-const illustrationVariants: FeatureIllustrationVariant[] = [
-  'grid-backtesting',
-  'results-to-runtime',
-];
+const visuals: ProductVisualVariant[] = ['backtest', 'promote'];
 
 export function Execution() {
   const { t } = useLocale();
 
   return (
-    <section className="relative overflow-hidden border-b border-white/6 py-24 lg:py-32">
-      <div className="absolute inset-0 control-grid opacity-30" />
+    <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
+      <div className="absolute inset-0 control-grid opacity-25" />
+      <div className="absolute -left-60 top-1/3 h-[700px] w-[700px] rounded-full bg-success/5 blur-[160px]" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <AnimateOnScroll>
-          <div className="mb-14 grid items-end gap-6 md:grid-cols-[0.8fr_1.2fr]">
+          <div className="mb-16 grid gap-8 md:grid-cols-[1fr_0.8fr] md:items-end">
             <div>
-              <div className="mb-4 font-mono text-[10px] tracking-[0.2em] text-success">02 / RUNTIME</div>
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl text-balance">
+              <div className="mb-5 font-mono text-[10px] tracking-[0.22em] text-success">04 / PROVE &amp; PROMOTE</div>
+              <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracking-[-0.045em] sm:text-6xl text-balance">
                 {t.execution.sectionTitle}
               </h2>
             </div>
@@ -35,47 +30,35 @@ export function Execution() {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {t.execution.items.map((item, i) => {
-            const variant = illustrationVariants[i] ?? 'results-to-runtime';
-            return (
-              <AnimateOnScroll key={i} delay={i * 120} className="h-full">
-                <div className="panel-sheen group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/9 bg-surface/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-success/30">
-                  <div className="flex flex-1 flex-col p-8">
-                    {/* Large step number watermark */}
-                    <div className="absolute -top-4 -right-2 text-8xl font-extrabold font-mono text-success/5 select-none">
-                      {String(i + 1).padStart(2, '0')}
-                    </div>
-
-                    <FeatureIllustration variant={variant} tone="success" />
-                    <h3 className="text-xl font-semibold text-foreground mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
-                    <div className="mt-auto flex flex-wrap gap-3 pt-5">
-                      {item.links.map((link) => (
-                        <a
-                          key={link.url}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-success hover:text-primary transition-colors"
-                        >
-                          {link.label}
-                          <ExternalLink size={12} />
-                        </a>
-                      ))}
-                    </div>
+        <div className="space-y-8">
+          {t.execution.items.map((item, i) => (
+            <AnimateOnScroll key={item.title} delay={i * 100}>
+              <article className="grid overflow-hidden rounded-[30px] border border-border bg-surface/45 lg:grid-cols-[0.78fr_1.22fr]">
+                <div className="flex flex-col justify-center border-b border-border p-7 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
+                  <div className="mb-8 font-mono text-[10px] tracking-[0.18em] text-success">0{i + 1} / {i === 0 ? 'REPLAY' : 'PROMOTE'}</div>
+                  <h3 className="text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl">{item.title}</h3>
+                  <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">{item.description}</p>
+                  <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.url}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-success hover:text-primary"
+                      >
+                        {link.label}
+                        <ArrowUpRight size={13} />
+                      </a>
+                    ))}
                   </div>
-
-                  {/* Bottom accent stripe */}
-                  <div className="h-1 bg-gradient-to-r from-success/60 via-primary/40 to-transparent" />
                 </div>
-              </AnimateOnScroll>
-            );
-          })}
+                <div className="p-4 sm:p-6">
+                  <ProductVisual variant={visuals[i]} className="h-full" />
+                </div>
+              </article>
+            </AnimateOnScroll>
+          ))}
         </div>
       </div>
     </section>
