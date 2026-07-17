@@ -208,6 +208,9 @@ export const translations = {
       sectionSubtitle:
         'A typed strategy API with npm packages, IDE support, and code you can test',
       tsTab: 'TypeScript',
+      statsImageAlt:
+        'TradeJS strategy statistics with closed orders, win rate, profit and loss, drawdown and performance metrics',
+      statsImageLabel: 'TRADEJS APP / STRATEGY STATISTICS',
     },
     roadmap: {
       sectionTitle: 'Roadmap',
@@ -466,6 +469,9 @@ export const translations = {
       sectionSubtitle:
         'Типизированный StrategyAPI, npm-пакеты, поддержка IDE и код, который можно тестировать',
       tsTab: 'TypeScript',
+      statsImageAlt:
+        'Статистика стратегии TradeJS с закрытыми сделками, win rate, P&L, просадкой и метриками эффективности',
+      statsImageLabel: 'TRADEJS APP / СТАТИСТИКА СТРАТЕГИИ',
     },
     roadmap: {
       sectionTitle: 'Дорожная карта',

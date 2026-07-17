@@ -47,7 +47,7 @@ export function Hero() {
     <section className="hero-atmosphere relative min-h-screen overflow-hidden border-b border-border pt-20">
       <div className="absolute inset-0 control-grid opacity-70" />
 
-      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 pb-16 pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:px-8 lg:pb-20 lg:pt-14">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-14 px-4 pb-16 pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:px-8 lg:pb-20 lg:pt-14">
         <div>
           <AnimateOnScroll delay={80}>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 font-mono text-[10px] tracking-[0.16em] text-primary">
@@ -101,7 +101,7 @@ export function Hero() {
                   <button
                     type="button"
                     onClick={copyBootstrapCommand}
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/5 text-[#93a7bd] transition-[color,border-color,transform] hover:scale-105 hover:border-[#20c5bd]/40 hover:text-[#20c5bd] motion-reduce:transform-none"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/5 text-[#93a7bd] transition-[color,border-color] hover:border-[#20c5bd]/40 hover:text-[#20c5bd]"
                     aria-label={copied ? t.hero.copied : t.hero.copyCommand}
                   >
                     {copied ? <Check size={14} /> : <Copy size={14} />}
@@ -134,7 +134,7 @@ export function Hero() {
                 href={firstBacktestUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-[background-color,transform,box-shadow] hover:-translate-y-0.5 hover:bg-accent-hover glow-accent motion-reduce:transform-none"
+                className="group inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-[background-color,box-shadow] hover:bg-accent-hover glow-accent"
               >
                 {t.hero.quickstart}
                 <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none" size={17} />
@@ -151,7 +151,7 @@ export function Hero() {
           </AnimateOnScroll>
         </div>
 
-        <AnimateOnScroll delay={240} className="lg:pl-2">
+        <AnimateOnScroll delay={240} className="lg:pl-2 lg:pt-16">
           <div className="relative">
             <div className="absolute -inset-8 rounded-full bg-primary/8 blur-[80px]" />
             <AppScreenshot

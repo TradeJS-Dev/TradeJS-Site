@@ -175,7 +175,7 @@ export function DeveloperExperience() {
                   TYPE SAFE
                 </div>
               </div>
-              <div className="code-fade relative max-h-[560px] overflow-hidden p-5 sm:p-6">
+              <div className="code-fade relative max-h-[688px] overflow-hidden p-5 sm:p-6">
                 <div className="overflow-x-auto">
                   <pre className="hljs m-0 bg-transparent p-0 font-mono text-[11px] leading-[1.75] text-foreground/90 sm:text-xs">
                     <code
@@ -199,13 +199,22 @@ export function DeveloperExperience() {
               </div>
             </div>
 
-            <div className="relative flex items-center overflow-hidden bg-[#0d1421] p-4 sm:p-6">
+            <div className="relative grid content-center gap-4 overflow-hidden bg-[#0d1421] p-4 sm:p-6">
               <div className="absolute inset-0 grid-pattern-fine opacity-25" />
               <AppScreenshot
                 src="/screenshots/runtime-performance.png"
                 alt={t.execution.items[1].imageAlt}
                 label={t.execution.items[1].imageLabel}
                 status="MEASURED OUTPUT"
+                className="relative w-full"
+                viewportClassName="aspect-[1800/1222]"
+                fit="contain"
+              />
+              <AppScreenshot
+                src="/screenshots/strategy-statistics.png"
+                alt={t.devExperience.statsImageAlt}
+                label={t.devExperience.statsImageLabel}
+                status="STRATEGY STATS"
                 className="relative w-full"
                 viewportClassName="aspect-[1800/1222]"
                 fit="contain"

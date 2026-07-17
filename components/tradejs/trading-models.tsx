@@ -91,7 +91,6 @@ function ArchitectureArt({ variant }: { variant: ModelKey }) {
         ))}
         <path d="M174 77H200" stroke="#ff8a6b" strokeWidth="2" strokeDasharray="4 7" className="trade-flow-line" />
         <path d="M194 73L202 77L194 81" fill="#ff8a6b" />
-        <text x="187" y="62" textAnchor="middle" fill="#ffad97" fontSize="6" fontFamily="monospace">EACH TRADE</text>
         <circle cx="264" cy="76" r="45" fill="rgba(76,169,255,.08)" stroke="rgba(76,169,255,.3)" />
         <circle cx="264" cy="76" r="31" fill="rgba(76,169,255,.08)" stroke="rgba(76,169,255,.22)" />
         <path d="M246 77C246 65 254 58 264 58C274 58 282 65 282 77C282 88 274 96 264 96C254 96 246 88 246 77Z" stroke="#4ca9ff" strokeWidth="2" />
@@ -225,7 +224,7 @@ export function TradingModels() {
             return (
               <AnimateOnScroll key={item.key} delay={index * 70}>
                 <article
-                  className={`group/model relative grid gap-8 overflow-hidden rounded-[28px] border px-6 py-9 transition-[transform,border-color,box-shadow] duration-500 motion-reduce:transform-none motion-reduce:transition-none sm:px-8 lg:grid-cols-[0.82fr_1.18fr_0.78fr] lg:items-center lg:gap-10 lg:px-10 lg:py-12 lg:hover:-translate-y-1 ${
+                  className={`relative grid gap-8 overflow-hidden rounded-[28px] border px-6 py-9 sm:px-8 lg:grid-cols-[0.82fr_1.18fr_0.78fr] lg:items-center lg:gap-10 lg:px-10 lg:py-12 ${
                     recommended
                       ? 'border-[#087f79] bg-[#0b2425] text-white shadow-[0_26px_90px_rgba(8,127,121,0.16)]'
                       : 'border-[#091019]/14 bg-white/95 text-[#091019] shadow-[0_16px_60px_rgba(9,16,25,0.055)]'

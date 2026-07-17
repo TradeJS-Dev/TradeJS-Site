@@ -53,7 +53,7 @@ export function Roadmap() {
                   </div>
 
                   <article
-                    className={`group relative overflow-hidden rounded-2xl border border-border bg-surface/55 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-surface/80 ${
+                    className={`group relative overflow-hidden rounded-2xl border border-border bg-surface/55 p-6 transition-[border-color,background-color] duration-300 hover:border-primary/35 hover:bg-surface/80 ${
                       isLeft
                         ? 'lg:col-start-1 lg:row-start-1 lg:ml-auto lg:max-w-[30rem]'
                         : 'lg:col-start-3 lg:row-start-1 lg:mr-auto lg:max-w-[30rem]'

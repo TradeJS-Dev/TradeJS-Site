@@ -144,26 +144,79 @@ function LifecycleVisual() {
 
 function SelfHostedVisual() {
   return (
-    <Shell label="YOUR INFRASTRUCTURE" status="LOCAL CONTROL">
-      <div className="relative min-h-[252px] p-5 sm:p-7">
-        <div className="absolute inset-5 rounded-[32px] border border-dashed border-[#20c5bd]/18 sm:inset-7" />
-        <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border border-[#20c5bd]/30 bg-[#20c5bd]/8 shadow-[0_0_60px_rgba(32,197,189,.13)]">
-          <ShieldCheck size={35} className="text-[#20c5bd]" />
-        </div>
-        {[
-          ['DATA', Database, 'left-10 top-10'],
-          ['RUNTIME', ServerCog, 'right-10 top-10'],
-          ['SIGNALS', Radio, 'bottom-10 left-10'],
-          ['EXCHANGE', Braces, 'bottom-10 right-10'],
-        ].map(([label, Icon, position]) => {
-          const NodeIcon = Icon as typeof Database;
-          return (
-            <div key={label as string} className={cn('absolute flex items-center gap-2 rounded-lg border border-white/8 bg-[#0d1421] px-3 py-2.5', position as string)}>
-              <NodeIcon size={13} className="text-[#93a7bd]" />
-              <span className="font-mono text-[7px] tracking-wider text-[#93a7bd]">{label as string}</span>
+    <Shell label="YOUR INFRASTRUCTURE" status="LOCAL CONTROL" className="min-h-[390px]">
+      <div className="relative min-h-[342px] p-5 sm:p-7">
+        <div className="rounded-[24px] border border-dashed border-[#20c5bd]/22 bg-[#0a111b]/72 p-4 sm:p-5">
+          <div className="mb-4 flex items-center justify-between border-b border-white/8 pb-3">
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={14} className="text-[#20c5bd]" />
+              <span className="font-mono text-[8px] tracking-[0.16em] text-[#dce5f4]">PRIVATE NETWORK</span>
             </div>
-          );
-        })}
+            <span className="rounded-full border border-[#20c5bd]/20 bg-[#20c5bd]/8 px-2 py-1 font-mono text-[6px] tracking-wider text-[#20c5bd]">NO SHARED CLOUD</span>
+          </div>
+
+          <div className="relative grid grid-cols-[0.78fr_1.28fr_0.78fr] items-stretch gap-3">
+            <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 520 166" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M116 42H188M116 124H188M332 42H404M332 124H404" stroke="rgba(32,197,189,.4)" strokeWidth="1.5" strokeDasharray="4 6" className="trade-flow-line" />
+            </svg>
+
+            <div className="relative z-10 grid content-center gap-3">
+              {[
+                ['MARKET DATA', Database],
+                ['STRATEGY CODE', Braces],
+              ].map(([label, Icon]) => {
+                const NodeIcon = Icon as typeof Database;
+                return (
+                  <div key={label as string} className="rounded-xl border border-white/8 bg-[#0d1421] px-3 py-3">
+                    <NodeIcon size={14} className="text-[#4ca9ff]" />
+                    <p className="mt-3 font-mono text-[6px] leading-relaxed tracking-wider text-[#93a7bd] sm:text-[7px]">{label as string}</p>
+                    <span className="mt-2 block h-1 w-8 rounded-full bg-[#4ca9ff]/35" />
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="relative z-10 rounded-2xl border border-[#20c5bd]/30 bg-[#20c5bd]/8 p-3 text-center shadow-[0_0_50px_rgba(32,197,189,.1)] sm:p-4">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-[#20c5bd]/25 bg-[#080d15]">
+                <ServerCog size={24} className="text-[#20c5bd]" />
+              </span>
+              <p className="mt-3 font-mono text-[7px] tracking-[0.16em] text-[#93a7bd]">TRADEJS NODE</p>
+              <p className="mt-1 font-mono text-[10px] font-semibold text-[#dce5f4]">localhost</p>
+              <div className="mt-4 grid gap-1.5">
+                {['BACKTEST ENGINE', 'RUNTIME', 'AI GATE'].map((service) => (
+                  <span key={service} className="rounded-md border border-white/8 bg-[#080d15]/70 px-2 py-1.5 font-mono text-[6px] tracking-wider text-[#93a7bd]">
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative z-10 grid content-center gap-3">
+              {[
+                ['EXCHANGE', Radio],
+                ['SIGNAL API', ShieldCheck],
+              ].map(([label, Icon]) => {
+                const NodeIcon = Icon as typeof Database;
+                return (
+                  <div key={label as string} className="rounded-xl border border-white/8 bg-[#0d1421] px-3 py-3">
+                    <NodeIcon size={14} className="text-[#19c6a0]" />
+                    <p className="mt-3 font-mono text-[6px] leading-relaxed tracking-wider text-[#93a7bd] sm:text-[7px]">{label as string}</p>
+                    <span className="mt-2 block h-1 w-8 rounded-full bg-[#19c6a0]/35" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-4 gap-2 border-t border-white/8 pt-4">
+            {['DOCKER', 'POSTGRES', 'LOCAL KEYS', 'YOUR LOGS'].map((item, index) => (
+              <div key={item} className="rounded-lg border border-white/8 bg-white/[0.025] px-2 py-2 text-center">
+                <span className={`mx-auto mb-1.5 block h-1.5 w-1.5 rounded-full ${index === 2 ? 'bg-[#f3bf72]' : 'bg-[#20c5bd]'}`} />
+                <span className="font-mono text-[5px] tracking-wider text-[#93a7bd] sm:text-[6px]">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </Shell>
   );
