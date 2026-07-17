@@ -3,9 +3,18 @@
 import { ArrowUpRight } from 'lucide-react';
 import { AnimateOnScroll } from './animate-on-scroll';
 import { useLocale } from './locale-provider';
-import { ProductVisual, type ProductVisualVariant } from './product-visual';
+import { AppScreenshot } from './app-screenshot';
 
-const visuals: ProductVisualVariant[] = ['backtest', 'promote'];
+const screenshots = [
+  {
+    src: '/screenshots/backtest-run.png',
+    aspect: 'aspect-[1800/1329]',
+  },
+  {
+    src: '/screenshots/runtime-performance.png',
+    aspect: 'aspect-[1800/1222]',
+  },
+];
 
 export function Execution() {
   const { t } = useLocale();
@@ -13,7 +22,6 @@ export function Execution() {
   return (
     <section className="relative overflow-hidden border-b border-border py-20 lg:py-24">
       <div className="absolute inset-0 control-grid opacity-25" />
-      <div className="absolute -left-60 top-1/3 h-[700px] w-[700px] rounded-full bg-success/5 blur-[160px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <AnimateOnScroll>
@@ -54,7 +62,15 @@ export function Execution() {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <ProductVisual variant={visuals[i]} className="h-full" />
+                  <AppScreenshot
+                    src={screenshots[i].src}
+                    alt={item.imageAlt}
+                    label={item.imageLabel}
+                    status={i === 0 ? 'RUNNING' : 'LIVE METRICS'}
+                    className="h-full"
+                    viewportClassName={screenshots[i].aspect}
+                    fit="contain"
+                  />
                 </div>
               </article>
             </AnimateOnScroll>

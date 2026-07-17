@@ -3,10 +3,9 @@
 import { LocaleProvider } from './locale-provider';
 import { Header } from './header';
 import { Hero } from './hero';
+import { TradingModels } from './trading-models';
 import { StrategyAuthoring } from './strategy-authoring';
-import { Intelligence } from './intelligence';
 import { Execution } from './execution';
-import { HowItWorks } from './how-it-works';
 import { DeveloperExperience } from './developer-experience';
 import { FinalCta } from './final-cta';
 import { Footer } from './footer';
@@ -18,11 +17,10 @@ export function LandingPage() {
         <Header />
         <main>
           <Hero />
+          <TradingModels />
           <StrategyAuthoring />
-          <HowItWorks />
           <DeveloperExperience />
           <Execution />
-          <Intelligence />
           <FinalCta />
         </main>
         <Footer />

@@ -1,10 +1,7 @@
 'use client';
 
 import {
-  Bell,
-  BrainCircuit,
   Braces,
-  Check,
   Database,
   Radio,
   ServerCog,
@@ -15,12 +12,7 @@ import { cn } from '@/lib/utils';
 export type ProductVisualVariant =
   | 'authoring'
   | 'lifecycle'
-  | 'self-hosted'
-  | 'backtest'
-  | 'promote'
-  | 'pine'
-  | 'ai-sidecar'
-  | 'operations';
+  | 'self-hosted';
 
 interface ProductVisualProps {
   variant: ProductVisualVariant;
@@ -177,162 +169,12 @@ function SelfHostedVisual() {
   );
 }
 
-function BacktestVisual() {
-  return (
-    <Shell label="HISTORICAL REPLAY" status="184 / 184 TRADES" className="min-h-[360px]">
-      <div className="grid min-h-[312px] md:grid-cols-[1fr_180px]">
-        <div className="border-b border-white/8 p-5 sm:p-7 md:border-b-0 md:border-r">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="font-mono text-[7px] tracking-wider text-[#6f8198]">EQUITY / BTC-USDT / 1H</p>
-              <p className="mt-2 font-mono text-xl text-[#dce5f4]">+24.8%</p>
-            </div>
-            <span className="font-mono text-[8px] text-[#19c6a0]">SELECTED RUN</span>
-          </div>
-          <svg className="mt-5 h-44 w-full" viewBox="0 0 500 180" fill="none" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="backtest-area" x1="0" y1="0" x2="0" y2="1">
-                <stop stopColor="#20c5bd" stopOpacity=".3" />
-                <stop offset="1" stopColor="#20c5bd" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <path d="M0 156L35 148L70 151L105 132L140 138L175 110L210 119L245 91L280 97L315 65L350 77L385 42L420 51L455 23L500 13V180H0Z" fill="url(#backtest-area)" />
-            <path d="M0 156L35 148L70 151L105 132L140 138L175 110L210 119L245 91L280 97L315 65L350 77L385 42L420 51L455 23L500 13" stroke="#20c5bd" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M0 116H500M0 76H500M0 36H500" stroke="rgba(147,167,189,.08)" />
-          </svg>
-        </div>
-        <div className="grid grid-cols-2 gap-px bg-white/8 md:grid-cols-1">
-          {[
-            ['RETURN', '+24.8%', '#19c6a0'],
-            ['DRAWDOWN', '-6.2%', '#ff5f70'],
-            ['PF', '1.84', '#dce5f4'],
-            ['TRADES', '184', '#dce5f4'],
-          ].map(([label, value, color]) => (
-            <div key={label} className="flex flex-col justify-center bg-[#0b111c] px-5 py-4">
-              <span className="font-mono text-[7px] tracking-wider text-[#6f8198]">{label}</span>
-              <span className="mt-2 font-mono text-base" style={{ color }}>{value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Shell>
-  );
-}
-
-function PromoteVisual() {
-  return (
-    <Shell label="CONFIG PROMOTION" status="VALIDATED" className="min-h-[360px]">
-      <div className="grid min-h-[312px] items-center gap-4 p-5 sm:grid-cols-[1fr_auto_1fr] sm:p-7">
-        <div className="rounded-2xl border border-white/8 bg-[#0d1421] p-5">
-          <p className="font-mono text-[8px] tracking-wider text-[#4ca9ff]">BACKTEST #1842</p>
-          <div className="mt-5 space-y-3">
-            {['EMA_FAST  09', 'EMA_SLOW  21', 'RISK      01'].map((item) => (
-              <div key={item} className="border-b border-white/6 pb-2 font-mono text-[9px] text-[#93a7bd]">{item}</div>
-            ))}
-          </div>
-        </div>
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-[#19c6a0]/30 bg-[#19c6a0]/8 text-[#19c6a0]">
-          <Check size={18} />
-        </div>
-        <div className="rounded-2xl border border-[#19c6a0]/20 bg-[#19c6a0]/5 p-5">
-          <p className="font-mono text-[8px] tracking-wider text-[#19c6a0]">RUNTIME CONFIG</p>
-          <div className="mt-5 space-y-3 font-mono text-[9px]">
-            <p className="text-[#93a7bd]">status: <span className="text-[#19c6a0]">ready</span></p>
-            <p className="text-[#93a7bd]">source: <span className="text-[#dce5f4]">#1842</span></p>
-            <p className="text-[#93a7bd]">mode: <span className="text-[#dce5f4]">signal</span></p>
-          </div>
-        </div>
-      </div>
-    </Shell>
-  );
-}
-
-function PineVisual() {
-  return (
-    <Shell label="PINE INTEROP" status="OPTIONAL">
-      <div className="grid min-h-[252px] grid-cols-[1fr_auto_1fr] items-center gap-3 p-5 sm:p-7">
-        <div className="rounded-xl border border-white/8 bg-[#0d1421] p-4">
-          <p className="font-mono text-[8px] text-[#f3bf72]">PINE</p>
-          <div className="mt-4 space-y-2">
-            {[80, 58, 72, 45].map((width, i) => <div key={i} className="h-1.5 rounded-full bg-[#f3bf72]/20" style={{ width: `${width}%` }} />)}
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <span className="h-px w-8 bg-gradient-to-r from-[#f3bf72] to-[#20c5bd]" />
-          <span className="font-mono text-[7px] text-[#6f8198]">ADAPT</span>
-        </div>
-        <div className="rounded-xl border border-[#20c5bd]/20 bg-[#20c5bd]/5 p-4">
-          <p className="font-mono text-[8px] text-[#20c5bd]">STRATEGY CORE</p>
-          <div className="mt-4 flex items-center gap-2 text-[#93a7bd]">
-            <Braces size={14} />
-            <span className="font-mono text-[8px]">TypeScript runtime</span>
-          </div>
-        </div>
-      </div>
-    </Shell>
-  );
-}
-
-function AiSidecarVisual() {
-  return (
-    <Shell label="OPTIONAL INTELLIGENCE" status="SIDE-CAR">
-      <div className="relative min-h-[252px] p-5 sm:p-7">
-        <div className="rounded-xl border border-white/8 bg-[#0d1421] p-4">
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-[8px] text-[#dce5f4]">DETERMINISTIC STRATEGY</span>
-            <span className="rounded-md bg-[#19c6a0]/10 px-2 py-1 font-mono text-[7px] text-[#19c6a0]">PASS</span>
-          </div>
-        </div>
-        <div className="ml-8 h-8 w-px bg-[#4ca9ff]/40" />
-        <div className="ml-8 flex items-center gap-4 rounded-xl border border-[#4ca9ff]/20 bg-[#4ca9ff]/5 p-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#4ca9ff]/10 text-[#4ca9ff]"><BrainCircuit size={20} /></div>
-          <div className="flex-1">
-            <p className="font-mono text-[8px] tracking-wider text-[#4ca9ff]">AI REVIEW</p>
-            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/8"><div className="h-full w-[82%] bg-[#4ca9ff]" /></div>
-          </div>
-          <span className="font-mono text-sm text-[#4ca9ff]">0.82</span>
-        </div>
-      </div>
-    </Shell>
-  );
-}
-
-function OperationsVisual() {
-  return (
-    <Shell label="EVENT DELIVERY" status="CONNECTED">
-      <div className="relative min-h-[252px] p-5 sm:p-7">
-        <div className="absolute left-10 right-10 top-1/2 h-px bg-gradient-to-r from-[#20c5bd]/20 via-[#20c5bd] to-[#20c5bd]/20" />
-        <div className="relative grid min-h-[196px] grid-cols-3 items-center gap-3">
-          {[
-            ['RUNTIME', ServerCog],
-            ['EVENT BUS', Radio],
-            ['TELEGRAM', Bell],
-          ].map(([label, Icon], i) => {
-            const NodeIcon = Icon as typeof ServerCog;
-            return (
-              <div key={label as string} className={cn('mx-auto flex w-full max-w-[130px] flex-col items-center gap-3 rounded-xl border bg-[#0d1421] p-4 text-center', i === 1 ? 'border-[#20c5bd]/30 shadow-[0_0_40px_rgba(32,197,189,.12)]' : 'border-white/8')}>
-                <NodeIcon size={18} className={i === 1 ? 'text-[#20c5bd]' : 'text-[#93a7bd]'} />
-                <span className="font-mono text-[7px] tracking-wider text-[#93a7bd]">{label as string}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </Shell>
-  );
-}
-
 export function ProductVisual({ variant, className }: ProductVisualProps) {
   const visual = (() => {
     switch (variant) {
       case 'authoring': return <AuthoringVisual />;
       case 'lifecycle': return <LifecycleVisual />;
       case 'self-hosted': return <SelfHostedVisual />;
-      case 'backtest': return <BacktestVisual />;
-      case 'promote': return <PromoteVisual />;
-      case 'pine': return <PineVisual />;
-      case 'ai-sidecar': return <AiSidecarVisual />;
-      case 'operations': return <OperationsVisual />;
     }
   })();
 

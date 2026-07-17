@@ -25,7 +25,7 @@ export function AnimateOnScroll({
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.01, rootMargin: '360px 0px 360px 0px' },
     );
 
     if (ref.current) {
@@ -38,8 +38,9 @@ export function AnimateOnScroll({
   return (
     <div
       ref={ref}
+      data-animate-on-scroll="true"
       className={cn(
-        'transition-all duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none',
+        'transition-[opacity,transform] duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6',
         className,
       )}

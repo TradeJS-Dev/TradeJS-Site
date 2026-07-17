@@ -4,7 +4,7 @@ export const translations = {
   en: {
     nav: {
       advantages: 'Why TradeJS',
-      howItWorks: 'Workflow',
+      architectures: 'Architectures',
       devExperience: 'TypeScript',
       x: 'X.com',
       github: 'GitHub',
@@ -15,8 +15,96 @@ export const translations = {
       titleSuffix: 'TypeScript Strategies',
       subtitle:
         'An open-source, self-hosted framework for building, backtesting, and running programmable trading strategies',
-      quickstart: 'npx create-tradejs',
+      quickstart: 'Run your first backtest',
       secondaryCta: 'Explore TypeScript API',
+      terminalLabel: 'RUN IN YOUR TERMINAL',
+      terminalHint:
+        'The CLI scaffolds a local TradeJS project, starts the required services, and opens the dashboard.',
+      terminalSteps: ['CREATE PROJECT', 'START SERVICES', 'OPEN DASHBOARD'],
+      copyCommand: 'Copy command',
+      copied: 'Command copied',
+      productScreenshotAlt:
+        'TradeJS application showing a backtested strategy with entries, exits, take profit and stop loss on a market chart',
+      productScreenshotLabel: 'TRADEJS APP / STRATEGY CHART',
+    },
+    tradingModels: {
+      sectionLabel: 'TRADING ARCHITECTURES',
+      sectionTitle: 'Four paths from backtest to live decisions',
+      sectionSubtitle:
+        'TradeJS supports all four. The architecture determines what enters the runtime decision path—and what must be validated before you trust it.',
+      recommendation: 'RECOMMENDED DIRECTION',
+      thesis: 'Use AI to discover the rules. Keep runtime deterministic.',
+      legend: {
+        positive: 'Strength',
+        requirement: 'Requirement',
+        warning: 'Risk',
+      },
+      items: [
+        {
+          key: 'classic',
+          index: '01',
+          title: 'Classic trading',
+          description:
+            'Backtest a deterministic strategy across a long history, then promote only pairs and configurations that survive multiple market regimes.',
+          tradeoff:
+            'Easy to explain and reproduce, but pair selection is still model selection: without out-of-sample checks, the best history can simply be overfit.',
+          steps: ['LONG BACKTEST', 'PAIR SELECTION', 'RUNTIME'],
+          signals: [
+            'No model latency',
+            'Explicit strategy logic',
+            'Long history required',
+            'Pair-selection overfit risk',
+          ],
+        },
+        {
+          key: 'ml',
+          index: '02',
+          title: 'ML filter',
+          description:
+            'Build a point-in-time dataset from backtest candidates, train on past windows, validate on holdout and walk-forward windows, then score new candidates locally.',
+          tradeoff:
+            'Inference is fast. The operational burden moves to leakage prevention, drift monitoring, retraining, and explaining model decisions.',
+          steps: ['BACKTEST DATA', 'TRAIN + VALIDATE', 'MODEL GATE', 'RUNTIME'],
+          signals: [
+            'Fast local inference',
+            'Walk-forward + retraining',
+            'Harder to explain',
+            'Dataset leakage risk',
+          ],
+        },
+        {
+          key: 'ai',
+          index: '03',
+          title: 'AI at runtime',
+          description:
+            'Send every candidate with its signal-time market context to an external model and use the answer as an allow-or-reject decision before the order.',
+          tradeoff:
+            'Latency, cost, model updates, and nondeterminism enter the execution path. Historical replay is comparable only when provider output is captured or re-run.',
+          steps: ['SIGNAL', 'AI REQUEST', 'ALLOW / REJECT', 'ORDER'],
+          signals: [
+            'Provider latency',
+            'Forward testing required',
+            'Model / prompt drift',
+            'Expensive historical replay',
+          ],
+        },
+        {
+          key: 'gate',
+          index: '04',
+          title: 'AI Gate',
+          description:
+            'Use AI during research to discover candidate pockets in backtest exports. Validate them in time order, then encode the survivors as a local deterministic strategy wrapper.',
+          tradeoff:
+            'Runtime uses only signal-time data and local rules. The same gate can be replayed in backtests, but still needs holdout and forward validation before promotion.',
+          steps: ['BACKTEST EXPORT', 'AI POCKET SEARCH', 'LOCAL GATE', 'RUNTIME'],
+          signals: [
+            'Provider outside decision path',
+            'Explicit, versioned rules',
+            'Reproducible backtests',
+            'Holdout + forward validation',
+          ],
+        },
+      ],
     },
     // Group 1: TypeScript-first product pillars
     strategyAuthoring: {
@@ -71,57 +159,7 @@ export const translations = {
         },
       ],
     },
-    // Group 2: Optional extensions
-    intelligence: {
-      sectionTitle: 'Extend When You Need It',
-      sectionSubtitle:
-        'Add compatibility, intelligence, and operational integrations without changing the TypeScript-first workflow',
-      coreStatement: 'TypeScript stays in control.',
-      items: [
-        {
-          title: 'Pine Strategy Interoperability',
-          description:
-            'Port or compare Pine-backed strategies while keeping TypeScript as the primary strategy and runtime surface.',
-          links: [
-            {
-              label: 'Pine Strategies',
-              url: 'https://docs.tradejs.dev/guides/pine-workflows',
-            },
-          ],
-        },
-        {
-          title: 'Optional AI / ML Layers',
-          description:
-            'Add AI review or ML enrichment when a strategy needs extra scoring and filtering beyond its deterministic TypeScript logic.',
-          links: [
-            {
-              label: 'AI Workflows',
-              url: 'https://docs.tradejs.dev/ai-ml/ai/configuration',
-            },
-            {
-              label: 'ML Workflows',
-              url: 'https://docs.tradejs.dev/ai-ml/ml/configuration',
-            },
-          ],
-        },
-        {
-          title: 'Operational Integrations',
-          description:
-            'Connect exchanges, monitor runtime activity, and deliver signal, execution, and error notifications through Telegram.',
-          links: [
-            {
-              label: 'Connectors',
-              url: 'https://docs.tradejs.dev/core-concepts/connectors',
-            },
-            {
-              label: 'Telegram Setup',
-              url: 'https://docs.tradejs.dev/runtime/execution/telegram-notifications',
-            },
-          ],
-        },
-      ],
-    },
-    // Group 3: Backtest-to-runtime workflow
+    // Group 2: Backtest-to-runtime workflow
     execution: {
       sectionTitle: 'From Backtest to Runtime',
       sectionSubtitle:
@@ -131,6 +169,9 @@ export const translations = {
           title: 'Backtest & Compare',
           description:
             'Run deterministic backtests and parameter grids, then inspect metrics and artifacts before selecting a configuration.',
+          imageAlt:
+            'TradeJS backtest runner with strategy, date window, connector and parallel execution settings',
+          imageLabel: 'TRADEJS APP / BACKTEST RUNNER',
           links: [
             {
               label: 'Backtesting',
@@ -146,6 +187,9 @@ export const translations = {
           title: 'Promote & Run',
           description:
             'Promote a selected result into runtime configuration, evaluate closed candles, and optionally automate execution.',
+          imageAlt:
+            'TradeJS runtime dashboard showing strategy performance, drawdown, orders and win rate',
+          imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
           links: [
             {
               label: 'Results to Runtime',
@@ -156,36 +200,6 @@ export const translations = {
               url: 'https://docs.tradejs.dev/runtime/execution/signals',
             },
           ],
-        },
-      ],
-    },
-    howItWorks: {
-      sectionTitle: 'How It Works',
-      sectionSubtitle: 'Write once, then move the strategy through one controlled workflow',
-      steps: [
-        {
-          step: '01',
-          title: 'Write in TypeScript',
-          description:
-            'Define entry and exit logic, indicators, state, and risk management with a typed StrategyAPI.',
-        },
-        {
-          step: '02',
-          title: 'Backtest',
-          description:
-            'Replay the strategy on historical data, compare configurations, and inspect metrics and chart artifacts.',
-        },
-        {
-          step: '03',
-          title: 'Promote Configuration',
-          description:
-            'Move the selected backtest result into runtime configuration without rewriting the strategy.',
-        },
-        {
-          step: '04',
-          title: 'Run Self-Hosted',
-          description:
-            'Generate signals and optionally execute orders on infrastructure, data stores, and credentials you control.',
         },
       ],
     },
@@ -233,8 +247,8 @@ export const translations = {
     finalCta: {
       title: 'Build Your Strategy in TypeScript',
       subtitle:
-        'Create the project, start local infrastructure, choose your local password, and open the market dashboard with one command.',
-      quickstart: 'npx create-tradejs',
+        'Start with the real example, run a historical replay, and inspect your first result before changing the strategy.',
+      quickstart: 'Run your first backtest',
       secondaryCta: 'Explore TypeScript API',
     },
     footer: {
@@ -250,7 +264,7 @@ export const translations = {
   ru: {
     nav: {
       advantages: 'Почему TradeJS',
-      howItWorks: 'Процесс',
+      architectures: 'Архитектуры',
       devExperience: 'TypeScript',
       x: 'X.com',
       github: 'GitHub',
@@ -261,8 +275,96 @@ export const translations = {
       titleSuffix: 'TypeScript-стратегии',
       subtitle:
         'Open-source self-hosted фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий',
-      quickstart: 'npx create-tradejs',
+      quickstart: 'Запустить первый бэктест',
       secondaryCta: 'Изучить TypeScript API',
+      terminalLabel: 'ВЫПОЛНИТЕ В ТЕРМИНАЛЕ',
+      terminalHint:
+        'CLI создаст локальный проект TradeJS, запустит необходимые сервисы и откроет dashboard.',
+      terminalSteps: ['СОЗДАТЬ ПРОЕКТ', 'ЗАПУСТИТЬ СЕРВИСЫ', 'ОТКРЫТЬ DASHBOARD'],
+      copyCommand: 'Скопировать команду',
+      copied: 'Команда скопирована',
+      productScreenshotAlt:
+        'Приложение TradeJS с результатом бэктеста, входами, выходами, take profit и stop loss на графике',
+      productScreenshotLabel: 'TRADEJS APP / ГРАФИК СТРАТЕГИИ',
+    },
+    tradingModels: {
+      sectionLabel: 'АРХИТЕКТУРЫ ТОРГОВЛИ',
+      sectionTitle: 'Четыре пути от бэктеста к runtime-решениям',
+      sectionSubtitle:
+        'TradeJS поддерживает все четыре схемы. Архитектура определяет, что попадёт в runtime decision path — и что нужно проверить, прежде чем ей доверять.',
+      recommendation: 'РЕКОМЕНДУЕМОЕ НАПРАВЛЕНИЕ',
+      thesis: 'AI исследует данные. В runtime решение принимает детерминированный код.',
+      legend: {
+        positive: 'Преимущество',
+        requirement: 'Требование',
+        warning: 'Риск',
+      },
+      items: [
+        {
+          key: 'classic',
+          index: '01',
+          title: 'Классический трейдинг',
+          description:
+            'Бэктестим детерминированную стратегию на длинной истории и переносим в runtime только пары и конфигурации, устойчивые в разных рыночных режимах.',
+          tradeoff:
+            'Схему легко объяснить и воспроизвести, но выбор пар — тоже отбор модели: без out-of-sample проверки лучший результат может оказаться переобучением.',
+          steps: ['ДЛИННЫЙ БЭКТЕСТ', 'ВЫБОР ПАР', 'RUNTIME'],
+          signals: [
+            'Нет model latency',
+            'Явная логика стратегии',
+            'Нужна длинная история',
+            'Overfitting при выборе пар',
+          ],
+        },
+        {
+          key: 'ml',
+          index: '02',
+          title: 'ML-фильтр',
+          description:
+            'Собираем датасет только из данных, доступных на момент сигнала, обучаемся на прошлом, проверяем holdout и walk-forward окна, затем локально оцениваем новые сделки.',
+          tradeoff:
+            'Inference работает быстро. Основная сложность смещается в защиту от leakage, контроль drift, регулярное обновление модели и объяснение решений.',
+          steps: ['ДАННЫЕ БЭКТЕСТА', 'TRAIN + VALIDATE', 'MODEL GATE', 'RUNTIME'],
+          signals: [
+            'Быстрый локальный inference',
+            'Walk-forward + retraining',
+            'Сложнее объяснять',
+            'Риск dataset leakage',
+          ],
+        },
+        {
+          key: 'ai',
+          index: '03',
+          title: 'AI в runtime',
+          description:
+            'Отправляем каждый кандидат вместе с доступным на момент сигнала контекстом во внешнюю модель и используем ответ как allow-or-reject решение перед ордером.',
+          tradeoff:
+            'В execution path попадают задержка, стоимость, обновления модели и недетерминированность. Исторический replay сравним только при сохранении или повторном запросе ответов.',
+          steps: ['СИГНАЛ', 'AI-ЗАПРОС', 'ALLOW / REJECT', 'ОРДЕР'],
+          signals: [
+            'Задержка провайдера',
+            'Нужны forward-тесты',
+            'Model / prompt drift',
+            'Дорогой исторический replay',
+          ],
+        },
+        {
+          key: 'gate',
+          index: '04',
+          title: 'AI Gate',
+          description:
+            'Используем AI на этапе исследования: ищем pockets в экспортах бэктестов, валидируем их по времени и превращаем выжившие правила в локальную детерминированную обёртку стратегии.',
+          tradeoff:
+            'Runtime использует только доступные на момент сигнала данные и локальные правила. Тот же gate воспроизводится в бэктестах, но перед promotion всё равно требует holdout и forward validation.',
+          steps: ['BACKTEST EXPORT', 'AI POCKET SEARCH', 'LOCAL GATE', 'RUNTIME'],
+          signals: [
+            'Провайдер вне decision path',
+            'Версионируемые правила',
+            'Воспроизводимые бэктесты',
+            'Holdout + forward validation',
+          ],
+        },
+      ],
     },
     strategyAuthoring: {
       sectionTitle: 'Для TypeScript-разработчиков',
@@ -316,55 +418,6 @@ export const translations = {
         },
       ],
     },
-    intelligence: {
-      sectionTitle: 'Расширяйте по необходимости',
-      sectionSubtitle:
-        'Добавляйте совместимость, интеллектуальные слои и интеграции, не меняя TypeScript-first процесс',
-      coreStatement: 'TypeScript сохраняет контроль.',
-      items: [
-        {
-          title: 'Совместимость с Pine-стратегиями',
-          description:
-            'Переносите и сравнивайте Pine-backed стратегии, сохраняя TypeScript основным языком стратегий и runtime.',
-          links: [
-            {
-              label: 'Pine-стратегии',
-              url: 'https://docs.tradejs.dev/ru/guides/pine-workflows',
-            },
-          ],
-        },
-        {
-          title: 'Опциональные AI / ML-слои',
-          description:
-            'Добавляйте AI-проверку или ML enrichment, когда стратегии нужна дополнительная оценка и фильтрация поверх детерминированной TypeScript-логики.',
-          links: [
-            {
-              label: 'AI workflows',
-              url: 'https://docs.tradejs.dev/ru/ai-ml/ai/configuration',
-            },
-            {
-              label: 'ML workflows',
-              url: 'https://docs.tradejs.dev/ru/ai-ml/ml/configuration',
-            },
-          ],
-        },
-        {
-          title: 'Операционные интеграции',
-          description:
-            'Подключайте биржи, контролируйте runtime и получайте уведомления о сигналах, исполнении и ошибках в Telegram.',
-          links: [
-            {
-              label: 'Коннекторы',
-              url: 'https://docs.tradejs.dev/ru/core-concepts/connectors',
-            },
-            {
-              label: 'Настройка Telegram',
-              url: 'https://docs.tradejs.dev/ru/runtime/execution/telegram-notifications',
-            },
-          ],
-        },
-      ],
-    },
     execution: {
       sectionTitle: 'От бэктеста к runtime',
       sectionSubtitle:
@@ -374,6 +427,9 @@ export const translations = {
           title: 'Тестируйте и сравнивайте',
           description:
             'Запускайте детерминированные бэктесты и перебор параметров, затем изучайте метрики и артефакты перед выбором конфигурации.',
+          imageAlt:
+            'Форма запуска бэктеста TradeJS с выбором стратегии, периода, коннектора и параллельности',
+          imageLabel: 'TRADEJS APP / ЗАПУСК БЭКТЕСТА',
           links: [
             {
               label: 'Бэктестинг',
@@ -389,6 +445,9 @@ export const translations = {
           title: 'Переносите и запускайте',
           description:
             'Перенесите выбранный результат в runtime-конфигурацию, обрабатывайте закрытые свечи и при необходимости автоматизируйте исполнение.',
+          imageAlt:
+            'Runtime dashboard TradeJS с доходностью стратегии, просадкой, сделками и win rate',
+          imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
           links: [
             {
               label: 'Результаты в runtime',
@@ -399,37 +458,6 @@ export const translations = {
               url: 'https://docs.tradejs.dev/ru/runtime/execution/signals',
             },
           ],
-        },
-      ],
-    },
-    howItWorks: {
-      sectionTitle: 'Как это работает',
-      sectionSubtitle:
-        'Напишите один раз и проведите стратегию через единый контролируемый процесс',
-      steps: [
-        {
-          step: '01',
-          title: 'Напишите на TypeScript',
-          description:
-            'Определите входы, выходы, индикаторы, состояние и управление рисками через типизированный StrategyAPI.',
-        },
-        {
-          step: '02',
-          title: 'Проведите бэктест',
-          description:
-            'Воспроизведите стратегию на истории, сравните конфигурации и изучите метрики и графические артефакты.',
-        },
-        {
-          step: '03',
-          title: 'Перенесите конфигурацию',
-          description:
-            'Перенесите выбранный результат бэктеста в runtime-конфигурацию, не переписывая стратегию.',
-        },
-        {
-          step: '04',
-          title: 'Запустите на своём сервере',
-          description:
-            'Генерируйте сигналы и при необходимости исполняйте ордера на инфраструктуре, которой управляете сами.',
         },
       ],
     },
@@ -477,8 +505,8 @@ export const translations = {
     finalCta: {
       title: 'Создайте стратегию на TypeScript',
       subtitle:
-        'Одной командой создайте проект, запустите локальную инфраструктуру, задайте пароль и откройте dashboard с графиком.',
-      quickstart: 'npx create-tradejs',
+        'Начните с реального примера, запустите исторический replay и изучите первый результат до изменения стратегии.',
+      quickstart: 'Запустить первый бэктест',
       secondaryCta: 'Изучить TypeScript API',
     },
     footer: {

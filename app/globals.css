@@ -39,7 +39,12 @@
     linear-gradient(90deg, rgba(76, 93, 117, 0.11) 1px, transparent 1px),
     radial-gradient(circle at 50% 35%, rgba(32, 197, 189, 0.08), transparent 38%);
   background-size: 80px 80px, 80px 80px, 100% 100%;
-  mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.75) 75%, transparent 100%);
+}
+
+.hero-atmosphere {
+  background-image:
+    radial-gradient(circle at 8% 8%, rgba(8, 127, 121, 0.12), transparent 34%),
+    radial-gradient(circle at 92% 72%, rgba(37, 111, 168, 0.08), transparent 36%);
 }
 
 .blueprint-grid {
@@ -56,7 +61,6 @@
     linear-gradient(90deg, rgba(147, 167, 189, 0.055) 1px, transparent 1px),
     radial-gradient(circle, rgba(32, 197, 189, 0.08) 1px, transparent 1.5px);
   background-size: 32px 32px, 32px 32px, 16px 16px;
-  mask-image: linear-gradient(135deg, black, rgba(0, 0, 0, 0.42) 62%, transparent);
 }
 
 .product-visual::after {
@@ -126,6 +130,25 @@
   50% { box-shadow: 0 0 0 5px rgba(25, 198, 160, 0); }
 }
 
+@keyframes terminal-cursor-blink {
+  0%, 48% { opacity: 1; }
+  49%, 100% { opacity: 0; }
+}
+
+@keyframes terminal-log-reveal {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes trade-dot-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.82); }
+  50% { opacity: 1; transform: scale(1.18); }
+}
+
+@keyframes trade-flow {
+  to { stroke-dashoffset: -20; }
+}
+
 .hero-chart-line {
   stroke-dasharray: 720;
   stroke-dashoffset: 720;
@@ -144,6 +167,35 @@
 
 .live-dot {
   animation: live-pulse 2s ease-in-out infinite;
+}
+
+.terminal-cursor {
+  animation: terminal-cursor-blink 1s steps(1, end) infinite;
+}
+
+.terminal-log {
+  opacity: 0;
+  animation: terminal-log-reveal 0.45s ease-out forwards;
+}
+
+.trade-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: trade-dot-pulse 2.8s ease-in-out infinite;
+}
+
+.trade-flow-line {
+  animation: trade-flow 1.4s linear infinite;
+}
+
+.screenshot-scan {
+  background: linear-gradient(to bottom, transparent, rgba(126, 233, 227, 0.08), transparent);
+  transform: translateY(-130%);
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .screenshot-scan {
+  transform: translateY(300%);
 }
 
 @media (min-width: 1024px) {
@@ -403,9 +455,16 @@ html {
   .hero-chart-pulse,
   .signal-sweep,
   .live-dot,
-  .workflow-rail::after {
+  .workflow-rail::after,
+  .terminal-cursor,
+  .terminal-log,
+  .trade-dot,
+  .trade-flow-line {
     animation: none !important;
   }
 
   .hero-chart-line { stroke-dashoffset: 0; }
+  .terminal-log { opacity: 1; transform: none; }
+  .trade-dot { opacity: 1; transform: none; }
+  .screenshot-scan { display: none; }
 }

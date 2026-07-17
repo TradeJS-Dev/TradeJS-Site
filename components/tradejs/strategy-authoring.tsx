@@ -18,7 +18,7 @@ export function StrategyAuthoring() {
         <AnimateOnScroll>
           <div className="mb-12 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-end lg:mb-16">
             <div>
-              <div className="mb-5 font-mono text-[10px] tracking-[0.22em] text-[#087f79]">01 / THE SYSTEM</div>
+              <div className="mb-5 font-mono text-[10px] tracking-[0.22em] text-[#087f79]">02 / THE SYSTEM</div>
               <h2 className="max-w-3xl text-4xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl text-balance">
                 {t.strategyAuthoring.sectionTitle}
               </h2>

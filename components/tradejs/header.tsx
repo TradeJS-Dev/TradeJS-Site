@@ -24,15 +24,15 @@ export function Header() {
 
   const navLinks = [
     { label: t.nav.advantages, href: '#advantages' },
-    { label: t.nav.howItWorks, href: '#how-it-works' },
+    { label: t.nav.architectures, href: '#trading-models' },
     { label: t.nav.devExperience, href: '#dev-experience' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
-          ? 'bg-background/90 backdrop-blur-xl border-b border-border'
+          ? 'bg-background/95 border-b border-border shadow-[0_8px_30px_rgba(9,16,25,0.055)]'
           : 'bg-transparent'
       }`}
     >
@@ -143,7 +143,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
+        <div className="md:hidden bg-background border-b border-border shadow-[0_16px_36px_rgba(9,16,25,0.08)]">
           <nav
             className="flex flex-col px-4 py-4 gap-3"
             aria-label="Mobile navigation"
