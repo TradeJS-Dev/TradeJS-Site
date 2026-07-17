@@ -151,7 +151,7 @@ export function Hero() {
           </AnimateOnScroll>
         </div>
 
-        <AnimateOnScroll delay={240} className="lg:pl-2 lg:pt-4">
+        <AnimateOnScroll delay={240} variant="scale" className="lg:pl-2 lg:pt-4">
           <div className="relative">
             <div className="absolute -inset-8 rounded-full bg-primary/8 blur-[80px]" />
             <AppScreenshot

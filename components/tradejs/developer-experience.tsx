@@ -160,7 +160,7 @@ export function DeveloperExperience() {
           </div>
         </AnimateOnScroll>
 
-        <AnimateOnScroll delay={100}>
+        <AnimateOnScroll delay={100} variant="scale">
           <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch lg:gap-8">
             <div className="control-panel min-w-0 overflow-hidden rounded-2xl border border-white/9 bg-[#0b111c]/92">
               <div className="flex items-center justify-between border-b border-white/8 bg-surface/50 px-4 py-3 sm:px-6">
@@ -199,23 +199,23 @@ export function DeveloperExperience() {
               </div>
             </div>
 
-            <div className="grid h-[520px] min-h-0 grid-rows-2 gap-5 sm:h-[720px] lg:h-auto lg:gap-6">
-              <figure className="relative min-h-0 overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+            <div className="grid gap-5 lg:self-start lg:gap-6">
+              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
                 <Image
                   src="/screenshots/runtime-performance.png"
                   alt={t.execution.items[1].imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-contain"
+                  className="object-cover object-right"
                 />
               </figure>
-              <figure className="relative min-h-0 overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
                 <Image
                   src="/screenshots/strategy-statistics.png"
                   alt={t.devExperience.statsImageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-contain"
+                  className="object-cover object-right"
                 />
               </figure>
             </div>

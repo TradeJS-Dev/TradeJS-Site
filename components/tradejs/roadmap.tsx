@@ -37,6 +37,7 @@ export function Roadmap() {
               <AnimateOnScroll
                 key={item.quarter}
                 delay={index * 120}
+                variant={isLeft ? 'left' : 'right'}
                 className={`h-full ${index === 0 ? '' : 'lg:-mt-20'}`}
               >
                 <div className="relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-4 lg:grid-cols-[minmax(0,1fr)_5rem_minmax(0,1fr)] lg:gap-8">

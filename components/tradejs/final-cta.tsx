@@ -22,7 +22,7 @@ export function FinalCta() {
       <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/8 blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 lg:px-8">
-        <AnimateOnScroll>
+        <AnimateOnScroll variant="scale">
           <div className="control-panel overflow-hidden rounded-3xl border border-primary/20 bg-[#0b111c]/90">
             <div className="flex items-center justify-between border-b border-white/8 px-5 py-3 sm:px-8">
               <div className="flex items-center gap-2 font-mono text-[9px] tracking-[0.16em] text-muted-foreground">

@@ -29,7 +29,7 @@ export function StrategyAuthoring() {
           </div>
         </AnimateOnScroll>
 
-        <div className="divide-y divide-[#091019]/14 border-y border-[#091019]/14">
+        <div>
           {t.strategyAuthoring.items.map((item, i) => (
             <AnimateOnScroll key={item.title} delay={i * 80}>
               <article className="grid gap-10 py-10 lg:grid-cols-12 lg:items-center lg:gap-14 lg:py-20">

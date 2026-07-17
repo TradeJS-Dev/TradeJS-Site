@@ -119,7 +119,8 @@ function ArchitectureArt({ variant }: { variant: ModelKey }) {
       <rect x="242" y="35" width="112" height="82" rx="16" fill="rgba(32,197,189,.09)" stroke="rgba(32,197,189,.35)" />
       <path d="M264 58H330M264 76H318M264 94H324" stroke="#7ee9e3" strokeWidth="2" strokeLinecap="round" />
       <path d="M354 76H397" stroke="#20c5bd" strokeWidth="2" strokeDasharray="4 6" className="trade-flow-line" />
-      <path d="M418 44H482V108H418Z" fill="rgba(32,197,189,.08)" stroke="#20c5bd" />
+      <circle cx="450" cy="76" r="34" fill="rgba(32,197,189,.08)" stroke="rgba(32,197,189,.3)" />
+      <circle cx="450" cy="76" r="23" fill="rgba(32,197,189,.08)" stroke="rgba(32,197,189,.22)" />
       <path d="M438 75L449 86L469 64" stroke="#7ee9e3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -222,7 +223,11 @@ export function TradingModels() {
               });
 
             return (
-              <AnimateOnScroll key={item.key} delay={index * 70}>
+              <AnimateOnScroll
+                key={item.key}
+                delay={index * 70}
+                variant={recommended ? 'scale' : 'up'}
+              >
                 <article
                   className={`relative grid gap-8 overflow-hidden rounded-[28px] border px-6 py-9 sm:px-8 lg:grid-cols-[0.82fr_1.18fr_0.78fr] lg:items-center lg:gap-10 lg:px-10 lg:py-12 ${
                     recommended

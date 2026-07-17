@@ -8,11 +8,11 @@ import { AppScreenshot } from './app-screenshot';
 const screenshots = [
   {
     src: '/screenshots/backtest-run.png',
-    aspect: 'aspect-[1800/1329]',
+    aspect: 'aspect-[1720/1329]',
   },
   {
     src: '/screenshots/runtime-performance.png',
-    aspect: 'aspect-[1800/1222]',
+    aspect: 'aspect-[1720/1222]',
   },
 ];
 
@@ -40,7 +40,11 @@ export function Execution() {
 
         <div className="space-y-8">
           {t.execution.items.map((item, i) => (
-            <AnimateOnScroll key={item.title} delay={i * 100}>
+            <AnimateOnScroll
+              key={item.title}
+              delay={i * 100}
+              variant={i % 2 === 0 ? 'left' : 'right'}
+            >
               <article className="grid overflow-hidden rounded-[30px] border border-border bg-surface/45 lg:grid-cols-[0.78fr_1.22fr]">
                 <div className="flex flex-col justify-center border-b border-border p-7 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
                   <div className="mb-8 font-mono text-[10px] tracking-[0.18em] text-success">0{i + 1} / {i === 0 ? 'REPLAY' : 'PROMOTE'}</div>
@@ -69,7 +73,8 @@ export function Execution() {
                     status={i === 0 ? 'RUNNING' : 'LIVE METRICS'}
                     className="h-full"
                     viewportClassName={screenshots[i].aspect}
-                    fit="contain"
+                    fit="cover"
+                    position="right"
                   />
                 </div>
               </article>

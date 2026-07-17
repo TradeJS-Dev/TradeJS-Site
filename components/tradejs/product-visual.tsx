@@ -85,7 +85,7 @@ function AuthoringVisual() {
           </div>
         </div>
         <div className="relative flex flex-col justify-center p-5 sm:p-7">
-          <div className="absolute left-[42px] top-[54px] bottom-[54px] w-px bg-gradient-to-b from-[#4ca9ff]/20 via-[#20c5bd] to-[#19c6a0]/20" />
+          <div className="absolute bottom-[54px] left-[38px] top-[54px] w-px bg-gradient-to-b from-[#4ca9ff]/20 via-[#20c5bd] to-[#19c6a0]/20 sm:left-[46px]" />
           {[
             ['CONFIG', 'StrategyConfig<T>', '#4ca9ff'],
             ['CONTRACT', 'StrategyAPI', '#20c5bd'],
