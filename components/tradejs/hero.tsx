@@ -151,17 +151,17 @@ export function Hero() {
           </AnimateOnScroll>
         </div>
 
-        <AnimateOnScroll delay={240} className="lg:pl-2 lg:pt-16">
+        <AnimateOnScroll delay={240} className="lg:pl-2 lg:pt-4">
           <div className="relative">
             <div className="absolute -inset-8 rounded-full bg-primary/8 blur-[80px]" />
             <AppScreenshot
-              src="/screenshots/strategy-chart.png"
+              src="/screenshots/strategy-chart-hero.png"
               alt={t.hero.productScreenshotAlt}
               label={t.hero.productScreenshotLabel}
               status="BACKTEST VIEW"
               priority
-              className="relative mx-auto w-full max-w-[760px]"
-              viewportClassName="aspect-[1620/1036]"
+              className="relative mx-auto w-full max-w-[650px]"
+              viewportClassName="aspect-[1534/1219]"
               fit="contain"
             />
           </div>

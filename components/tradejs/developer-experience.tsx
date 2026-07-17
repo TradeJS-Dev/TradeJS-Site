@@ -3,9 +3,9 @@
 import hljs from 'highlight.js/lib/core';
 import typescript from 'highlight.js/lib/languages/typescript';
 import { useMemo } from 'react';
+import Image from 'next/image';
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
-import { AppScreenshot } from './app-screenshot';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 
 if (!hljs.getLanguage('typescript')) {
@@ -161,8 +161,8 @@ export function DeveloperExperience() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={100}>
-          <div className="control-panel grid overflow-hidden rounded-2xl border border-white/9 bg-[#0b111c]/92 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="min-w-0 border-b border-white/8 lg:border-b-0 lg:border-r">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch lg:gap-8">
+            <div className="control-panel min-w-0 overflow-hidden rounded-2xl border border-white/9 bg-[#0b111c]/92">
               <div className="flex items-center justify-between border-b border-white/8 bg-surface/50 px-4 py-3 sm:px-6">
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-[10px] text-primary">MaStrategy/core.ts</span>
@@ -199,26 +199,25 @@ export function DeveloperExperience() {
               </div>
             </div>
 
-            <div className="relative grid content-center gap-4 overflow-hidden bg-[#0d1421] p-4 sm:p-6">
-              <div className="absolute inset-0 grid-pattern-fine opacity-25" />
-              <AppScreenshot
-                src="/screenshots/runtime-performance.png"
-                alt={t.execution.items[1].imageAlt}
-                label={t.execution.items[1].imageLabel}
-                status="MEASURED OUTPUT"
-                className="relative w-full"
-                viewportClassName="aspect-[1800/1222]"
-                fit="contain"
-              />
-              <AppScreenshot
-                src="/screenshots/strategy-statistics.png"
-                alt={t.devExperience.statsImageAlt}
-                label={t.devExperience.statsImageLabel}
-                status="STRATEGY STATS"
-                className="relative w-full"
-                viewportClassName="aspect-[1800/1222]"
-                fit="contain"
-              />
+            <div className="grid h-[520px] min-h-0 grid-rows-2 gap-5 sm:h-[720px] lg:h-auto lg:gap-6">
+              <figure className="relative min-h-0 overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+                <Image
+                  src="/screenshots/runtime-performance.png"
+                  alt={t.execution.items[1].imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-contain"
+                />
+              </figure>
+              <figure className="relative min-h-0 overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+                <Image
+                  src="/screenshots/strategy-statistics.png"
+                  alt={t.devExperience.statsImageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-contain"
+                />
+              </figure>
             </div>
           </div>
         </AnimateOnScroll>
