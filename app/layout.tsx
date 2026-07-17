@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image-v2.png',
         width: 1200,
         height: 630,
         alt: 'TradeJS — Self-Hosted TypeScript Trading Framework',
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: 'TradeJS — Self-Hosted TypeScript Trading Framework',
     description:
       'Build, backtest, and run TypeScript trading strategies on your infrastructure.',
-    images: ['/og-image.png'],
+    images: ['/og-image-v2.png'],
   },
   icons: {
     icon: [
