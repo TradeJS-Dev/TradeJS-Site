@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | TradeJS',
   },
   description:
-    'TradeJS is an open-source, self-hosted framework for building, backtesting, and running programmable trading strategies in TypeScript.',
+    'TradeJS is a TypeScript framework for building, backtesting, and running programmable trading strategies, with a self-hosted runtime you control.',
   applicationName: 'TradeJS',
   keywords: [
     'TradeJS',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     'algorithmic trading',
     'TypeScript trading strategies',
     'trading strategy backtesting',
-    'open-source trading runtime',
+    'TypeScript trading runtime',
   ],
   authors: [{ name: 'TradeJS Team', url: 'https://tradejs.dev' }],
   creator: 'TradeJS Team',

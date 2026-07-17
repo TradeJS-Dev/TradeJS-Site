@@ -27,7 +27,7 @@ export default function Page() {
         },
         url: 'https://tradejs.dev',
         description:
-          'Open-source, self-hosted framework for building, backtesting, and running programmable TypeScript trading strategies.',
+          'TypeScript framework for building, backtesting, and running programmable trading strategies, with a self-hosted runtime you control.',
       },
       {
         '@type': 'SoftwareSourceCode',
@@ -36,7 +36,7 @@ export default function Page() {
         programmingLanguage: 'TypeScript',
         runtimePlatform: 'Node.js',
         url: 'https://tradejs.dev',
-        license: 'https://opensource.org/licenses/MIT',
+        license: 'https://github.com/TradeJS-Dev/TradeJS/blob/stable/LICENSING.md',
         description:
           'TypeScript-native strategy framework and runtime stack for infrastructure you control.',
       },

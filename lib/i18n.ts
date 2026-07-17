@@ -14,7 +14,7 @@ export const translations = {
       actionWords: ['BUILD', 'BACKTEST', 'RUN'],
       titleSuffix: 'TypeScript Strategies',
       subtitle:
-        'An open-source, self-hosted framework for building, backtesting, and running programmable trading strategies',
+        'A TypeScript framework for building, backtesting, and running programmable trading strategies—with a self-hosted runtime you control',
       quickstart: 'Run your first backtest',
       secondaryCta: 'Explore TypeScript API',
       terminalLabel: 'RUN IN YOUR TERMINAL',
@@ -222,7 +222,7 @@ export const translations = {
           completed: true,
           title: 'Project Launch',
           description:
-            'Launch of the TradeJS open-source framework and the core project foundation.',
+            'Initial MIT-licensed launch of TradeJS and the core project foundation.',
         },
         {
           quarter: 'Q2',
@@ -258,6 +258,7 @@ export const translations = {
       description: 'One strategy lifecycle from research to runtime.',
       app: 'Application',
       docs: 'Documentation',
+      licensing: 'Licensing',
       github: 'GitHub Repository',
       x: 'X',
       contact: 'Contact me',
@@ -277,7 +278,7 @@ export const translations = {
       actionWords: ['СОЗДАВАЙ', 'ТЕСТИРУЙ', 'ЗАПУСКАЙ'],
       titleSuffix: 'TypeScript-стратегии',
       subtitle:
-        'Open-source self-hosted фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий',
+        'TypeScript-фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий — с self-hosted runtime под вашим контролем',
       quickstart: 'Запустить первый бэктест',
       secondaryCta: 'Изучить TypeScript API',
       terminalLabel: 'ВЫПОЛНИТЕ В ТЕРМИНАЛЕ',
@@ -483,7 +484,7 @@ export const translations = {
           completed: true,
           title: 'Старт проекта',
           description:
-            'Запуск TradeJS как open-source фреймворка и формирование базовой архитектуры проекта.',
+            'Первоначальный запуск TradeJS под лицензией MIT и формирование базовой архитектуры проекта.',
         },
         {
           quarter: 'Q2',
@@ -519,6 +520,7 @@ export const translations = {
       description: 'Единый цикл стратегии от исследования до runtime.',
       app: 'Приложение',
       docs: 'Документация',
+      licensing: 'Лицензирование',
       github: 'GitHub-репозиторий',
       x: 'X',
       contact: 'Связаться',

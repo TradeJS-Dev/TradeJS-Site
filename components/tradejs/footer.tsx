@@ -14,6 +14,10 @@ export function Footer() {
     locale === 'ru'
       ? 'https://docs.tradejs.dev/ru/'
       : 'https://docs.tradejs.dev/';
+  const licensingUrl =
+    locale === 'ru'
+      ? 'https://docs.tradejs.dev/ru/introduction/licensing'
+      : 'https://docs.tradejs.dev/introduction/licensing';
 
   return (
     <footer className="border-t border-border bg-surface/30">
@@ -72,6 +76,14 @@ export function Footer() {
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {t.footer.docs}
+            </a>
+            <a
+              href={licensingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t.footer.licensing}
             </a>
             <a
               href={GITHUB_REPO_URL}

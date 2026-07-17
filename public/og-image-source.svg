@@ -50,10 +50,10 @@
 
   <rect x="64" y="64" width="1072" height="502" rx="34" fill="#0B1523" fill-opacity="0.68" stroke="url(#frame)" />
 
-  <rect x="96" y="96" width="200" height="38" rx="19" fill="#102132" stroke="#294A63" />
+  <rect x="96" y="96" width="240" height="38" rx="19" fill="#102132" stroke="#294A63" />
   <circle cx="119" cy="115" r="5" fill="#20C5BD" />
   <text x="135" y="121" fill="#A7EDEA" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2.1">
-    OPEN SOURCE
+    TYPESCRIPT FRAMEWORK
   </text>
 
   <g transform="translate(96 183)">
