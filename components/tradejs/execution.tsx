@@ -7,11 +7,11 @@ import { AppScreenshot } from './app-screenshot';
 
 const screenshots = [
   {
-    src: '/screenshots/backtest-run.png',
+    src: '/screenshots/backtest-run.webp',
     aspect: 'aspect-[1720/1329]',
   },
   {
-    src: '/screenshots/runtime-performance.png',
+    src: '/screenshots/runtime-performance.webp',
     aspect: 'aspect-[1720/1222]',
   },
 ];

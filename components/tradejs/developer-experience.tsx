@@ -202,7 +202,7 @@ export function DeveloperExperience() {
             <div className="grid gap-5 lg:self-start lg:gap-6">
               <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
                 <Image
-                  src="/screenshots/runtime-performance.png"
+                  src="/screenshots/runtime-performance.webp"
                   alt={t.execution.items[1].imageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"
@@ -211,7 +211,7 @@ export function DeveloperExperience() {
               </figure>
               <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
                 <Image
-                  src="/screenshots/strategy-statistics.png"
+                  src="/screenshots/strategy-statistics.webp"
                   alt={t.devExperience.statsImageAlt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 42vw"

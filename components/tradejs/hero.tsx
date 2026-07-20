@@ -155,7 +155,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute -inset-8 rounded-full bg-primary/8 blur-[80px]" />
             <AppScreenshot
-              src="/screenshots/strategy-chart-hero.png"
+              src="/screenshots/strategy-chart-hero.webp"
               alt={t.hero.productScreenshotAlt}
               label={t.hero.productScreenshotLabel}
               status="BACKTEST VIEW"
