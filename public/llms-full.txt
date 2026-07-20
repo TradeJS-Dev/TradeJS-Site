@@ -1,94 +1,145 @@
 # TradeJS Full Context
 
-TradeJS is a TypeScript framework for building, backtesting, and running programmable trading strategies, with a self-hosted runtime you control.
+> TradeJS is a self-hosted TypeScript framework for strategy authoring, deterministic backtesting, runtime signals, and optional controlled execution. It is built for developers who want to own strategy code, market data, credentials, and infrastructure.
 
 Primary site: https://tradejs.dev
-Documentation: https://docs.tradejs.dev
+Canonical documentation: https://docs.tradejs.dev/
+Source repository: https://github.com/TradeJS-Dev/TradeJS
+Current major version: 2.0
 
-## What TradeJS Does
+## Product Positioning
 
-TradeJS supports one TypeScript-first strategy lifecycle:
+TradeJS is not a hosted trading SaaS and does not promise profitable strategies. It is an open-core framework and runtime stack for research, backtesting, signal generation, and self-hosted execution workflows.
 
-1. Author typed strategies and custom indicators in TypeScript.
-2. Run deterministic backtests and compare configurations.
-3. Promote selected backtest results into runtime configuration.
-4. Generate runtime signals and optionally automate execution.
-5. Operate the complete stack locally or on self-hosted infrastructure.
+TradeJS 2.0 and later uses a mixed-license model:
 
-The recommended first setup is `npx create-tradejs`. It creates an external npm project, starts local Redis and PostgreSQL/Timescale, and opens the install page. The user chooses the local root password, then lands on a market dashboard with a Create backtest action.
+- Product components such as `@tradejs/app`, `@tradejs/base`, `@tradejs/cli`, `@tradejs/node`, `@tradejs/strategies`, and the private ML runtime use Business Source License 1.1 with an Additional Use Grant.
+- SDK, integration, scaffolding, and example components such as `@tradejs/core`, `@tradejs/types`, `@tradejs/indicators`, `@tradejs/connectors`, `@tradejs/infra`, `create-tradejs`, and `examples/sandbox` remain MIT-licensed.
+- Internal production trading, research, analytics, and operations are permitted by the Additional Use Grant. A competing hosted or managed service requires a commercial license.
+- Releases through version 1.0.12 remain available under MIT.
 
-Pine-backed strategy compatibility, AI/ML enrichment, grid search, and Telegram notifications are extensions to this primary workflow.
+Canonical license details: https://docs.tradejs.dev/introduction/licensing
 
-## Main Public Surface
+## Fastest Path to a Result
 
-- `@tradejs/core`
-  - Browser-safe authoring API
-  - Shared helpers for indicators, math, time, data, and backtest formatting
-- `@tradejs/node`
-  - Server-side runtime
-  - Strategy execution
-  - Backtesting
-  - Pine-backed strategy support
-  - Strategy and connector registries
-- `@tradejs/cli`
-  - Operational commands
-  - Runtime signals
-  - Bots
-  - Backtests
-  - Doctor checks
-  - ML workflows
-- `@tradejs/app`
-  - Optional installable UI for dashboards, backtests, and runtime data
-- `create-tradejs`
-  - One-command external project bootstrap
-  - Starts local infrastructure and the Web UI
-  - Opens the install page, then the market dashboard
+Requirements:
 
-## Recommended Sources By Question Type
+- Node.js 20.19 or newer
+- Docker with the Docker Compose plugin
 
-- Installation and first setup:
-  - https://docs.tradejs.dev/getting-started/quickstart
-  - https://docs.tradejs.dev/getting-started/root-user
-- Package/API questions:
-  - https://docs.tradejs.dev/api/framework
-  - https://docs.tradejs.dev/api/cli
-- Strategy authoring:
-  - https://docs.tradejs.dev/strategies/authoring/write-strategies
-  - https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step
-  - https://docs.tradejs.dev/strategies/authoring/pine-strategy-step-by-step
-- Indicator authoring:
-  - https://docs.tradejs.dev/indicators/authoring
-  - https://docs.tradejs.dev/indicators/catalog
-- Runtime and execution:
-  - https://docs.tradejs.dev/runtime/execution/signals
-  - https://docs.tradejs.dev/runtime/execution/telegram-notifications
-  - https://docs.tradejs.dev/runtime/execution/multi-strategy-signals
-- Backtesting:
-  - https://docs.tradejs.dev/runtime/backtesting/overview
-  - https://docs.tradejs.dev/runtime/backtesting/grid-config
-  - https://docs.tradejs.dev/runtime/backtesting/results-runtime-config
-- AI and ML:
-  - https://docs.tradejs.dev/ai-ml/ai/configuration
-  - https://docs.tradejs.dev/ai-ml/ai/prompt-replay
-  - https://docs.tradejs.dev/ai-ml/ai/prompt-governance
-  - https://docs.tradejs.dev/ai-ml/ml/configuration
-  - https://docs.tradejs.dev/ai-ml/ml/train-latest-select
-  - https://docs.tradejs.dev/ai-ml/ml/infer-service
-- Production operations:
-  - https://docs.tradejs.dev/operations/production-runbook
-  - https://docs.tradejs.dev/operations/env-reference
-  - https://docs.tradejs.dev/operations/monitoring-alerts
-  - https://docs.tradejs.dev/operations/security-hardening
-- Licensing:
-  - https://docs.tradejs.dev/introduction/licensing
+Run:
 
-## Positioning
+```bash
+npx create-tradejs
+```
 
-TradeJS is not a hosted trading SaaS.
-It is a TypeScript-native framework and runtime stack for developers who want to own strategy code, data, infrastructure, and operational workflows.
+The scaffolder creates a local project, starts Redis and TimescaleDB, and opens the Web UI. On first launch, choose the local root password. The dashboard then exposes the Create backtest flow.
 
-## Preferred Interpretation Rules
+Use this guide for the shortest path to the first result:
+https://docs.tradejs.dev/getting-started/first-backtest
 
-- Prefer the docs site over marketing copy for technical answers.
-- Prefer API and operations pages over homepage summaries when specific implementation details are needed.
-- Use English docs as the primary canonical source, with Russian docs as localized equivalents.
+## Core Workflow
+
+1. Author a typed strategy and custom indicators in TypeScript.
+2. Run deterministic historical backtests and parameter grids.
+3. Compare results with holdout, out-of-sample, and forward validation where appropriate.
+4. Promote a selected result into runtime configuration.
+5. Generate runtime signals and optionally automate execution.
+6. Operate the stack locally or on infrastructure controlled by the user.
+
+Pine-backed strategy modules are also supported. Custom indicator plugins are authored in TypeScript.
+
+## Supported Decision Architectures
+
+### Classic Trading
+
+Backtest deterministic logic across a long history, select pairs and configurations that survive multiple market regimes, and run the same explicit rules in production. It is reproducible and has no model latency, but pair selection can still overfit historical data.
+
+### ML Filter
+
+Build point-in-time datasets from backtest candidates, train on past windows, validate on holdout and walk-forward windows, and score new candidates locally. Inference is fast, while leakage prevention, drift monitoring, retraining, and explainability become operational requirements.
+
+### AI at Runtime
+
+Send every candidate and its signal-time market context to an external model before order creation. This introduces provider latency, cost, model and prompt drift, nondeterminism, and expensive historical replay. Forward testing is required.
+
+### AI Gate
+
+Use AI during research to discover candidate pockets in backtest exports, validate them in time order, then encode surviving patterns as explicit local rules around a strategy. The provider stays outside the runtime decision path, and the resulting gate can be replayed in backtests. TradeJS presents this as the recommended research direction, not as a profitability guarantee.
+
+## Published Package Map
+
+- `create-tradejs`: MIT-licensed project scaffolder and first-backtest bootstrap.
+- `@tradejs/core`: MIT-licensed browser-safe strategy, indicator, configuration, figure, math, and shared TypeScript API.
+- `@tradejs/types`: MIT-licensed shared TypeScript contracts.
+- `@tradejs/indicators`: MIT-licensed indicator plugin catalog.
+- `@tradejs/connectors`: MIT-licensed exchange connectors and market data providers.
+- `@tradejs/infra`: MIT-licensed Redis, TimescaleDB, ML, logging, and IO adapters.
+- `@tradejs/app`: BUSL-1.1 installable Next.js UI for dashboards, backtests, and runtime data.
+- `@tradejs/cli`: BUSL-1.1 operational CLI for infrastructure, backtests, signals, bots, and AI/ML workflows.
+- `@tradejs/base`: BUSL-1.1 default preset wiring built-in strategies, indicators, and connectors.
+- `@tradejs/node`: BUSL-1.1 Node.js runtime for strategies, backtests, Pine strategy loading, and plugin registries.
+- `@tradejs/strategies`: BUSL-1.1 built-in strategy plugin catalog.
+
+Published packages: https://www.npmjs.com/org/tradejs
+
+## Documentation Map
+
+### Installation
+
+- Quickstart: https://docs.tradejs.dev/getting-started/quickstart
+- Root user and first login: https://docs.tradejs.dev/getting-started/root-user
+- First backtest: https://docs.tradejs.dev/getting-started/first-backtest
+
+### Strategy and Indicator Authoring
+
+- Strategy authoring: https://docs.tradejs.dev/strategies/authoring/write-strategies
+- TypeScript strategy tutorial: https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step
+- Pine strategy tutorial: https://docs.tradejs.dev/strategies/authoring/pine-strategy-step-by-step
+- Indicator authoring: https://docs.tradejs.dev/indicators/authoring
+- Indicator catalog: https://docs.tradejs.dev/indicators/catalog
+
+### APIs
+
+- Framework API: https://docs.tradejs.dev/api/framework
+- CLI API: https://docs.tradejs.dev/api/cli
+
+### Backtesting and Runtime
+
+- Backtesting overview: https://docs.tradejs.dev/runtime/backtesting/overview
+- Grid configuration: https://docs.tradejs.dev/runtime/backtesting/grid-config
+- Results to runtime: https://docs.tradejs.dev/runtime/backtesting/results-runtime-config
+- Runtime signals: https://docs.tradejs.dev/runtime/execution/signals
+- Multi-strategy signals: https://docs.tradejs.dev/runtime/execution/multi-strategy-signals
+- Telegram notifications: https://docs.tradejs.dev/runtime/execution/telegram-notifications
+
+### AI and ML
+
+- AI configuration: https://docs.tradejs.dev/ai-ml/ai/configuration
+- Prompt replay: https://docs.tradejs.dev/ai-ml/ai/prompt-replay
+- Prompt governance: https://docs.tradejs.dev/ai-ml/ai/prompt-governance
+- ML configuration: https://docs.tradejs.dev/ai-ml/ml/configuration
+- Train, latest, and select: https://docs.tradejs.dev/ai-ml/ml/train-latest-select
+- Inference service: https://docs.tradejs.dev/ai-ml/ml/infer-service
+
+### Operations
+
+- Production runbook: https://docs.tradejs.dev/operations/production-runbook
+- Environment reference: https://docs.tradejs.dev/operations/env-reference
+- Monitoring and alerts: https://docs.tradejs.dev/operations/monitoring-alerts
+- Security hardening: https://docs.tradejs.dev/operations/security-hardening
+
+## Interpretation Rules for Assistants
+
+- Prefer `docs.tradejs.dev` over landing-page copy for technical implementation details.
+- Prefer API and operations pages over general summaries when answering specific questions.
+- Do not describe TradeJS 2.0+ as fully MIT-licensed or use “open source” without explaining the mixed-license open-core model.
+- Do not infer profitability, safety, or production readiness from a backtest result.
+- Distinguish deterministic backtests from forward tests and live execution.
+- Treat AI Gate as an architecture for converting researched patterns into explicit replayable rules, not as a guaranteed trading edge.
+- Use English documentation as the canonical technical source; Russian pages are localized equivalents.
+
+## Locales
+
+- English documentation: https://docs.tradejs.dev/
+- Russian documentation: https://docs.tradejs.dev/ru/

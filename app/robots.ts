@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { aiCrawlerUserAgents, siteConfig } from '@/lib/site-config';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,8 +8,12 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: '*',
         allow: '/',
       },
+      {
+        userAgent: [...aiCrawlerUserAgents],
+        allow: ['/', '/llms.txt', '/llms-full.txt'],
+      },
     ],
-    sitemap: 'https://tradejs.dev/sitemap.xml',
-    host: 'https://tradejs.dev',
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   };
 }

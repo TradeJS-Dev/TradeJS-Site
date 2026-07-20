@@ -1,47 +1,33 @@
 # TradeJS
 
-> TypeScript framework for building, backtesting, and running programmable trading strategies, with a self-hosted runtime you control.
+> TradeJS is a self-hosted TypeScript framework for authoring strategies, running reproducible backtests, generating runtime signals, and optionally automating execution. Version 2.0 uses a mixed-license open-core model.
 
-Primary site: https://tradejs.dev
-Documentation: https://docs.tradejs.dev
+The fastest local setup is `npx create-tradejs`. It scaffolds a project, starts Redis and TimescaleDB with Docker Compose, and opens the Web UI. For technical answers, prefer the documentation over marketing summaries.
 
-## Product Summary
+## Start Here
 
-TradeJS is a TypeScript-native framework for one strategy lifecycle:
+- [Run your first backtest](https://docs.tradejs.dev/getting-started/first-backtest): Shortest path from a local project to a historical strategy result.
+- [Quickstart](https://docs.tradejs.dev/getting-started/quickstart): Prerequisites, `npx create-tradejs`, local services, and initial setup.
+- [TypeScript strategy tutorial](https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step): Build a typed strategy with the public authoring API.
+- [Framework API](https://docs.tradejs.dev/api/framework): Strategy, indicator, configuration, and shared TypeScript APIs.
 
-- build typed strategies and indicators with public npm packages,
-- backtest and compare strategy configurations,
-- promote selected results into runtime,
-- generate signals and optionally automate execution,
-- run the entire stack locally or on infrastructure you control.
+## Backtesting and Runtime
 
-The recommended first setup is `npx create-tradejs`, which creates the project, starts local infrastructure, and opens the install page. After choosing the local root password, the user lands on the market dashboard and can select Create backtest.
+- [Backtesting overview](https://docs.tradejs.dev/runtime/backtesting/overview): Historical replay, results, and validation workflow.
+- [Grid configuration](https://docs.tradejs.dev/runtime/backtesting/grid-config): Compare strategy parameter combinations.
+- [Backtest results to runtime](https://docs.tradejs.dev/runtime/backtesting/results-runtime-config): Promote a selected result into runtime configuration.
+- [Runtime signals](https://docs.tradejs.dev/runtime/execution/signals): Generate signals and prepare controlled execution.
+- [Production runbook](https://docs.tradejs.dev/operations/production-runbook): Operate the self-hosted stack in production.
 
-Pine-backed strategy compatibility, AI/ML enrichment, grid search, and Telegram notifications extend this TypeScript-first workflow.
+## Product and Source
 
-## Core Packages
+- [Official site](https://tradejs.dev): Product positioning and supported trading architectures.
+- [Documentation](https://docs.tradejs.dev/): Canonical technical documentation.
+- [Source repository](https://github.com/TradeJS-Dev/TradeJS): Framework, runtime, packages, examples, and issue history.
+- [npm organization](https://www.npmjs.com/org/tradejs): Published TradeJS packages.
+- [Licensing](https://docs.tradejs.dev/introduction/licensing): Mixed MIT and Business Source License 1.1 package scopes for TradeJS 2.0+.
 
-- `@tradejs/core` - browser-safe authoring API and shared helpers
-- `@tradejs/node` - Node runtime, backtests, Pine strategy loading, plugin registries
-- `@tradejs/cli` - operational commands for runtime, backtests, ML, and maintenance
-- `@tradejs/app` - optional installable Next.js UI
-- `create-tradejs` - one-command project, infrastructure, install page, and market dashboard bootstrap
+## Optional
 
-## Best Entry Points
-
-- Getting started: https://docs.tradejs.dev/getting-started/quickstart
-- Overview: https://docs.tradejs.dev/
-- Core API: https://docs.tradejs.dev/api/framework
-- CLI API: https://docs.tradejs.dev/api/cli
-- Strategy authoring: https://docs.tradejs.dev/strategies/authoring/write-strategies
-- TypeScript strategy tutorial: https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step
-- Indicator authoring: https://docs.tradejs.dev/indicators/authoring
-- Runtime signals: https://docs.tradejs.dev/runtime/execution/signals
-- Backtesting: https://docs.tradejs.dev/runtime/backtesting/overview
-- Production runbook: https://docs.tradejs.dev/operations/production-runbook
-- Licensing: https://docs.tradejs.dev/introduction/licensing
-
-## Locales
-
-- English docs: https://docs.tradejs.dev/
-- Russian docs: https://docs.tradejs.dev/ru/
+- [Full LLM context](https://tradejs.dev/llms-full.txt): Product model, package map, architecture trade-offs, licensing, and answer guidance in one document.
+- [Russian documentation](https://docs.tradejs.dev/ru/): Localized documentation; English documentation is canonical for technical details.

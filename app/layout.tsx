@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Manrope, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
+import { siteConfig } from '@/lib/site-config';
 import './globals.css';
 
 const _manrope = Manrope({
@@ -15,27 +16,31 @@ const _jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tradejs.dev'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'TradeJS — Self-Hosted TypeScript Trading Framework',
+    default: siteConfig.title,
     template: '%s | TradeJS',
   },
-  description:
-    'TradeJS is a TypeScript framework for building, backtesting, and running programmable trading strategies, with a self-hosted runtime you control.',
-  applicationName: 'TradeJS',
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
   keywords: [
     'TradeJS',
     'self-hosted trading framework',
     'TypeScript trading framework',
+    'TypeScript backtesting framework',
     'algorithmic trading',
+    'algorithmic trading TypeScript',
     'TypeScript trading strategies',
     'trading strategy backtesting',
     'TypeScript trading runtime',
+    'AI trading gate',
+    'open-core trading framework',
   ],
-  authors: [{ name: 'TradeJS Team', url: 'https://tradejs.dev' }],
-  creator: 'TradeJS Team',
-  publisher: 'TradeJS',
+  authors: [{ name: 'TradeJS-Dev', url: siteConfig.links.github }],
+  creator: 'TradeJS-Dev',
+  publisher: siteConfig.name,
   category: 'technology',
+  referrer: 'strict-origin-when-cross-origin',
   alternates: {
     canonical: '/',
   },
@@ -51,28 +56,28 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'TradeJS — Self-Hosted TypeScript Trading Framework',
-    description:
-      'Build, backtest, and run programmable TypeScript trading strategies on infrastructure you control.',
+    title: siteConfig.title,
+    description: siteConfig.description,
     type: 'website',
-    url: 'https://tradejs.dev',
-    siteName: 'TradeJS',
-    locale: 'en_US',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     images: [
       {
-        url: '/og-image-v2.png',
+        url: siteConfig.image,
         width: 1200,
         height: 630,
-        alt: 'TradeJS — Self-Hosted TypeScript Trading Framework',
+        alt: siteConfig.title,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TradeJS — Self-Hosted TypeScript Trading Framework',
-    description:
-      'Build, backtest, and run TypeScript trading strategies on your infrastructure.',
-    images: ['/og-image-v2.png'],
+    site: '@tradejsdev',
+    creator: '@tradejsdev',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.image],
   },
   icons: {
     icon: [
