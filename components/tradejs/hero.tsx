@@ -5,6 +5,7 @@ import { Activity, ArrowRight, Check, Copy, Terminal } from 'lucide-react';
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
 import { AppScreenshot } from './app-screenshot';
+import { reachYandexMetrikaGoal } from '@/lib/yandex-metrika';
 
 const BOOTSTRAP_COMMAND = 'npx create-tradejs';
 
@@ -39,6 +40,7 @@ export function Hero() {
 
   const copyBootstrapCommand = async () => {
     await navigator.clipboard.writeText(BOOTSTRAP_COMMAND);
+    reachYandexMetrikaGoal('copy_npx', { placement: 'hero' });
     setCopied(true);
     setTimeout(() => setCopied(false), 1800);
   };
@@ -134,6 +136,12 @@ export function Hero() {
                 href={firstBacktestUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  reachYandexMetrikaGoal('open_quickstart', {
+                    placement: 'hero',
+                    locale,
+                  })
+                }
                 className="group inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-[background-color,box-shadow] hover:bg-accent-hover glow-accent"
               >
                 {t.hero.quickstart}

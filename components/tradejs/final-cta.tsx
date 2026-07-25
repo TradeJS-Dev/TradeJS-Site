@@ -3,6 +3,7 @@
 import { useLocale } from './locale-provider';
 import { AnimateOnScroll } from './animate-on-scroll';
 import { ArrowRight, CheckCircle2, Code2 } from 'lucide-react';
+import { reachYandexMetrikaGoal } from '@/lib/yandex-metrika';
 
 export function FinalCta() {
   const { locale, t } = useLocale();
@@ -51,6 +52,12 @@ export function FinalCta() {
                   href={firstBacktestUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    reachYandexMetrikaGoal('open_quickstart', {
+                      placement: 'final_cta',
+                      locale,
+                    })
+                  }
                   className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3.5 font-mono text-sm font-semibold text-primary-foreground transition-all hover:bg-accent-hover glow-accent"
                   aria-label={t.finalCta.quickstart}
                 >

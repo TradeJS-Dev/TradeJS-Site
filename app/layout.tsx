@@ -3,6 +3,7 @@ import { Manrope, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import { siteConfig } from '@/lib/site-config';
+import { YANDEX_METRIKA_COUNTER_ID } from '@/lib/yandex-metrika';
 import './globals.css';
 
 const _manrope = Manrope({
@@ -137,9 +138,9 @@ export default function RootLayout({
                 if (document.scripts[j].src === r) { return; }
               }
               k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
-            })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=107254154', 'ym');
+            })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=${YANDEX_METRIKA_COUNTER_ID}', 'ym');
 
-            ym(107254154, 'init', {
+            ym(${YANDEX_METRIKA_COUNTER_ID}, 'init', {
               ssr: true,
               clickmap: true,
               ecommerce: 'dataLayer',
@@ -154,7 +155,7 @@ export default function RootLayout({
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://mc.yandex.ru/watch/107254154"
+              src={`https://mc.yandex.ru/watch/${YANDEX_METRIKA_COUNTER_ID}`}
               style={{ position: 'absolute', left: '-9999px' }}
               alt=""
             />

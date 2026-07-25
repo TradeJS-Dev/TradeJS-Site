@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLocale } from './locale-provider';
 import { Github, Menu, X as CloseIcon } from 'lucide-react';
+import { reachYandexMetrikaGoal } from '@/lib/yandex-metrika';
 
 const GITHUB_REPO_URL = 'https://github.com/tradejs-dev/tradejs';
 
@@ -125,6 +126,12 @@ export function Header() {
             href={firstBacktestUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              reachYandexMetrikaGoal('open_quickstart', {
+                placement: 'header',
+                locale,
+              })
+            }
             className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-accent-hover transition-colors glow-accent"
           >
             {t.nav.quickstart}
@@ -199,6 +206,13 @@ export function Header() {
               href={firstBacktestUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                reachYandexMetrikaGoal('open_quickstart', {
+                  placement: 'mobile_header',
+                  locale,
+                });
+                setMobileOpen(false);
+              }}
               className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground text-center hover:bg-accent-hover transition-colors"
             >
               {t.nav.quickstart}
