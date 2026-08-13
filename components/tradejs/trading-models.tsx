@@ -136,7 +136,7 @@ function ArchitectureIllustration({
   recommended: boolean;
 }) {
   return (
-    <div className={`overflow-hidden rounded-2xl border bg-[#0d151d] ${recommended ? 'border-[#66e4dc]/22' : 'border-[#091019]/12'}`}>
+    <div className={`overflow-hidden rounded-2xl border bg-[#0d151d] ${recommended ? 'border-[#66e4dc]/22' : 'border-white/10'}`}>
       <div className="border-b border-white/7 px-4 pb-1 pt-3">
         <ArchitectureArt variant={variant} />
       </div>
@@ -165,7 +165,7 @@ export function TradingModels() {
   return (
     <section
       id="trading-models"
-      className="relative overflow-hidden border-b border-border bg-[#f7faf8] py-20 text-[#091019] lg:py-28"
+      className="relative overflow-hidden border-b border-border bg-surface/30 py-20 text-foreground lg:py-28"
     >
       <div className="absolute inset-0 blueprint-grid opacity-35" />
 
@@ -173,7 +173,7 @@ export function TradingModels() {
         <AnimateOnScroll>
           <div className="mb-14 grid gap-8 lg:mb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <div>
-              <div className="mb-5 font-mono text-[10px] tracking-[0.22em] text-[#087f79]">
+              <div className="mb-5 font-mono text-[10px] tracking-[0.22em] text-primary">
                 01 / {t.tradingModels.sectionLabel}
               </div>
               <h2 className="max-w-4xl text-4xl font-bold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl text-balance">
@@ -181,24 +181,24 @@ export function TradingModels() {
               </h2>
             </div>
             <div className="max-w-xl lg:justify-self-end">
-              <p className="text-base leading-relaxed text-[#263842]/72 lg:text-lg">
+              <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                 {t.tradingModels.sectionSubtitle}
               </p>
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 font-mono text-[9px] tracking-[0.08em] text-[#263842]/62">
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 font-mono text-[9px] tracking-[0.08em] text-muted-foreground">
                 <span className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#087f79]/8 text-[#087f79]">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <Check size={11} strokeWidth={2.5} />
                   </span>
                   {t.tradingModels.legend.positive}
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#2678bd]/10 text-[#2678bd]">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-info/10 text-info">
                     <Minus size={11} strokeWidth={2.5} />
                   </span>
                   {t.tradingModels.legend.requirement}
                 </span>
                 <span className="flex items-center gap-2">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#d75f43]/10 text-[#c45136]">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ff8a6b]/10 text-[#ff9c83]">
                     <CircleAlert size={11} strokeWidth={2.5} />
                   </span>
                   {t.tradingModels.legend.warning}
@@ -231,8 +231,8 @@ export function TradingModels() {
                 <article
                   className={`relative grid gap-8 overflow-hidden rounded-[28px] border px-6 py-9 sm:px-8 lg:grid-cols-[0.82fr_1.18fr_0.78fr] lg:items-center lg:gap-10 lg:px-10 lg:py-12 ${
                     recommended
-                      ? 'border-[#087f79] bg-[#0b2425] text-white shadow-[0_26px_90px_rgba(8,127,121,0.16)]'
-                      : 'border-[#091019]/14 bg-white/95 text-[#091019] shadow-[0_16px_60px_rgba(9,16,25,0.055)]'
+                      ? 'border-primary/55 bg-[#0b2425] text-white shadow-[0_26px_90px_rgba(10,174,165,0.12)]'
+                      : 'border-border bg-[#0d1722]/92 text-foreground shadow-[0_18px_65px_rgba(0,0,0,0.2)]'
                   }`}
                 >
                   {recommended && (
@@ -243,17 +243,17 @@ export function TradingModels() {
                     <div className="mb-6 flex items-center gap-4">
                       <span
                         className={`font-mono text-[10px] tracking-[0.2em] ${
-                          recommended ? 'text-[#66e4dc]' : 'text-[#087f79]'
+                          recommended ? 'text-[#66e4dc]' : 'text-primary'
                         }`}
                       >
                         {item.index}
                       </span>
                       <span
-                        className={`h-px w-10 ${recommended ? 'bg-[#66e4dc]/40' : 'bg-[#087f79]/35'}`}
+                        className={`h-px w-10 ${recommended ? 'bg-[#66e4dc]/40' : 'bg-primary/35'}`}
                       />
                       <Icon
                         size={17}
-                        className={recommended ? 'text-[#66e4dc]' : 'text-[#087f79]'}
+                        className={recommended ? 'text-[#66e4dc]' : 'text-primary'}
                       />
                     </div>
                     {recommended && (
@@ -266,7 +266,7 @@ export function TradingModels() {
                     </h3>
                     <p
                       className={`mt-4 max-w-md text-sm leading-relaxed ${
-                        recommended ? 'text-white/72' : 'text-[#263842]/88'
+                        recommended ? 'text-white/72' : 'text-muted-foreground'
                       }`}
                     >
                       {item.description}
@@ -281,7 +281,7 @@ export function TradingModels() {
                     />
                     <p
                       className={`mt-4 text-xs leading-relaxed ${
-                        recommended ? 'text-white/62' : 'text-[#40545e]'
+                        recommended ? 'text-white/62' : 'text-muted-foreground'
                       }`}
                     >
                       {item.tradeoff}
@@ -300,14 +300,14 @@ export function TradingModels() {
                         tone === 'positive'
                           ? recommended
                             ? 'bg-[#66e4dc]/12 text-[#66e4dc]'
-                            : 'bg-[#087f79]/8 text-[#087f79]'
+                            : 'bg-primary/10 text-primary'
                           : tone === 'warning'
                             ? recommended
                               ? 'bg-[#ff8a6b]/12 text-[#ff9c83]'
-                              : 'bg-[#d75f43]/10 text-[#c45136]'
+                              : 'bg-[#ff8a6b]/10 text-[#ff9c83]'
                             : recommended
                               ? 'bg-[#7ebcff]/12 text-[#8fc5ff]'
-                              : 'bg-[#2678bd]/10 text-[#2678bd]';
+                              : 'bg-info/10 text-info';
 
                       return (
                         <div
@@ -315,7 +315,7 @@ export function TradingModels() {
                           className={`flex items-center gap-3 border-b pb-3 text-xs font-medium last:border-b-0 last:pb-0 ${
                             recommended
                               ? 'border-white/10 text-white/75'
-                              : 'border-[#091019]/10 text-[#1c2b32]'
+                              : 'border-white/8 text-foreground/78'
                           }`}
                         >
                           <span
@@ -335,11 +335,11 @@ export function TradingModels() {
         </div>
 
         <AnimateOnScroll delay={120}>
-          <div className="mt-10 flex flex-col gap-4 border-l-2 border-[#087f79] pl-5 sm:flex-row sm:items-center sm:justify-between lg:mt-14">
+          <div className="mt-10 flex flex-col gap-4 border-l-2 border-primary pl-5 sm:flex-row sm:items-center sm:justify-between lg:mt-14">
             <p className="max-w-3xl text-xl font-semibold tracking-[-0.025em] sm:text-2xl">
               {t.tradingModels.thesis}
             </p>
-            <span className="font-mono text-[9px] tracking-[0.18em] text-[#087f79]">
+            <span className="font-mono text-[9px] tracking-[0.18em] text-primary">
               RESEARCH → RULES → RUNTIME
             </span>
           </div>

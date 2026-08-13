@@ -200,7 +200,7 @@ export function DeveloperExperience() {
             </div>
 
             <div className="grid gap-5 lg:self-start lg:gap-6">
-              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-white/10 bg-[#111318] shadow-[0_22px_65px_rgba(0,0,0,0.32)]">
                 <Image
                   src="/screenshots/runtime-performance.webp"
                   alt={t.execution.items[1].imageAlt}
@@ -209,7 +209,7 @@ export function DeveloperExperience() {
                   className="object-cover object-right"
                 />
               </figure>
-              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-[#091019]/10 bg-[#111318] shadow-[0_18px_55px_rgba(9,16,25,0.12)]">
+              <figure className="relative aspect-[1720/1222] overflow-hidden rounded-2xl border border-white/10 bg-[#111318] shadow-[0_22px_65px_rgba(0,0,0,0.32)]">
                 <Image
                   src="/screenshots/strategy-statistics.webp"
                   alt={t.devExperience.statsImageAlt}

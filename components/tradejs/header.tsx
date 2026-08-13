@@ -33,7 +33,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
         scrolled
-          ? 'bg-background/95 border-b border-border shadow-[0_8px_30px_rgba(9,16,25,0.055)]'
+          ? 'bg-background/90 border-b border-border shadow-[0_14px_40px_rgba(0,0,0,0.34)] backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
@@ -150,7 +150,7 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-b border-border shadow-[0_16px_36px_rgba(9,16,25,0.08)]">
+        <div className="border-b border-border bg-background/95 shadow-[0_16px_36px_rgba(0,0,0,0.34)] backdrop-blur-xl md:hidden">
           <nav
             className="flex flex-col px-4 py-4 gap-3"
             aria-label="Mobile navigation"
