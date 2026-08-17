@@ -64,3 +64,5 @@ GHCR package `tradejs-site` must stay public so the production host can pull it 
   owns strategy-neutral authoring helpers.
 - `TradeJS-Strategy-*` repositories own individual strategy packages;
   `TradeJS-Strategy-TrendLine` intentionally owns both TrendLine variants.
+
+Keywords: ai, claude, codex.

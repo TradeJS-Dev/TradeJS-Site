@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "TradeJS marketing site.",
+  "keywords": [
+    "ai",
+    "claude",
+    "codex"
+  ],
   "homepage": "https://tradejs.dev",
   "repository": {
     "type": "git",
