@@ -2,7 +2,11 @@
 
 Standalone marketing site for the TradeJS framework.
 
-Source of truth for `tradejs.dev`. Core framework code stays in the main monorepo: `https://github.com/TradeJS-Dev/tradejs`.
+Source of truth for `tradejs.dev`. Core framework code stays in
+[`TradeJS`](https://github.com/TradeJS-Dev/TradeJS); the generated personal
+runtime lives in
+[`TradeJS-Project`](https://github.com/TradeJS-Dev/TradeJS-Project), and each
+public strategy is released from its own repository.
 
 ## Install
 
@@ -49,3 +53,14 @@ docker compose -f ~/docker-compose.prod.yml up -d site
 ```
 
 GHCR package `tradejs-site` must stay public so the production host can pull it without registry login.
+
+## Related Repositories
+
+- [`TradeJS-Docs`](https://github.com/TradeJS-Dev/TradeJS-Docs) owns the public
+  knowledge base.
+- [`TradeJS-Base`](https://github.com/TradeJS-Dev/TradeJS-Base) owns the
+  non-empty default preset.
+- [`TradeJS-Strategy-Kit`](https://github.com/TradeJS-Dev/TradeJS-Strategy-Kit)
+  owns strategy-neutral authoring helpers.
+- `TradeJS-Strategy-*` repositories own individual strategy packages;
+  `TradeJS-Strategy-TrendLine` intentionally owns both TrendLine variants.

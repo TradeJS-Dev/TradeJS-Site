@@ -15,10 +15,15 @@ Keep the site standalone, buildable with plain `npm`, and deployable through its
 - Do not add dependencies on the TradeJS monorepo workspace layout.
 - Keep links to documentation pointing at `https://docs.tradejs.dev`.
 - Keep GitHub links pointing at the correct public repositories inside `TradeJS-Dev`.
+- Keep `public/llms.txt` and `public/llms-full.txt` aligned with the current
+  package and repository boundaries.
+- Do not reintroduce `@tradejs/strategies`; built-in strategies are independent
+  packages, with TrendLine and ReverseTrendLine as the single grouped exception.
 
 ## Build Rules
 
-- Use `npm install`, `npm run lint`, and `npm run build`.
+- Use `npm install` for the standalone install flow and `yarn checks` for the
+  complete lint/build verification before every commit.
 - Keep the app runnable with the local `Dockerfile`.
 - Treat `ghcr.io/tradejs-dev/tradejs-site` as the canonical image name.
 - If changing deploy automation, keep the production compose service name as `site`.

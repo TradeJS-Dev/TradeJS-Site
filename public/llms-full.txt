@@ -5,7 +5,7 @@
 Primary site: https://tradejs.dev
 Canonical documentation: https://docs.tradejs.dev/
 Source repository: https://github.com/TradeJS-Dev/TradeJS
-Current major version: 2.0
+Current release line: 3.1
 
 ## Product Positioning
 
@@ -13,8 +13,8 @@ TradeJS is not a hosted trading SaaS and does not promise profitable strategies.
 
 TradeJS 2.0 and later uses a mixed-license model:
 
-- Product components such as `@tradejs/app`, `@tradejs/base`, `@tradejs/cli`, `@tradejs/node`, `@tradejs/strategies`, and the private ML runtime use Business Source License 1.1 with an Additional Use Grant.
-- SDK, integration, scaffolding, and example components such as `@tradejs/core`, `@tradejs/types`, `@tradejs/indicators`, `@tradejs/connectors`, `@tradejs/infra`, `create-tradejs`, and `examples/sandbox` remain MIT-licensed.
+- Product components such as `@tradejs/app`, `@tradejs/base`, `@tradejs/cli`, `@tradejs/node`, the independently published `@tradejs/strategy-*` packages, and the private ML runtime use Business Source License 1.1 with an Additional Use Grant.
+- SDK, integration, scaffolding, and example components such as `@tradejs/core`, `@tradejs/types`, `@tradejs/indicators`, `@tradejs/connectors`, `@tradejs/infra`, `@tradejs/strategy-kit`, `create-tradejs`, and `examples/sandbox` remain MIT-licensed.
 - Internal production trading, research, analytics, and operations are permitted by the Additional Use Grant. A competing hosted or managed service requires a commercial license.
 - Releases through version 1.0.12 remain available under MIT.
 
@@ -34,6 +34,10 @@ npx create-tradejs
 ```
 
 The scaffolder creates a local project, starts Redis and TimescaleDB, and opens the Web UI. On first launch, choose the local root password. The dashboard then exposes the Create backtest flow.
+
+The generated project is a normal npm consumer. It owns `tradejs.config.ts`,
+the exact dependency lockfile, local backtest artifacts, and—when self-hosted—
+the application runtime image. It does not clone strategy or engine source.
 
 Use this guide for the shortest path to the first result:
 https://docs.tradejs.dev/getting-started/first-backtest
@@ -79,7 +83,23 @@ Use AI during research to discover candidate pockets in backtest exports, valida
 - `@tradejs/cli`: BUSL-1.1 operational CLI for infrastructure, backtests, signals, bots, and AI/ML workflows.
 - `@tradejs/base`: BUSL-1.1 default preset wiring built-in strategies, indicators, and connectors.
 - `@tradejs/node`: BUSL-1.1 Node.js runtime for strategies, backtests, Pine strategy loading, and plugin registries.
-- `@tradejs/strategies`: BUSL-1.1 built-in strategy plugin catalog.
+- `@tradejs/strategy-kit`: MIT-licensed, browser-safe, strategy-neutral authoring helpers exposed through explicit subpaths.
+- `@tradejs/strategy-*`: BUSL-1.1 independently versioned strategy plugins. Each package maps to one repository, except `@tradejs/strategy-trend-line`, which intentionally contains both TrendLine and ReverseTrendLine because they share family mechanics.
+
+`@tradejs/strategies` no longer exists. `@tradejs/base` is non-empty and
+depends on the complete public strategy catalog. A project may omit the preset,
+select packages explicitly, or add private npm strategy packages without an
+engine commit.
+
+## Repository Ownership
+
+- `TradeJS`: framework engine and shared runtime packages.
+- `TradeJS-Base`: the default preset composition.
+- `TradeJS-Strategy-Kit`: neutral helpers shared by unrelated strategies.
+- `TradeJS-Strategy-*`: strategy implementations, tests, and releases.
+- `TradeJS-Project`: generated user configuration, dependency lockfile, app image, and immutable deploy dispatch.
+- `TradeJS-Deploy`: production Compose, TLS, persistent volumes, SSH, and server secrets.
+- `TradeJS-Docs` and `TradeJS-Site`: public knowledge base and marketing site.
 
 Published packages: https://www.npmjs.com/org/tradejs
 

@@ -2,7 +2,7 @@
 
 > TradeJS is a self-hosted TypeScript framework for authoring strategies, running reproducible backtests, generating runtime signals, and optionally automating execution. Version 2.0 uses a mixed-license open-core model.
 
-The fastest local setup is `npx create-tradejs`. It scaffolds a project, starts Redis and TimescaleDB with Docker Compose, and opens the Web UI. For technical answers, prefer the documentation over marketing summaries.
+The fastest local setup is `npx create-tradejs`. It scaffolds a standalone project, starts Redis and TimescaleDB with Docker Compose, and opens the Web UI. The non-empty `@tradejs/base` preset installs independently published strategy packages; a project can replace any of them with a private npm strategy package. For technical answers, prefer the documentation over marketing summaries.
 
 ## Start Here
 
@@ -24,6 +24,8 @@ The fastest local setup is `npx create-tradejs`. It scaffolds a project, starts 
 - [Official site](https://tradejs.dev): Product positioning and supported trading architectures.
 - [Documentation](https://docs.tradejs.dev/): Canonical technical documentation.
 - [Source repository](https://github.com/TradeJS-Dev/TradeJS): Framework, runtime, packages, examples, and issue history.
+- [Project repository](https://github.com/TradeJS-Dev/TradeJS-Project): Generated package composition, personal config, runtime image, and deploy handoff.
+- [Base preset](https://github.com/TradeJS-Dev/TradeJS-Base): Default public strategy, indicator, and connector composition.
 - [npm organization](https://www.npmjs.com/org/tradejs): Published TradeJS packages.
 - [Licensing](https://docs.tradejs.dev/introduction/licensing): Mixed MIT and Business Source License 1.1 package scopes for TradeJS 2.0+.
 

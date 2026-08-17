@@ -15,7 +15,8 @@
     "dev": "next dev --port 3003",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3003",
-    "lint": "eslint app components hooks lib --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint app components hooks lib --ext .js,.jsx,.ts,.tsx",
+    "checks": "yarn lint && yarn build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
