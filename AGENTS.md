@@ -9,6 +9,15 @@ These rules apply to the `TradeJS-Site` repository.
 This repository is the source of truth for `tradejs.dev`.
 Keep the site standalone, buildable with plain `npm`, and deployable through its own GitHub Actions workflow.
 
+## Workspace Routing
+
+- This repository is the canonical destination for the public landing page,
+  marketing copy, SEO, and `tradejs.dev`. Start from
+  `~/dev/tradejs/AGENTS.md`; do not scan sibling repositories.
+- User-facing knowledge-base articles belong in `tradejs-docs`; framework and
+  strategy behavior belong in their source repositories.
+- Use `yarn dev` for local work and `yarn checks` for complete verification.
+
 ## Architecture
 
 - This repo owns the public marketing site only.
