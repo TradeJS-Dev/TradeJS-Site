@@ -5,6 +5,7 @@ import { Header } from './header';
 import { Hero } from './hero';
 import { TradingModels } from './trading-models';
 import { StrategyAuthoring } from './strategy-authoring';
+import { McpAccess } from './mcp-access';
 import { Execution } from './execution';
 import { DeveloperExperience } from './developer-experience';
 import { FinalCta } from './final-cta';
@@ -20,6 +21,7 @@ export function LandingPage() {
           <TradingModels />
           <StrategyAuthoring />
           <DeveloperExperience />
+          <McpAccess />
           <Execution />
           <FinalCta />
         </main>
