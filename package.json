@@ -62,11 +62,11 @@
     "highlight.js": "^11.11.1",
     "input-otp": "1.4.2",
     "lucide-react": "^0.564.0",
-    "next": "16.2.4",
+    "next": "16.4.3",
     "next-themes": "^0.4.6",
-    "react": "^19.2.3",
+    "react": "19.2.8",
     "react-day-picker": "9.13.2",
-    "react-dom": "^19.2.3",
+    "react-dom": "19.2.8",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.0",
-    "@types/node": "^20.19.22",
+    "@types/node": "^24.19.2",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "eslint": "^9.38.0",
@@ -88,9 +88,15 @@
     "typescript": "^5.9.3"
   },
   "engines": {
-    "node": ">=20.0"
+    "node": ">=24.22.1 <25"
   },
   "packageManager": "yarn@4.13.0",
   "license": "MIT",
-  "author": "aleksnick (https://github.com/aleksnick)"
+  "author": "aleksnick (https://github.com/aleksnick)",
+  "overrides": {
+    "eslint-plugin-react-hooks": "7.0.1"
+  },
+  "resolutions": {
+    "eslint-plugin-react-hooks": "7.0.1"
+  }
 }
