@@ -18,7 +18,7 @@ export const siteConfig = {
     createTradeJs: 'https://www.npmjs.com/package/create-tradejs',
     firstBacktest:
       'https://docs.tradejs.dev/getting-started/first-backtest',
-    quickstart: 'https://docs.tradejs.dev/getting-started/quickstart',
+    installation: 'https://docs.tradejs.dev/getting-started/installation',
     licensing: 'https://docs.tradejs.dev/introduction/licensing',
     x: 'https://x.com/tradejsdev',
   },

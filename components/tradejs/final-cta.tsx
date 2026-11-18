@@ -14,8 +14,8 @@ export function FinalCta() {
       : 'https://docs.tradejs.dev/getting-started/first-backtest';
   const typescriptApiUrl =
     locale === 'ru'
-      ? 'https://docs.tradejs.dev/ru/strategies/authoring/typescript-strategy-step-by-step'
-      : 'https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step';
+      ? 'https://docs.tradejs.dev/ru/api/framework'
+      : 'https://docs.tradejs.dev/api/framework';
 
   return (
     <section className="relative overflow-hidden py-20 lg:py-24">

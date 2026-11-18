@@ -107,7 +107,9 @@ Published packages: https://www.npmjs.com/org/tradejs
 
 ### Installation
 
-- Quickstart: https://docs.tradejs.dev/getting-started/quickstart
+- Installation: https://docs.tradejs.dev/getting-started/installation
+- Strategy catalog: https://docs.tradejs.dev/strategies/reference
+- Develop with an agent: https://docs.tradejs.dev/guides/develop-with-an-agent
 - Root user and first login: https://docs.tradejs.dev/getting-started/root-user
 - First backtest: https://docs.tradejs.dev/getting-started/first-backtest
 

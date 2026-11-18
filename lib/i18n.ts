@@ -149,7 +149,7 @@ export const translations = {
           links: [
             {
               label: 'Local Setup',
-              url: 'https://docs.tradejs.dev/getting-started/quickstart',
+              url: 'https://docs.tradejs.dev/getting-started/installation',
             },
             {
               label: 'Self-Hosted',
@@ -258,6 +258,7 @@ export const translations = {
       description: 'One strategy lifecycle from research to runtime.',
       app: 'Application',
       docs: 'Documentation',
+      strategies: 'Strategy catalog',
       licensing: 'Licensing',
       github: 'GitHub Repository',
       x: 'X',
@@ -412,7 +413,7 @@ export const translations = {
           links: [
             {
               label: 'Локальный запуск',
-              url: 'https://docs.tradejs.dev/ru/getting-started/quickstart',
+              url: 'https://docs.tradejs.dev/ru/getting-started/installation',
             },
             {
               label: 'Запуск на своём сервере',
@@ -520,6 +521,7 @@ export const translations = {
       description: 'Единый цикл стратегии от исследования до runtime.',
       app: 'Приложение',
       docs: 'Документация',
+      strategies: 'Каталог стратегий',
       licensing: 'Лицензирование',
       github: 'GitHub-репозиторий',
       x: 'X',

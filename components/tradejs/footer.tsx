@@ -78,6 +78,14 @@ export function Footer() {
               {t.footer.docs}
             </a>
             <a
+              href={`${docsUrl}strategies/reference`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t.footer.strategies}
+            </a>
+            <a
               href={licensingUrl}
               target="_blank"
               rel="noopener noreferrer"

@@ -70,7 +70,7 @@ export default function Page() {
         softwareRequirements: 'Node.js 20.19 or newer; Docker with Compose',
         url: siteConfig.url,
         downloadUrl: siteConfig.links.createTradeJs,
-        installUrl: siteConfig.links.quickstart,
+        installUrl: siteConfig.links.installation,
         softwareHelp: siteConfig.links.docs,
         description: siteConfig.shortDescription,
         featureList: [

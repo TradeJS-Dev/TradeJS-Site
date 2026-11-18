@@ -137,8 +137,8 @@ export function DeveloperExperience() {
   );
   const typescriptApiUrl =
     locale === 'ru'
-      ? 'https://docs.tradejs.dev/ru/strategies/authoring/typescript-strategy-step-by-step'
-      : 'https://docs.tradejs.dev/strategies/authoring/typescript-strategy-step-by-step';
+      ? 'https://docs.tradejs.dev/ru/api/framework'
+      : 'https://docs.tradejs.dev/api/framework';
 
   return (
     <section id="dev-experience" className="relative overflow-hidden border-b border-border pb-16 pt-20 lg:pb-16 lg:pt-24">
