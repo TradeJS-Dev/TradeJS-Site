@@ -23,8 +23,8 @@ export const siteConfig = {
     x: 'https://x.com/tradejsdev',
   },
   screenshots: [
-    '/screenshots/strategy-chart-hero.webp',
-    '/screenshots/backtest-run.webp',
+    '/screenshots/btc-market-chart.jpg',
+    '/screenshots/backtest-form.jpg',
     '/screenshots/runtime-performance.webp',
     '/screenshots/strategy-statistics.webp',
   ],

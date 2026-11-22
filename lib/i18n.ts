@@ -11,21 +11,43 @@ export const translations = {
       quickstart: 'Run first backtest',
     },
     hero: {
-      actionWords: ['BUILD', 'BACKTEST', 'RUN'],
-      titleSuffix: 'TypeScript Strategies',
-      subtitle:
-        'A TypeScript framework for building, backtesting, and running programmable trading strategies—with a self-hosted runtime you control',
+      sceneHeadline: 'From strategy',
+      sceneAccent: 'to execution',
+      sceneSubtitle: 'Write trading strategies in TypeScript, test them on historical data, and run signals or orders on your own infrastructure.',
       quickstart: 'Run your first backtest',
       secondaryCta: 'Explore TypeScript API',
-      terminalLabel: 'RUN IN YOUR TERMINAL',
-      terminalHint:
-        'The CLI scaffolds a local TradeJS project, starts the required services, and opens the dashboard.',
-      terminalSteps: ['CREATE PROJECT', 'START SERVICES', 'OPEN DASHBOARD'],
       copyCommand: 'Copy command',
       copied: 'Command copied',
       productScreenshotAlt:
-        'TradeJS application showing a backtested strategy with entries, exits, take profit and stop loss on a market chart',
-      productScreenshotLabel: 'TRADEJS APP / STRATEGY CHART',
+        'TradeJS BTC/USDT market chart with 15-minute candles, moving averages and volume',
+      productScreenshotLabel: 'TRADEJS APP / MARKET CHART',
+      productScreenshotStatus: 'BTC/USDT · 15m',
+    },
+    replay: {
+      sectionLabel: 'HEADANDSHOULDERS / REPLAY',
+      demoData: 'Illustrative candles · UTC',
+      navigation: 'Replay stages',
+      closePrice: 'Close',
+      entryPrice: 'Entry',
+      volume: 'Volume',
+      closed: 'Closed at target',
+      chartLabels: {
+        chart: 'BTC/USDT candlestick chart. Scroll or select a stage to reveal the pattern, indicators, and simulated trade.',
+        shoulders: ['Left shoulder', 'Head', 'Right shoulder'],
+        neckline: 'Neckline',
+        entry: 'SHORT',
+        exit: 'Target hit',
+      },
+      stages: [
+        { label: 'Candles', title: 'Read the market', description: 'TradeJS replays BTC/USDT one 15-minute candle at a time.' },
+        { label: 'Pattern', title: 'Find the pattern', description: 'Three peaks form a head and shoulders. Two lows mark the neckline. ATR and volume appear below the chart.' },
+        { label: 'Breakdown', title: 'Wait for confirmation', description: 'A candle closes below the neckline. The strategy waits for another close with sufficient distance and volume.' },
+        { label: 'Short', title: 'Open the short', description: 'The next close confirms the signal. The stop sits above the head and the profit target projects the pattern height below the neckline.' },
+        { label: 'Exit', title: 'Close at the target', description: 'TradeJS follows the position as new candles close. Price reaches the take-profit level and closes the simulated short.' },
+      ],
+      consoleTitle: 'The same workflow in TradeJS',
+      consoleDescription: 'Open a historical run, inspect the strategy’s marks on the chart, and compare configurations before running signals.',
+      consoleLink: 'Explore backtesting',
     },
     tradingModels: {
       sectionLabel: 'TRADING ARCHITECTURES',
@@ -170,8 +192,9 @@ export const translations = {
           description:
             'Run deterministic backtests and parameter grids, then inspect metrics and artifacts before selecting a configuration.',
           imageAlt:
-            'TradeJS backtest runner with strategy, date window, connector and parallel execution settings',
+            'TradeJS backtest setup form with strategy, test period, exchange and instrument controls',
           imageLabel: 'TRADEJS APP / BACKTEST RUNNER',
+          imageStatus: 'RUN SETUP',
           links: [
             {
               label: 'Backtesting',
@@ -190,6 +213,7 @@ export const translations = {
           imageAlt:
             'TradeJS runtime dashboard showing strategy performance, drawdown, orders and win rate',
           imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
+          imageStatus: 'LIVE METRICS',
           links: [
             {
               label: 'Results to Runtime',
@@ -276,21 +300,43 @@ export const translations = {
       quickstart: 'Первый бэктест',
     },
     hero: {
-      actionWords: ['СОЗДАВАЙ', 'ТЕСТИРУЙ', 'ЗАПУСКАЙ'],
-      titleSuffix: 'TypeScript-стратегии',
-      subtitle:
-        'TypeScript-фреймворк для создания, бэктестинга и запуска программируемых торговых стратегий — с self-hosted runtime под вашим контролем',
+      sceneHeadline: 'От стратегии',
+      sceneAccent: 'до сделки',
+      sceneSubtitle: 'Пишите стратегии на TypeScript, проверяйте их на истории и запускайте сигналы или торговлю на своей инфраструктуре.',
       quickstart: 'Запустить первый бэктест',
       secondaryCta: 'Изучить TypeScript API',
-      terminalLabel: 'ВЫПОЛНИТЕ В ТЕРМИНАЛЕ',
-      terminalHint:
-        'CLI создаст локальный проект TradeJS, запустит необходимые сервисы и откроет dashboard.',
-      terminalSteps: ['СОЗДАТЬ ПРОЕКТ', 'ЗАПУСТИТЬ СЕРВИСЫ', 'ОТКРЫТЬ DASHBOARD'],
       copyCommand: 'Скопировать команду',
       copied: 'Команда скопирована',
       productScreenshotAlt:
-        'Приложение TradeJS с результатом бэктеста, входами, выходами, take profit и stop loss на графике',
-      productScreenshotLabel: 'TRADEJS APP / ГРАФИК СТРАТЕГИИ',
+        'Рыночный график BTC/USDT в TradeJS с 15-минутными свечами, скользящими средними и объёмом',
+      productScreenshotLabel: 'TRADEJS APP / РЫНОЧНЫЙ ГРАФИК',
+      productScreenshotStatus: 'BTC/USDT · 15m',
+    },
+    replay: {
+      sectionLabel: 'HEADANDSHOULDERS / РАЗБОР',
+      demoData: 'Учебные свечи · UTC',
+      navigation: 'Этапы сделки',
+      closePrice: 'Закрытие',
+      entryPrice: 'Вход',
+      volume: 'Объём',
+      closed: 'Закрыто по цели',
+      chartLabels: {
+        chart: 'Свечной график BTC/USDT. Прокрутите страницу или выберите этап, чтобы увидеть фигуру, индикаторы и учебную сделку.',
+        shoulders: ['Левое плечо', 'Голова', 'Правое плечо'],
+        neckline: 'Линия шеи',
+        entry: 'SHORT',
+        exit: 'Цель достигнута',
+      },
+      stages: [
+        { label: 'Свечи', title: 'Читаем рынок', description: 'TradeJS воспроизводит движение BTC/USDT по 15-минутным свечам.' },
+        { label: 'Фигура', title: 'Находим фигуру', description: 'Три вершины образуют «голову и плечи». Два минимума задают линию шеи. Под графиком видны ATR и объём.' },
+        { label: 'Пробой', title: 'Ждём подтверждения', description: 'Свеча закрывается ниже линии шеи. Стратегия ждёт следующего закрытия и проверяет расстояние до линии и объём.' },
+        { label: 'Вход', title: 'Открываем шорт', description: 'Подтверждающая свеча даёт сигнал. Стоп выше головы, цель ниже линии шеи на высоту фигуры.' },
+        { label: 'Выход', title: 'Закрываем по цели', description: 'TradeJS отслеживает позицию на новых свечах. Цена достигает цели, и учебная сделка закрывается по тейк-профиту.' },
+      ],
+      consoleTitle: 'Как это выглядит в TradeJS',
+      consoleDescription: 'Откройте бэктест, изучите отметки стратегии на графике и сравните конфигурации перед запуском сигналов.',
+      consoleLink: 'Подробнее о бэктестах',
     },
     tradingModels: {
       sectionLabel: 'АРХИТЕКТУРЫ ТОРГОВЛИ',
@@ -433,8 +479,9 @@ export const translations = {
           description:
             'Запускайте детерминированные бэктесты и перебор параметров, затем изучайте метрики и артефакты перед выбором конфигурации.',
           imageAlt:
-            'Форма запуска бэктеста TradeJS с выбором стратегии, периода, коннектора и параллельности',
+            'Форма настройки бэктеста TradeJS с выбором стратегии, периода, биржи и инструментов',
           imageLabel: 'TRADEJS APP / ЗАПУСК БЭКТЕСТА',
+          imageStatus: 'НАСТРОЙКА',
           links: [
             {
               label: 'Бэктестинг',
@@ -453,6 +500,7 @@ export const translations = {
           imageAlt:
             'Runtime dashboard TradeJS с доходностью стратегии, просадкой, сделками и win rate',
           imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
+          imageStatus: 'ПОКАЗАТЕЛИ',
           links: [
             {
               label: 'Результаты в runtime',

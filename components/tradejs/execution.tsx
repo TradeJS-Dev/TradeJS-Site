@@ -7,8 +7,8 @@ import { AppScreenshot } from './app-screenshot';
 
 const screenshots = [
   {
-    src: '/screenshots/backtest-run.webp',
-    aspect: 'aspect-[1720/1329]',
+    src: '/screenshots/backtest-form.jpg',
+    aspect: 'aspect-[1220/780]',
   },
   {
     src: '/screenshots/runtime-performance.webp',
@@ -70,7 +70,7 @@ export function Execution() {
                     src={screenshots[i].src}
                     alt={item.imageAlt}
                     label={item.imageLabel}
-                    status={i === 0 ? 'RUNNING' : 'LIVE METRICS'}
+                    status={item.imageStatus}
                     className="h-full"
                     viewportClassName={screenshots[i].aspect}
                     fit="cover"

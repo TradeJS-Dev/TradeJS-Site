@@ -470,3 +470,149 @@ html {
   .trade-dot { opacity: 1; transform: none; }
   .screenshot-scan { display: none; }
 }
+
+.market-intro {
+  background: radial-gradient(ellipse at 76% 36%, #15313a 0%, #09131e 50%, var(--background) 85%);
+}
+
+.market-headline {
+  max-width: 17ch;
+  font-size: clamp(2.45rem, 8.6vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.068em;
+}
+
+.market-horizon {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 10%, #000 58%);
+}
+
+.market-horizon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #070d14bf 2%, transparent 34%, transparent 58%, var(--background) 97%);
+}
+
+.market-horizon-chart {
+  position: absolute;
+  top: 15%;
+  left: 19%;
+  width: 103%;
+  height: auto;
+  opacity: 0.61;
+  transform: perspective(1300px) rotateX(26deg) rotateZ(-12deg);
+  transform-origin: 67% 38%;
+  filter: drop-shadow(0 0 16px #2bc8bf55);
+}
+
+.replay-scene {
+  min-height: 260svh;
+  scroll-margin-top: 64px;
+}
+
+.replay-sticky {
+  position: sticky;
+  top: 64px;
+  padding-block: clamp(12px, 3.9vh, 40px);
+  background: radial-gradient(ellipse at 74% 48%, #10303a 0%, transparent 64%);
+}
+
+.replay-layout {
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 17px 33px;
+}
+
+.replay-controls { grid-column: 2; }
+
+.replay-terminal {
+  box-shadow: 0 22px 90px #0007;
+  transition: border-color 400ms ease, box-shadow 500ms ease;
+}
+
+.replay-terminal[data-phase='3'],
+.replay-terminal[data-phase='4'] {
+  border-color: var(--primary);
+  box-shadow: 0 22px 90px #0007, 0 0 52px #2bc8bf24;
+}
+
+.replay-progress {
+  height: 2px;
+  background: var(--border);
+}
+
+.replay-progress::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  transform: scaleX(var(--replay-progress, 0));
+  transform-origin: left;
+}
+
+.replay-headline {
+  font-size: clamp(1.65rem, 3.65vw, 3.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  animation: replay-heading 430ms cubic-bezier(0.2, 0.7, 0.25, 1) both;
+}
+
+.replay-description { min-height: 6em; }
+.replay-step[aria-pressed='true'] { color: var(--primary); border-color: var(--primary); }
+.replay-annotation { animation: replay-reveal 450ms ease-out both; }
+.replay-pattern-line { stroke-dasharray: 1; animation: replay-draw 800ms ease-out both; }
+.replay-latest-candle { animation: replay-reveal 260ms ease-out both; }
+.replay-sweep, .replay-price-marker { transition: transform 190ms ease-out; }
+.replay-order-zone { transition: width 230ms ease-out; }
+
+.replay-event-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: replay-ring 950ms ease-out both;
+}
+
+@keyframes replay-heading {
+  from { opacity: 0.28; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes replay-ring {
+  from { opacity: 0.9; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(3); }
+}
+
+@keyframes replay-reveal {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@keyframes replay-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (max-width: 1023px) {
+  .replay-layout { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .replay-controls { grid-column: auto; }
+  .replay-headline { min-height: 1.9em; }
+  .replay-description { min-height: 3.5em; }
+}
+
+@media (max-width: 639px) {
+  .market-horizon-chart { left: 5%; top: 18%; width: 160%; }
+  .market-horizon { opacity: 0.6; mask-image: linear-gradient(to right, #0006, #000); }
+  .replay-terminal > svg { min-height: 178px; }
+  .replay-chart-labels { display: none; }
+  .replay-description { min-height: 4.6em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .replay-headline, .replay-annotation, .replay-pattern-line, .replay-latest-candle, .replay-event-ring { animation: none; }
+  .replay-event-ring { display: none; }
+  .replay-terminal, .replay-sweep, .replay-price-marker, .replay-order-zone { transition: none; }
+}

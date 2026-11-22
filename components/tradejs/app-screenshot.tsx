@@ -9,7 +9,7 @@ interface AppScreenshotProps {
   className?: string;
   viewportClassName?: string;
   fit?: 'cover' | 'contain';
-  position?: 'center' | 'right';
+  position?: 'center' | 'right' | 'top';
   priority?: boolean;
 }
 
@@ -60,7 +60,11 @@ export function AppScreenshot({
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 62vw, 760px"
           className={cn(
             fit === 'contain' ? 'object-contain' : 'object-cover',
-            position === 'right' ? 'object-right' : 'object-center',
+            {
+              center: 'object-center',
+              right: 'object-right',
+              top: 'object-top',
+            }[position],
           )}
         />
         <div className="screenshot-scan pointer-events-none absolute inset-x-0 top-0 h-1/3" />
