@@ -163,7 +163,7 @@ export function StrategyReplay() {
             alt={t.hero.productScreenshotAlt}
             label={t.hero.productScreenshotLabel}
             status={t.hero.productScreenshotStatus}
-            viewportClassName="aspect-[1668/889]"
+            viewportClassName="aspect-[1668/905]"
             fit="contain"
           />
         </div>

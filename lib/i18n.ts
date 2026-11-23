@@ -213,7 +213,7 @@ export const translations = {
           imageAlt:
             'TradeJS runtime dashboard showing strategy performance, drawdown, orders and win rate',
           imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
-          imageStatus: 'LIVE METRICS',
+          imageStatus: 'DEMO DATA',
           links: [
             {
               label: 'Results to Runtime',
@@ -500,7 +500,7 @@ export const translations = {
           imageAlt:
             'Runtime dashboard TradeJS с доходностью стратегии, просадкой, сделками и win rate',
           imageLabel: 'TRADEJS APP / RUNTIME PERFORMANCE',
-          imageStatus: 'ПОКАЗАТЕЛИ',
+          imageStatus: 'ДЕМО-ДАННЫЕ',
           links: [
             {
               label: 'Результаты в runtime',
