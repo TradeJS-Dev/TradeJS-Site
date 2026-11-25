@@ -5,10 +5,10 @@ export const translations = {
     nav: {
       advantages: 'Why TradeJS',
       architectures: 'Architectures',
-      devExperience: 'TypeScript',
+      devExperience: 'Development',
       x: 'X.com',
       github: 'GitHub',
-      quickstart: 'Run first backtest',
+      quickstart: 'Documentation',
     },
     hero: {
       sceneHeadline: 'From strategy',
@@ -282,7 +282,6 @@ export const translations = {
       description: 'One strategy lifecycle from research to runtime.',
       app: 'Application',
       docs: 'Documentation',
-      strategies: 'Strategy catalog',
       licensing: 'Licensing',
       github: 'GitHub Repository',
       x: 'X',
@@ -293,11 +292,11 @@ export const translations = {
   ru: {
     nav: {
       advantages: 'Почему TradeJS',
-      architectures: 'Архитектуры',
-      devExperience: 'TypeScript',
+      architectures: 'Архитектура',
+      devExperience: 'Разработка',
       x: 'X.com',
       github: 'GitHub',
-      quickstart: 'Первый бэктест',
+      quickstart: 'Документация',
     },
     hero: {
       sceneHeadline: 'От стратегии',
@@ -569,7 +568,6 @@ export const translations = {
       description: 'Единый цикл стратегии от исследования до runtime.',
       app: 'Приложение',
       docs: 'Документация',
-      strategies: 'Каталог стратегий',
       licensing: 'Лицензирование',
       github: 'GitHub-репозиторий',
       x: 'X',

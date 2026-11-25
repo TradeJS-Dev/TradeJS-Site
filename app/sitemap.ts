@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { catalog, componentPath } from '@/lib/marketplace';
 import { absoluteUrl, siteConfig } from '@/lib/site-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,5 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
       images: siteConfig.screenshots.map(absoluteUrl),
     },
+    {
+      url: absoluteUrl('/marketplace'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...catalog.map((item) => ({
+      url: absoluteUrl(componentPath(item)),
+      changeFrequency: 'monthly' as const,
+    })),
   ];
 }

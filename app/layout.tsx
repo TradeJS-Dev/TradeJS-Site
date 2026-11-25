@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 import { siteConfig } from '@/lib/site-config';
 import { YANDEX_METRIKA_COUNTER_ID } from '@/lib/yandex-metrika';
+import { LocaleProvider } from '@/components/tradejs/locale-provider';
 import './globals.css';
 
 const _manrope = Manrope({
@@ -126,6 +127,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${_manrope.variable} ${_jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
@@ -161,7 +163,7 @@ export default function RootLayout({
             />
           </div>
         </noscript>
-        {children}
+        <LocaleProvider>{children}</LocaleProvider>
         <Analytics />
       </body>
     </html>

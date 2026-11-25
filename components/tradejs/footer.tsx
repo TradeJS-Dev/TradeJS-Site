@@ -1,6 +1,7 @@
 'use client';
 
 import { Github, Twitter } from 'lucide-react';
+import Link from 'next/link';
 import { useLocale } from './locale-provider';
 
 const GITHUB_REPO_URL = 'https://github.com/tradejs-dev/tradejs';
@@ -77,14 +78,12 @@ export function Footer() {
             >
               {t.footer.docs}
             </a>
-            <a
-              href={`${docsUrl}strategies/reference`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/marketplace"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              {t.footer.strategies}
-            </a>
+              Marketplace
+            </Link>
             <a
               href={licensingUrl}
               target="_blank"

@@ -108,7 +108,7 @@ Published packages: https://www.npmjs.com/org/tradejs
 ### Installation
 
 - Installation: https://docs.tradejs.dev/getting-started/installation
-- Strategy catalog: https://docs.tradejs.dev/strategies/reference
+- Marketplace for strategies, exchange adapters, and plugins: https://tradejs.dev/marketplace. Each component page covers its behavior, configuration keys, and an example. Strategy and adapter pages include copyable backtest commands.
 - Develop with an agent: https://docs.tradejs.dev/guides/develop-with-an-agent
 - Root user and first login: https://docs.tradejs.dev/getting-started/root-user
 - First backtest: https://docs.tradejs.dev/getting-started/first-backtest

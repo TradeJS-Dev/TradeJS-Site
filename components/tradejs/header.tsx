@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useLocale } from './locale-provider';
 import { Github, Menu, X as CloseIcon } from 'lucide-react';
 import { reachYandexMetrikaGoal } from '@/lib/yandex-metrika';
 
 const GITHUB_REPO_URL = 'https://github.com/tradejs-dev/tradejs';
 
-export function Header() {
+export function Header({ marketplace = false }: { marketplace?: boolean }) {
   const { locale, t, toggleLocale } = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,7 +28,8 @@ export function Header() {
     { label: t.nav.advantages, href: '#advantages' },
     { label: t.nav.architectures, href: '#trading-models' },
     { label: t.nav.devExperience, href: '#dev-experience' },
-  ];
+  ].map((link) => ({ ...link, href: marketplace ? `/${link.href}` : link.href }));
+  const links = [...navLinks, { label: 'Marketplace', href: '/marketplace' }];
 
   return (
     <header
@@ -39,8 +41,8 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
-        <a
-          href="#"
+        <Link
+          href={marketplace ? '/' : '#'}
           className="flex items-center gap-2 group"
           aria-label="TradeJS Home"
         >
@@ -71,26 +73,27 @@ export function Header() {
           <span className="text-foreground font-bold text-lg tracking-tight">
             Trade<span className="text-primary">JS</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav
-          className="hidden md:flex items-center gap-6"
+          className="hidden lg:flex items-center gap-5"
           aria-label="Main navigation"
         >
-          {navLinks.map((link) => (
-            <a
+          {links.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
-              className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+              aria-current={marketplace && link.href === '/marketplace' ? 'page' : undefined}
+              className="text-muted-foreground hover:text-foreground aria-[current=page]:text-primary text-sm font-medium transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Right side */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <button
             onClick={toggleLocale}
             className="flex items-center gap-1 rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors"
@@ -140,9 +143,10 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-foreground p-2"
+          className="lg:hidden text-foreground p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <CloseIcon size={22} /> : <Menu size={22} />}
         </button>
@@ -150,20 +154,21 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-b border-border bg-background/95 shadow-[0_16px_36px_rgba(0,0,0,0.34)] backdrop-blur-xl md:hidden">
+        <div className="border-b border-border bg-background/95 shadow-[0_16px_36px_rgba(0,0,0,0.34)] backdrop-blur-xl lg:hidden">
           <nav
             className="flex flex-col px-4 py-4 gap-3"
             aria-label="Mobile navigation"
           >
-            {navLinks.map((link) => (
-              <a
+            {links.map((link) => (
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-foreground text-sm font-medium py-2 transition-colors"
+                aria-current={marketplace && link.href === '/marketplace' ? 'page' : undefined}
+                className="text-muted-foreground hover:text-foreground aria-[current=page]:text-primary text-sm font-medium py-2 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <hr className="border-border" />
             <div className="flex items-center gap-3 py-2">

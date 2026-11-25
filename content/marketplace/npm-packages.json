@@ -1,0 +1,1205 @@
+{
+  "@tradejs/base": {
+    "version": "3.1.8",
+    "latest": "3.1.8",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/node": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.1.8",
+        "date": "2026-10-19",
+        "commit": "c6df6b6ae57c0862baa8cbe3b35a006382b214aa"
+      },
+      {
+        "version": "3.1.7",
+        "date": "2026-09-14",
+        "commit": "d437fbe18d35d7b367547c1b9880df34bbb9a2c0"
+      },
+      {
+        "version": "3.1.6",
+        "date": "2026-09-02",
+        "commit": "561d740723a64d022f982be2a359c0aabe35c269"
+      },
+      {
+        "version": "3.1.5",
+        "date": "2026-09-02",
+        "commit": "6c3adad7d48fa123bf3d3ed1b9c77e154532870c"
+      },
+      {
+        "version": "3.1.4",
+        "date": "2026-08-31",
+        "commit": "dc2c4a621794890b2c2b13c16314ba7ebef5a5f9"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Base"
+  },
+  "@tradejs/connectors": {
+    "version": "3.1.30",
+    "latest": "3.1.30",
+    "peerRanges": {},
+    "releases": [
+      {
+        "version": "3.1.30",
+        "date": "2026-11-24",
+        "commit": "a890499641acb9e6736fc7e3062bb3c33c7748a0"
+      },
+      {
+        "version": "3.1.29",
+        "date": "2026-11-23",
+        "commit": "6dc51e35d9502bd7dfd824401860c05fcaafa8be"
+      },
+      {
+        "version": "3.1.28",
+        "date": "2026-09-21",
+        "commit": "ab641b8ee883a9e5e3e5e968ab56998b823597c4"
+      },
+      {
+        "version": "3.1.27",
+        "date": "2026-09-07",
+        "commit": "d780f3450e8d2cd0ec6bc00bc7e925bc802e7d70"
+      },
+      {
+        "version": "3.1.26",
+        "date": "2026-08-31",
+        "commit": "cfbf32b2cdcef436f8f76271bf70317ba0bbba18"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS"
+  },
+  "@tradejs/indicators": {
+    "version": "3.1.30",
+    "latest": "3.1.30",
+    "peerRanges": {},
+    "releases": [
+      {
+        "version": "3.1.30",
+        "date": "2026-11-24",
+        "commit": "a890499641acb9e6736fc7e3062bb3c33c7748a0"
+      },
+      {
+        "version": "3.1.29",
+        "date": "2026-11-23",
+        "commit": "6dc51e35d9502bd7dfd824401860c05fcaafa8be"
+      },
+      {
+        "version": "3.1.28",
+        "date": "2026-09-21",
+        "commit": "ab641b8ee883a9e5e3e5e968ab56998b823597c4"
+      },
+      {
+        "version": "3.1.27",
+        "date": "2026-09-07",
+        "commit": "d780f3450e8d2cd0ec6bc00bc7e925bc802e7d70"
+      },
+      {
+        "version": "3.1.26",
+        "date": "2026-08-31",
+        "commit": "cfbf32b2cdcef436f8f76271bf70317ba0bbba18"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS"
+  },
+  "@tradejs/node": {
+    "version": "3.1.30",
+    "latest": "3.1.30",
+    "peerRanges": {},
+    "releases": [
+      {
+        "version": "3.1.30",
+        "date": "2026-11-24",
+        "commit": "a890499641acb9e6736fc7e3062bb3c33c7748a0"
+      },
+      {
+        "version": "3.1.29",
+        "date": "2026-11-23",
+        "commit": "6dc51e35d9502bd7dfd824401860c05fcaafa8be"
+      },
+      {
+        "version": "3.1.28",
+        "date": "2026-09-21",
+        "commit": "ab641b8ee883a9e5e3e5e968ab56998b823597c4"
+      },
+      {
+        "version": "3.1.27",
+        "date": "2026-09-07",
+        "commit": "d780f3450e8d2cd0ec6bc00bc7e925bc802e7d70"
+      },
+      {
+        "version": "3.1.26",
+        "date": "2026-08-31",
+        "commit": "cfbf32b2cdcef436f8f76271bf70317ba0bbba18"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS"
+  },
+  "@tradejs/strategy-adaptive-momentum-ribbon": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "787ab83302c8a289ed0d051182d7fd5fb4472912"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "b5c7cf4b53bc41b58929de6688fbf0c8b312f215"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "c01e07fd12988db0f5d230ca221568665655e695"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "6fad369a90182e6229ed8d47f9e963b2e0e4ae1f"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "0a2e125a1062f11a682ab3bc6e848e054f16284a"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-AdaptiveMomentumRibbon"
+  },
+  "@tradejs/strategy-adaptive-trend-channel": {
+    "version": "3.0.6",
+    "latest": "3.0.6",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.6",
+        "date": "2026-10-09",
+        "commit": "2943909819377c5a395cd49520ad41bef2c3078c"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-08",
+        "commit": "c6de5eba6dfffd2df332e20cf956c2ae7999cf03"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-27",
+        "commit": "77a820a074d991d9a2cc9ed407d188eeecc29c19"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "b3746fd8eccedd9c9fe223102039365af0c8711a"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "b40a9f6c6271b6db96f26c09a2cd33a21b1ecf3b"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-AdaptiveTrendChannel"
+  },
+  "@tradejs/strategy-breakout": {
+    "version": "3.0.4",
+    "latest": "3.0.4",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.4",
+        "date": "2026-09-14",
+        "commit": "821d5ef08e4a737e97072ed685129d118f5d1f31"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "0c262687818c0adf5b0fbf2d4f3bd2d2a59caf18"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "6f4d01fdbd209d47410f30a786f32106eccabaea"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "bd7b51e738a296e6206059a6e5258cddc43c8b61"
+      },
+      {
+        "version": "3.0.0",
+        "date": "2026-08-17",
+        "commit": "fd3c5e531f9a53465d857219bc8431d10c991b5d"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Breakout"
+  },
+  "@tradejs/strategy-crab": {
+    "version": "0.1.2",
+    "latest": "0.1.2",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.2",
+        "date": "2026-11-17",
+        "commit": "7ec30fd87dc2053b4a786ea7ff29c049a1e35fd1"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-09-08",
+        "commit": "75bc8b1ea3c256534943ce52b88983ee66ee38a4"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Crab"
+  },
+  "@tradejs/strategy-cup-and-handle": {
+    "version": "3.0.7",
+    "latest": "3.0.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.7",
+        "date": "2026-11-13",
+        "commit": "8bed3b77733bfcd27a6e558c4cf4cdadbda58d3b"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-14",
+        "commit": "e1df5f1fe1bea4c5a13fc85bed07dd0765f7febe"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-08",
+        "commit": "bbfda39731b15011ce215f238eb738901597dbda"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-25",
+        "commit": "0dfa7766958119bdd0c4454adf786eb7601c31e3"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "7e5c73b921df2ea6e64eef2f93dd60b0649bfb82"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-CupAndHandle"
+  },
+  "@tradejs/strategy-diamond": {
+    "version": "0.1.3",
+    "latest": "0.1.3",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.3",
+        "date": "2026-11-17",
+        "commit": "86970b094fdad42b72a31d3c9dd5dffb96f9c6ac"
+      },
+      {
+        "version": "0.1.2",
+        "date": "2026-09-08",
+        "commit": "c68fe774e2b78b0df0852ac034df6417572d6813"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-09-07",
+        "commit": "c3cb0c0416ff4a61e59e887e717b8aba0003dd97"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Diamond"
+  },
+  "@tradejs/strategy-double-tap": {
+    "version": "3.0.6",
+    "latest": "3.0.6",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.6",
+        "date": "2026-11-13",
+        "commit": "8dc156a8a0196723fb0c04ffff65874ecc61a650"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "8ff4438ba21a0b44feb5cb71f0875734c6c28a25"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "698002eed7114801e47dc9075fef612c24c7a85e"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "c37c6b02fb6e80bdca049acdf830c34aacc60a54"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "0d583bb167c24232197a300a37ae899a476ae7f6"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-DoubleTap"
+  },
+  "@tradejs/strategy-dragon": {
+    "version": "0.1.4",
+    "latest": "0.1.4",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.4",
+        "date": "2026-11-13",
+        "commit": "da9cec3372b49395a03e94e781d97e1b10fda819"
+      },
+      {
+        "version": "0.1.3",
+        "date": "2026-09-14",
+        "commit": "fdbd7900df816d192cbf3fb8f54cd2dbecf8e6c5"
+      },
+      {
+        "version": "0.1.2",
+        "date": "2026-09-08",
+        "commit": "004cd0024760775f82c13cf52302d19359e41e60"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-08-31",
+        "commit": "43db4c1d6ac30af19313d30a908b1f71cbd79890"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Dragon"
+  },
+  "@tradejs/strategy-flag": {
+    "version": "0.1.7",
+    "latest": "0.1.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.7",
+        "date": "2026-11-13",
+        "commit": "8dc94a474d63149ff4e5fb5ab315af5247dbaa66"
+      },
+      {
+        "version": "0.1.6",
+        "date": "2026-10-06",
+        "commit": "051cd67e257e9f50412ae351d3e7945b3beebe99"
+      },
+      {
+        "version": "0.1.5",
+        "date": "2026-10-02",
+        "commit": "baaf3f75bb4b995322d418a0c127bc08181ee776"
+      },
+      {
+        "version": "0.1.4",
+        "date": "2026-09-14",
+        "commit": "c325f175366f9a4d71ff48e509bc704ce90ae14e"
+      },
+      {
+        "version": "0.1.3",
+        "date": "2026-09-09",
+        "commit": "b48a37069b8930d7d7b23f70a535b0717bdb75aa"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Flag"
+  },
+  "@tradejs/strategy-gartley": {
+    "version": "0.1.3",
+    "latest": "0.1.3",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.3",
+        "date": "2026-09-14",
+        "commit": "a51fd203591037b32056bcb707e71cbcb08a9ff4"
+      },
+      {
+        "version": "0.1.2",
+        "date": "2026-09-08",
+        "commit": "d994b994b00a03248fca7f7cf8a289387cf0ff12"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-09-02",
+        "commit": "cf7daec692c699b00e15762502871e1114a7143f"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Gartley"
+  },
+  "@tradejs/strategy-grid": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "659fea3f79025f2acbe7c16bde45f5670c199500"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "c4e5e1232fb4cbd0ff9ed732fa9093121e516040"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "a8ec9faa7ad4583a610ea20a79bcf954ccda903b"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "c1651e0e6227ba8fed3697e1a377a076f3dd320b"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "58d19ad7237fa55e05686a9f408901667047e742"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Grid"
+  },
+  "@tradejs/strategy-grid-classic": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "708f3765fba15d448527db85f9905319a16abcbf"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "de47543ecb6a00c0171ab2949395d6c1dccce8b0"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "3d1fbe057815582ef43f022ddb9b0009528444ef"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "906c37dd345a634318566c0928b7d0817a3ba3e7"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "27a4987d447ca866137be5d6718bf87be9143b18"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-GridClassic"
+  },
+  "@tradejs/strategy-head-and-shoulders": {
+    "version": "3.0.9",
+    "latest": "3.0.9",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.9",
+        "date": "2026-11-17",
+        "commit": "f014f3ba2f65ee9a2a1bbc0e448868c2780436bd"
+      },
+      {
+        "version": "3.0.8",
+        "date": "2026-11-13",
+        "commit": "6f9e7d552390145db6bd94a8650d29e67972fe13"
+      },
+      {
+        "version": "3.0.7",
+        "date": "2026-09-14",
+        "commit": "8f5aa8c69a29222fc0ddbff5bbc38133426a4c4b"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-08",
+        "commit": "31b367791d3bb6eecd855f14f609046b56c8cc7f"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-08-27",
+        "commit": "37a6bc60639668391e75c1d14b3484cd561bec5b"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-HeadAndShoulders"
+  },
+  "@tradejs/strategy-hyperliquid-consensus": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "1965d09e935d7d2b17ab6acb10c2ffa43cd14d57"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "7cddeae0b2fa105fc8e40946c7ff6d94d34730f0"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "e1010d6ca449790f2da6fa32e09a499893e9be2f"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "4b7c93fbe7ad0158c8279e3b1df586889b14a020"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "6402b1d65e4b0c865a7fc4bfaca19d71513a6970"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-HyperliquidConsensus"
+  },
+  "@tradejs/strategy-imbalance-momentum": {
+    "version": "0.0.1",
+    "latest": "0.0.1",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.1.29-beta.302",
+      "@tradejs/types": "^3.1.29-beta.302"
+    },
+    "releases": [
+      {
+        "version": "0.0.1",
+        "date": "2026-11-17",
+        "commit": "ebfe9809d42145dc21dd37916432320cf5f03575"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-ImbalanceMomentum"
+  },
+  "@tradejs/strategy-liquidity-tails": {
+    "version": "3.0.7",
+    "latest": "3.0.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.7",
+        "date": "2026-11-13",
+        "commit": "f75e10158c1d114a45abdc725775928b92b35976"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-08",
+        "commit": "3e98fba83b4ca113572922e42c9a8e3fa52d2936"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-08-31",
+        "commit": "f4bb0057690c8d07f2c6e4edb06833540d04a4e0"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-29",
+        "commit": "32af3fd317450a016018002807485af5fb54b0e9"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "76d440ab4a38bb141eaec38c2fddafcba6938a72"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-LiquidityTails"
+  },
+  "@tradejs/strategy-liquidity-zones": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "0e282e9e74ab5d07f9cf5197e363f52338991bb1"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "41cf465b8c89a2da7c5bc98fec679810e4b637bb"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "0967ae0841645e6ef1db73708a1f9af933416440"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "0124b68be404ab726dac1804a79cbb956e6cd4cd"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "aa5f673275dd107d79f7cc127de752391c480e68"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-LiquidityZones"
+  },
+  "@tradejs/strategy-london-breakout": {
+    "version": "0.0.2",
+    "latest": "0.0.2",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.1.28",
+      "@tradejs/types": "^3.1.28"
+    },
+    "releases": [
+      {
+        "version": "0.0.2",
+        "date": "2026-11-16",
+        "commit": "67fa12f13c7b69dc920e834b34b66be5aa6f77aa"
+      },
+      {
+        "version": "0.0.1",
+        "date": "2026-11-12",
+        "commit": "1c684bdeaa931535bd7d11d082fad797cf9adf42"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-London-Breakout"
+  },
+  "@tradejs/strategy-ma-strategy": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "cb7c794e2a238bad1348b90072d2caadc8d3d240"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "f7f5af588f298799ba2011aa4a227b22b797ba1f"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "e1837864747c6434c2dc998b0514a3b19b5954dc"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "cece16c6515bfce903a2209e4f4396c19e6d3a06"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "a80661ebe5a8a6de94ebc2011b0fbbbb3f4addc4"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-MaStrategy"
+  },
+  "@tradejs/strategy-market-flush-reversal": {
+    "version": "3.0.8",
+    "latest": "3.0.8",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.8",
+        "date": "2026-11-13",
+        "commit": "ee37da42cd50aa0491ff3d9a4b2de6edc33e5487"
+      },
+      {
+        "version": "3.0.7",
+        "date": "2026-09-14",
+        "commit": "d12d232750b07a219ddeafe16bb075652a868584"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-08",
+        "commit": "f7491499016c8c51224dd84902c98636cd511eb6"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-08-27",
+        "commit": "f8ec99c9c5a53c2a144f2608e863c34ab63ba12c"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-23",
+        "commit": "38456478fceed2f675964d4eab203efbd8eb01d9"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-MarketFlushReversal"
+  },
+  "@tradejs/strategy-range-reclaim": {
+    "version": "0.1.4",
+    "latest": "0.1.4",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.4",
+        "date": "2026-11-16",
+        "commit": "e4f1b9253db1dc12b552be3eca816a58dfc6fe8f"
+      },
+      {
+        "version": "0.1.3",
+        "date": "2026-11-13",
+        "commit": "24c006a4186f0fa58df01e596b876d578054c17d"
+      },
+      {
+        "version": "0.1.2",
+        "date": "2026-11-13",
+        "commit": "79cb2dee1a689dee2cd3a81598368eb61e979496"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-10-20",
+        "commit": "eb70b6f6914104a1ebe39d0953e2bab1757471af"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Range-Reclaim"
+  },
+  "@tradejs/strategy-relative-rotation": {
+    "version": "3.0.6",
+    "latest": "3.0.6",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.6",
+        "date": "2026-11-13",
+        "commit": "b1154737aac5c79bdce66595cac0567104238dfa"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "3c2b419051c44c704765796cd33e1116b36a1328"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "0d5b4d8053cf426216b14c685b39bce7673904e4"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "3c561664a643d9d9e035577f7e37f2a0ae26c13f"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "a65f44957c05b753ce01bc42ce322f28a002938a"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-RelativeRotation"
+  },
+  "@tradejs/strategy-structure-zones": {
+    "version": "3.0.7",
+    "latest": "3.0.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.7",
+        "date": "2026-11-13",
+        "commit": "520b9b14433d23edabffd87f08b1498a56bb25ee"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-14",
+        "commit": "9ea126bff86a6252f35dd606eae8449c3e705207"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-08",
+        "commit": "a831bc074f193c9c5fc5f8ef62c24fadb298ac5a"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-25",
+        "commit": "5c5c49f35794498fcfdaf95a120bf8c4de1f5de1"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "496ce1db727936024e7dbcc1c430139eb5562d6c"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-StructureZones"
+  },
+  "@tradejs/strategy-trading-patterns": {
+    "version": "0.1.3",
+    "latest": "0.1.3",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.3",
+        "date": "2026-11-13",
+        "commit": "c402b406b34c571fb3e17bbe05288b5a58f465ec"
+      },
+      {
+        "version": "0.1.2",
+        "date": "2026-10-19",
+        "commit": "9074733d5d035eb6b4977593f7ceb09f1825116d"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-10-06",
+        "commit": "06a3da123ab6ebebc958f4e90da1acd6d45fe63e"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-TradingPatterns"
+  },
+  "@tradejs/strategy-trend-follow": {
+    "version": "3.0.7",
+    "latest": "3.0.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.7",
+        "date": "2026-11-13",
+        "commit": "bbb0a233a9dd258e1cff10b043f8f74d51d7aeeb"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-14",
+        "commit": "9187cf6963d48e5a7400d04170c210340e961307"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-08",
+        "commit": "e6ab4b359f0b61adea6f7036b2c03b58a1bc18a6"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-24",
+        "commit": "bf3f9ff4b356685de75a6ce6b2c402e231d67571"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-20",
+        "commit": "15036de28d88ccefe45df03c171d6f3d482891f1"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-TrendFollow"
+  },
+  "@tradejs/strategy-trend-line": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "a68d9c6536fc2397d54d79d3798c1dffaec63129"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "76a7cd9ac3449fd800715f00c1da83e17b95f8fe"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "006deadabf8056986f125ed940abdfca89591d23"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "2aa277f824b0f540cadddfd405ef7867dc83a5d3"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "95cd08de99b63626cee1f399c978e98d96989829"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-TrendLine"
+  },
+  "@tradejs/strategy-trend-pullback": {
+    "version": "0.1.2",
+    "latest": "0.1.2",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.1.28 || ^3.1.29-beta.275",
+      "@tradejs/types": "^3.1.28 || ^3.1.29-beta.275"
+    },
+    "releases": [
+      {
+        "version": "0.1.2",
+        "date": "2026-11-16",
+        "commit": "e4f0e63470a29ec7e55441326d885171a0fc31ab"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-11-09",
+        "commit": "52d2b7d8733ebcd9b6f2d3ae1cfc7f082600bf79"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-TrendPullback"
+  },
+  "@tradejs/strategy-trend-shift": {
+    "version": "3.0.6",
+    "latest": "3.0.6",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.6",
+        "date": "2026-11-13",
+        "commit": "1abbf51222764de0848ee16174cd71927ddd4a70"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-08",
+        "commit": "68faa41909e58caadd4927255e545ea1478207e5"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-08-22",
+        "commit": "71a0513be9e8fd77d9c23de8eba4fcba88428d53"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-20",
+        "commit": "c7a2b16a34c3092ec6ac60ea1f5ed0c4bf6c6925"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "5d41e9834c0de6b68ca79c83c053bb3eb989a46f"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-TrendShift"
+  },
+  "@tradejs/strategy-triangle": {
+    "version": "0.1.2",
+    "latest": "0.1.2",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "0.1.2",
+        "date": "2026-11-17",
+        "commit": "70168e5b0f3971688ecb3cc01e761beb4c278eca"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-09-08",
+        "commit": "d122934f7ad6d2b345ace2291055283093355998"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-Triangle"
+  },
+  "@tradejs/strategy-value-area-reclaim": {
+    "version": "0.1.1",
+    "latest": "0.1.1",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.1.29-beta.281",
+      "@tradejs/types": "^3.1.29-beta.281"
+    },
+    "releases": [
+      {
+        "version": "0.1.1",
+        "date": "2026-11-17",
+        "commit": "c704f7c7b0c2d67efea0abb7429172a0cb0a4473"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-ValueAreaReclaim"
+  },
+  "@tradejs/strategy-volatility-compression-breakout": {
+    "version": "3.0.5",
+    "latest": "3.0.5",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.5",
+        "date": "2026-09-14",
+        "commit": "ffd852e82e27c311b4661ff11ffdb34f96d72cf4"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "a91e19f3a6fddd6a4c8f1e3ed42a9200773abf36"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "81728ef2a2704089faebe77412aac2d51ad6e8ba"
+      },
+      {
+        "version": "3.0.2",
+        "date": "2026-08-20",
+        "commit": "59c804ff67a9438c8598bf27b79b83bd4891de84"
+      },
+      {
+        "version": "3.0.1",
+        "date": "2026-08-20",
+        "commit": "c38f509d89aee1e6865a643620fde1b4526fb2c5"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-VolatilityCompressionBreakout"
+  },
+  "@tradejs/strategy-volume-divergence": {
+    "version": "3.0.7",
+    "latest": "3.0.7",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.0.1",
+      "@tradejs/types": "^3.0.1"
+    },
+    "releases": [
+      {
+        "version": "3.0.7",
+        "date": "2026-11-13",
+        "commit": "1a6fb10f63609cf53c4fce24ebe29a496c53c6d7"
+      },
+      {
+        "version": "3.0.6",
+        "date": "2026-09-14",
+        "commit": "a823f0b72f4e0d3bac8fac6c65c3584e7277eedb"
+      },
+      {
+        "version": "3.0.5",
+        "date": "2026-09-10",
+        "commit": "97f64c92a2d048fb9e8cc24afeec1182503a40d1"
+      },
+      {
+        "version": "3.0.4",
+        "date": "2026-09-08",
+        "commit": "2765a95022813fa4f595ff9d1cb49c875bf8275a"
+      },
+      {
+        "version": "3.0.3",
+        "date": "2026-08-24",
+        "commit": "0b2a2eaaa7b2ed7e94296ed354a277c9a8739c2d"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-VolumeDivergence"
+  },
+  "@tradejs/strategy-vwap-reversion": {
+    "version": "0.1.2",
+    "latest": "0.1.2",
+    "node": "24.x",
+    "peerRanges": {
+      "@tradejs/core": "^3.1.28",
+      "@tradejs/types": "^3.1.28"
+    },
+    "releases": [
+      {
+        "version": "0.1.2",
+        "date": "2026-10-26",
+        "commit": "6c2d1282a2a0f918deb321b455838f0357d224db"
+      },
+      {
+        "version": "0.1.1",
+        "date": "2026-10-16",
+        "commit": "829f0242378329f3b51613e171bbe7abb6fe59c5"
+      }
+    ],
+    "source": "https://github.com/TradeJS-Dev/TradeJS-Strategy-VwapReversion"
+  }
+}
