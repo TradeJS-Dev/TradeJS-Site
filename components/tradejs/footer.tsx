@@ -1,6 +1,7 @@
 'use client';
 
 import { Github, Twitter } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from './locale-provider';
 
@@ -27,30 +28,7 @@ export function Footer() {
           {/* Logo + description */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-7 h-7 rounded-md bg-primary/10 border border-primary/20">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="text-primary"
-                >
-                  <path
-                    d="M3 17L9 11L13 15L21 7"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M17 7H21V11"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <Image src="/icon.svg" alt="" width={28} height={28} className="rounded-md" />
               <span className="text-foreground font-bold text-base tracking-tight">
                 Trade<span className="text-primary">JS</span>
               </span>
