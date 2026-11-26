@@ -28,7 +28,7 @@ export function Footer() {
           {/* Logo + description */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-2">
-              <Image src="/icon.svg" alt="" width={28} height={28} className="rounded-md" />
+              <Image src="/tradejs-mark.svg" alt="" width={28} height={28} />
               <span className="text-foreground font-bold text-base tracking-tight">
                 Trade<span className="text-primary">JS</span>
               </span>

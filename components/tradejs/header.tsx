@@ -47,7 +47,7 @@ export function Header({ marketplace = false }: { marketplace?: boolean }) {
           className="flex items-center gap-2 group"
           aria-label="TradeJS Home"
         >
-          <Image src="/icon.svg" alt="" width={32} height={32} className="rounded-md" />
+          <Image src="/tradejs-mark.svg" alt="" width={32} height={32} />
           <span className="text-foreground font-bold text-lg tracking-tight">
             Trade<span className="text-primary">JS</span>
           </span>
